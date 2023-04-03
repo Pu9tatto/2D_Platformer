@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 55290024}
   - component: {fileID: 55290025}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_1 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 245784583}
   - component: {fileID: 245784584}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_1 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 301197705}
   - component: {fileID: 301197706}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_1 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 349290118}
   - component: {fileID: 349290119}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_1 (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 352405874}
   - component: {fileID: 352405875}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -742,7 +742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 604388390}
   - component: {fileID: 604388391}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -910,7 +910,7 @@ GameObject:
   m_Component:
   - component: {fileID: 741892803}
   - component: {fileID: 741892804}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_1 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -994,7 +994,7 @@ GameObject:
   m_Component:
   - component: {fileID: 750797179}
   - component: {fileID: 750797180}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_1 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1114,7 +1114,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 856244108}
-  m_Layer: 0
+  - component: {fileID: 856244109}
+  m_Layer: 6
   m_Name: Tiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1158,6 +1159,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &856244109
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856244107}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.1306901, y: -2.7391863}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 18.710018, y: 0.9356899}
+  m_EdgeRadius: 0
 --- !u!1 &870548409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,7 +1195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 870548410}
   - component: {fileID: 870548411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_1 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1255,6 +1282,8 @@ GameObject:
   - component: {fileID: 884364146}
   - component: {fileID: 884364145}
   - component: {fileID: 884364147}
+  - component: {fileID: 884364149}
+  - component: {fileID: 884364148}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -1322,10 +1351,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884364142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.6536746, y: -1.818183, z: 0}
+  m_LocalPosition: {x: -2.998, y: -1.768, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2036271928}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1353,7 +1383,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958e9f4e3d221fb41ad1c271c716038c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
+  _speed: 3
+  _jumpForce: 12
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  _groundCheck: {fileID: 2036271926}
+  _GroundCheckRadius: 0.3
+  _GroundCheckDeltaPosition: {x: 0, y: -0.3, z: 0}
 --- !u!114 &884364147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1384,6 +1421,43 @@ MonoBehaviour:
   m_DefaultActionMap: Hero
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!70 &884364148
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884364142}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.75, y: 0.875}
+  m_Direction: 0
+--- !u!50 &884364149
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884364142}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 3
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &897897558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,7 +1468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 897897559}
   - component: {fileID: 897897560}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_1 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1478,7 +1552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 978381770}
   - component: {fileID: 978381771}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1562,7 +1636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1138177661}
   - component: {fileID: 1138177662}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1814,7 +1888,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1335328964}
   - component: {fileID: 1335328965}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_1 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1982,7 +2056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1525489989}
   - component: {fileID: 1525489990}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2066,7 +2140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1545783670}
   - component: {fileID: 1545783671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_1 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2150,7 +2224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1587058013}
   - component: {fileID: 1587058014}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2234,7 +2308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1596081094}
   - component: {fileID: 1596081095}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_1 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2318,7 +2392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1661173611}
   - component: {fileID: 1661173612}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2402,7 +2476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1832019182}
   - component: {fileID: 1832019183}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2486,7 +2560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1835550363}
   - component: {fileID: 1835550364}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2570,7 +2644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1840447545}
   - component: {fileID: 1840447546}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_1 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2644,6 +2718,70 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2036271925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2036271928}
+  - component: {fileID: 2036271927}
+  - component: {fileID: 2036271926}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2036271926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036271925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e040fb1ee26c5274bb21b9b8c87ed46b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!58 &2036271927
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036271925}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
+--- !u!4 &2036271928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036271925}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 884364144}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2042901875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2654,7 +2792,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2042901876}
   - component: {fileID: 2042901877}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outdoor_1 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

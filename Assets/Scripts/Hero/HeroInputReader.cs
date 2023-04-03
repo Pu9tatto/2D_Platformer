@@ -13,7 +13,7 @@ public class HeroInputReader : MonoBehaviour
     {
         _hero = GetComponent<Hero>();
         _inputActions = new HeroInputActions();
-        
+
     }
 
     private void OnEnable()
