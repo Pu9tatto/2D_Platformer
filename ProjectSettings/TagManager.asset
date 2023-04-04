@@ -47,3 +47,9 @@ TagManager:
   - name: Level
     uniqueID: 848886009
     locked: 0
+  - name: Player
+    uniqueID: 576294415
+    locked: 0
+  - name: ForwardGround
+    uniqueID: 2294849341
+    locked: 0
