@@ -53,8 +53,4 @@ public class SpriteAnimation : MonoBehaviour
         _renderer.sprite = _sprites[_currentSpriteIndex];
         _currentSpriteIndex++;
     }
-
-
-
-
 }
