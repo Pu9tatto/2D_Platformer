@@ -641,6 +641,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Potions_25
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 893f906e08a8eeb4f8786c7b61644560
+      internalID: 285568509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potions_26
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fcfede716944d5418e09676ae6172fd
+      internalID: -1254151397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potions_27
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c37a174590813be4cb77dee3fcad77ea
+      internalID: 818014998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -652,6 +715,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Potions_25: 285568509
       Potions_1: 1616884292
       Potions_20: -1399380753
       Potions_6: 764896521
@@ -659,11 +723,13 @@ TextureImporter:
       Potions_22: 1787966318
       Potions_13: -1236840904
       Potions_14: -1163122151
+      Potions_26: -1254151397
       Potions_17: -1988529426
       Potions_16: -1963473220
       Potions_12: 74019422
       Potions_3: 1985693755
       Potions_4: 1524428651
+      Potions_27: 818014998
       Potions_0: -1124672066
       Potions_7: -1763298470
       Potions_18: -897462383

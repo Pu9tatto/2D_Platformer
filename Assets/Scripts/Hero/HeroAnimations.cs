@@ -16,6 +16,8 @@ public class HeroAnimations : MonoBehaviour
     private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
     private static readonly int IsRunningKey = Animator.StringToHash("is-running");
     private static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velosity");
+    private static readonly int HitKey = Animator.StringToHash("hit");
+    private static readonly int DieKey = Animator.StringToHash("die");
 
     private void Awake()
     {
@@ -37,6 +39,17 @@ public class HeroAnimations : MonoBehaviour
 
         _spriteRenderer.flipX = _isFlip;
     }
+
+    public void TakeDamageAnimation()
+    {
+        _animator.SetTrigger(HitKey);
+    }
+
+    public void DieAnimation()
+    {
+        _animator.SetTrigger(DieKey);
+    }
+
 
     public void SetDirectionX(float directionX)
     {

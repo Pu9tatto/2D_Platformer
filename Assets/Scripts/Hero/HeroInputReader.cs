@@ -21,6 +21,7 @@ public class HeroInputReader : MonoBehaviour
         _inputActions.Enable();
         _inputActions.Hero.Movement.performed += OnGetDirection;
         _inputActions.Hero.Movement.canceled += OnGetDirection;
+        _inputActions.Hero.Interact.started += OnInteract;
     }
 
     private void OnDisable()
@@ -28,6 +29,7 @@ public class HeroInputReader : MonoBehaviour
         _inputActions.Disable();
         _inputActions.Hero.Movement.performed -= OnGetDirection;
         _inputActions.Hero.Movement.canceled -= OnGetDirection;
+        _inputActions.Hero.Interact.started -= OnInteract;
     }
 
     private void OnGetDirection(InputAction.CallbackContext context)
@@ -35,5 +37,10 @@ public class HeroInputReader : MonoBehaviour
         var direction = context.ReadValue<Vector2>();
         _heroMovement.SetDirection(direction);
         _heroAnimations.SetDirectionX(direction.x);
+    }
+
+    private void OnInteract(InputAction.CallbackContext context)
+    {
+        _heroMovement.Interact();
     }
 }

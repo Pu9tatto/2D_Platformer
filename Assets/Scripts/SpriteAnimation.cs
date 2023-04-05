@@ -10,28 +10,44 @@ public class SpriteAnimation : MonoBehaviour
     [SerializeField] private UnityEvent _onComplete;
 
     private SpriteRenderer _renderer;
+
     private float _secondsPerFrame;
-    private int _currentSpriteIndex;
     private float _nextFrameTime;
+
+    private int _currentSpriteIndex;
+    private bool _isPlaying;
 
     private void Start()
     {
         _renderer = GetComponent<SpriteRenderer>();
+        _secondsPerFrame = 1f / _frameRate;
+
+        StartAnimation();
 
     }
-    private void OnEnable()
+    private void OnBecameVisible()
     {
-        _secondsPerFrame = 1f / _frameRate;
+        enabled = _isPlaying;
+    }
+
+    private void OnBecameInvisible()
+    {
+        enabled = false;
+    }
+
+    private void StartAnimation()
+    {
         _nextFrameTime = Time.time + _secondsPerFrame;
+        _isPlaying = true;
         _currentSpriteIndex = 0;
     }
     private void Update()
     {
-            if(_nextFrameTime < Time.time)
-            {
-                _nextFrameTime += _secondsPerFrame;
-                SetNextSprite();
-            }
+        if(_nextFrameTime < Time.time)
+        {
+            _nextFrameTime += _secondsPerFrame;
+            SetNextSprite();
+        }
         
     }
 
