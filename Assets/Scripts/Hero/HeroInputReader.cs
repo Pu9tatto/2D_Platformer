@@ -1,7 +1,5 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static Constants;
 
 public class HeroInputReader : MonoBehaviour
 {
