@@ -56,5 +56,5 @@ public class HeroAnimations : MonoBehaviour
 
     }
 
-    private bool IsGrounded() => _groundCheck.CheckTouchingLayer();
+    private bool IsGrounded() => _groundCheck.IsTouchingLayer;
 }
