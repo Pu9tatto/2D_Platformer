@@ -230,6 +230,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: 3762810132341534614}
   - {fileID: 1339257109237943163}
+  - {fileID: 3902237118515625754}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -286,6 +287,12 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: is-ground
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: is-hightFall
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -358,7 +365,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -2349387890396793502}
-    m_Position: {x: 430, y: 210, z: 0}
+    m_Position: {x: 340, y: 250, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4586841442049423826}
     m_Position: {x: 430, y: -110, z: 0}
@@ -370,7 +377,7 @@ AnimatorStateMachine:
     m_Position: {x: 640, y: 70, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8941268624352273144}
-    m_Position: {x: 430, y: 290, z: 0}
+    m_Position: {x: 570, y: 250, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3176951173449451516}
     m_Position: {x: 130, y: -100, z: 0}
@@ -475,6 +482,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: is-ground
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: is-hightFall
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8941268624352273144}
   m_Solo: 0
@@ -484,6 +494,34 @@ AnimatorStateTransition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 1
+  m_HasExitTime: 0
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &3902237118515625754
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: is-ground
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: is-hightFall
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -4586841442049423826}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0
   m_HasExitTime: 0
   m_HasFixedDuration: 0
   m_InterruptionSource: 0

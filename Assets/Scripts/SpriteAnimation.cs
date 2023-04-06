@@ -15,15 +15,18 @@ public class SpriteAnimation : MonoBehaviour
     private float _nextFrameTime;
 
     private int _currentSpriteIndex;
-    private bool _isPlaying;
+    private bool _isPlaying = true;
 
     private void Start()
     {
         _renderer = GetComponent<SpriteRenderer>();
         _secondsPerFrame = 1f / _frameRate;
+    }
 
+    private void OnEnable()
+    {
+        enabled = _isPlaying;
         StartAnimation();
-
     }
     private void OnBecameVisible()
     {
@@ -37,7 +40,7 @@ public class SpriteAnimation : MonoBehaviour
 
     private void StartAnimation()
     {
-        _nextFrameTime = Time.time + _secondsPerFrame;
+        _nextFrameTime = Time.time;
         _isPlaying = true;
         _currentSpriteIndex = 0;
     }

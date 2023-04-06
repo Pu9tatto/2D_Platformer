@@ -47,6 +47,10 @@ public class HeroMovement : MonoBehaviour, IControllable
     public void Move()
     {
         _rigidbody.velocity = new Vector2(_direction.x * _speed, _rigidbody.velocity.y);
+        if(_direction.x>0)
+            transform.localScale = Vector3.one;
+        if(_direction.x<0)
+            transform.localScale = new Vector3(-1,1,1);
     }
 
     public void Jump()

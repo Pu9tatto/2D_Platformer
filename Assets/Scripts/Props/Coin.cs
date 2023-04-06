@@ -8,7 +8,7 @@ public class Coin : MonoBehaviour
 
     public void AddCoin(GameObject target)
     {
-        if (target.TryGetComponent(out Inventary inventory))
+        if (target.TryGetComponent(out Inventory inventory))
         {
             inventory.AddCoin(_coinValue);
         }
