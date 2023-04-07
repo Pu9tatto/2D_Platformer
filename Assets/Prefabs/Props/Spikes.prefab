@@ -138,7 +138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f41f335db452f0a458f0ab0e94b9d55f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: Player
+  _tags:
+  - Player
+  - Enemy
   _action:
     m_PersistentCalls:
       m_Calls:

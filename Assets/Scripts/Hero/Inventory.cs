@@ -5,6 +5,9 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     private int _coins;
+    private int _swords;
+
+    public int GetSwordValue() => _swords;
 
     public int GetCoinsValue() => _coins;
 
@@ -12,6 +15,11 @@ public class Inventory : MonoBehaviour
     {
         _coins += value;
         Debug.Log(_coins);
+    }
+
+    public void AddSword()
+    {
+        _swords++;
     }
 
     public int DropCoins(int valueDropCoins)

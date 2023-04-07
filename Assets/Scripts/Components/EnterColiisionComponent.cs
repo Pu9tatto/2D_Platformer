@@ -6,15 +6,18 @@ using UnityEngine.Events;
 
 public class EnterColiisionComponent : MonoBehaviour
 {
-    [SerializeField] private string _tag;
+    [SerializeField] private string[] _tags;
     [SerializeField] private UnityEvent<GameObject> _action;
 
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag(_tag))
+        foreach (var tag in _tags)
         {
-            _action?.Invoke(other.gameObject);
+            if (other.gameObject.CompareTag(tag))
+            {
+                _action?.Invoke(other.gameObject);
+            }
         }
     }
 }

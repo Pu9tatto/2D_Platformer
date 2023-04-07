@@ -22,6 +22,7 @@ public class HeroInputReader : MonoBehaviour
         _inputActions.Hero.Movement.performed += OnGetDirection;
         _inputActions.Hero.Movement.canceled += OnGetDirection;
         _inputActions.Hero.Interact.started += OnInteract;
+        _inputActions.Hero.Attack.started += OnAttack;
     }
 
     private void OnDisable()
@@ -30,6 +31,8 @@ public class HeroInputReader : MonoBehaviour
         _inputActions.Hero.Movement.performed -= OnGetDirection;
         _inputActions.Hero.Movement.canceled -= OnGetDirection;
         _inputActions.Hero.Interact.started -= OnInteract;
+        _inputActions.Hero.Attack.started -= OnAttack;
+
     }
 
     private void OnGetDirection(InputAction.CallbackContext context)
@@ -42,5 +45,10 @@ public class HeroInputReader : MonoBehaviour
     private void OnInteract(InputAction.CallbackContext context)
     {
         _heroMovement.Interact();
+    }
+
+    private void OnAttack(InputAction.CallbackContext context)
+    {
+        _heroAnimations.SetAttack();
     }
 }

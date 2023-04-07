@@ -6,6 +6,7 @@ using UnityEngine;
 public class HeroMovement : MonoBehaviour, IControllable
 {
     [SerializeField] private float _speed;
+    [SerializeField] private int _damage;
 
     [Space]
     [Header("JumpSetting")]
@@ -13,11 +14,9 @@ public class HeroMovement : MonoBehaviour, IControllable
     [SerializeField] private float _jumpDamageForce;
     [SerializeField] private int _multiplyJump;
     [SerializeField] private LayerCheck _groundCheck;
+    [SerializeField] private CheckCircleOverlap _checkInteractableProps;
+    [SerializeField] private CheckCircleOverlap _checkDamageableProps;
 
-    [Space]
-    [Header("InteractSetting")]
-    [SerializeField] private float _interactRadius;
-    [SerializeField] private LayerMask _interactLayer;
 
     private Vector2 _direction;
     private int _multiplJumpyIndex = 0;
@@ -27,6 +26,7 @@ public class HeroMovement : MonoBehaviour, IControllable
     private Collider2D[] _interactResults = new Collider2D[1];
 
     private Rigidbody2D _rigidbody;
+
 
 
     private void Awake()
@@ -105,18 +105,26 @@ public class HeroMovement : MonoBehaviour, IControllable
 
     public void Interact()
     {
+        var interactableList = _checkInteractableProps.Check();
 
-        var size = Physics2D.OverlapCircleNonAlloc(
-            transform.position,
-            _interactRadius,
-            _interactResults,
-            _interactLayer);
-
-        for(int i = 0; i < size; i++)
+        foreach(var props in interactableList)
         {
-            if(_interactResults[i].TryGetComponent(out InteractableComponent component))
+            if (props.TryGetComponent(out InteractableComponent target))
             {
-                component.Interact();
+                target.Interact();
+            }
+        }
+    }
+
+    public void Attack()
+    {
+        var list = _checkDamageableProps.Check();
+
+        foreach (var props in list)
+        {
+            if(props.TryGetComponent(out HealthComponent attackTarget))
+            {
+                attackTarget.ChangeHealth(-_damage);
             }
         }
     }

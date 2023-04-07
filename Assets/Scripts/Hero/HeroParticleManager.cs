@@ -7,6 +7,7 @@ public class HeroParticleManager : MonoBehaviour
     [SerializeField] private SpawnComponent _footStepParticle;
     [SerializeField] private SpawnComponent _fallParticle;
     [SerializeField] private SpawnComponent _jumpParticle;
+    [SerializeField] private SpawnComponent _attack1Particle;
     [SerializeField] private ParticleSystem _burstCoinOnHitParticle;
     [SerializeField] private int _coinsForDrop;
 
@@ -15,6 +16,11 @@ public class HeroParticleManager : MonoBehaviour
     private void Start()
     {
         _inventory = GetComponent<Inventory>();
+    }
+
+    public void CreateAttack1Particle()
+    {
+        _attack1Particle.Spawn();
     }
 
     public void CreateFootStepParticle()

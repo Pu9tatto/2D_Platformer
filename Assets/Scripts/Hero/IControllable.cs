@@ -4,4 +4,6 @@ public interface IControllable
     abstract void Jump();
 
     abstract void Interact();
+
+    abstract void Attack();
 }

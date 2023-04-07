@@ -4,6 +4,7 @@ using UnityEngine.Events;
 public class HealthComponent : MonoBehaviour
 {
     [SerializeField] private int _maxHealth;
+    [SerializeField] private UnityEvent _onHealth;
     [SerializeField] private UnityEvent _onDamage;
     [SerializeField] private UnityEvent _onDie;
 
@@ -28,6 +29,7 @@ public class HealthComponent : MonoBehaviour
         }
         if(value > 0)
         {
+            _onHealth?.Invoke();
             if(_health >= _maxHealth)
             {
                 _health = _maxHealth;
