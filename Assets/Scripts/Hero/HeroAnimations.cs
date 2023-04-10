@@ -18,7 +18,7 @@ public class HeroAnimations : MonoBehaviour
     private bool _isHightFall;
     private bool _isHorizontalMovement;
     private bool _isFlip;
-    private bool _isArmed = false;
+    private HeroData _data;
 
     private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
     private static readonly int IsRunningKey = Animator.StringToHash("is-running");
@@ -39,8 +39,8 @@ public class HeroAnimations : MonoBehaviour
 
     private void Start()
     {
-        if(_animator.runtimeAnimatorController == _armed)
-            _isArmed=true;
+        _data = GameSession.Session.Data;
+        UpdateArmed();
     }
 
     private void LateUpdate()
@@ -58,14 +58,14 @@ public class HeroAnimations : MonoBehaviour
 
     public void Armed()
     {
-        _animator.runtimeAnimatorController = _armed;
-        _isArmed = true;
+        _data.IsArmed = true;
+        UpdateArmed();
     }
 
     public void DisArmed()
     {
-        _animator.runtimeAnimatorController = _disArmed;
-        _isArmed = false;
+        _data.IsArmed = false;
+        UpdateArmed();
     }
 
     private void SetAnimations()
@@ -80,7 +80,7 @@ public class HeroAnimations : MonoBehaviour
 
     public void SetAttack()
     {
-        if (!_isArmed) return;
+        if (!_data.IsArmed) return;
         _animator.SetTrigger(AtatckKey);
     }
 
@@ -97,13 +97,15 @@ public class HeroAnimations : MonoBehaviour
         _animator.SetTrigger(DieKey);
     }
 
+    public void SetDirectionX(float directionX) =>
+       _isHorizontalMovement = directionX == 0 ? false : true;
 
 
-
-    public void SetDirectionX(float directionX)=>
-       _isHorizontalMovement = directionX==0? false:true;
-    
-
-    private bool IsGrounded() => 
+    private bool IsGrounded() =>
         _groundCheck.IsTouchingLayer;
+
+    private void UpdateArmed()
+    {
+        _animator.runtimeAnimatorController = _data.IsArmed ? _armed : _disArmed;
+    }
 }

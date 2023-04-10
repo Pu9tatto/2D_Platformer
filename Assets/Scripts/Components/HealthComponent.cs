@@ -3,19 +3,13 @@ using UnityEngine.Events;
 
 public class HealthComponent : MonoBehaviour
 {
-    [SerializeField] private int _maxHealth;
-    [SerializeField] private UnityEvent _onHealth;
-    [SerializeField] private UnityEvent _onDamage;
-    [SerializeField] private UnityEvent _onDie;
+    [SerializeField] protected int _maxHealth;
+    [SerializeField] protected int _health = 1;
+    [SerializeField] protected UnityEvent _onHealth;
+    [SerializeField] protected UnityEvent _onDamage;
+    [SerializeField] protected UnityEvent _onDie;
 
-    private int _health;
-
-    private void Start()
-    {
-        _health = _maxHealth;
-    }
-
-    public void ChangeHealth(int value)
+    public virtual void ChangeHealth(int value)
     {
         _health += value;
 

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9108447039800305653}
   - component: {fileID: 9108447039800305652}
   - component: {fileID: 9108447039800305655}
-  - component: {fileID: 9108447039800305650}
+  - component: {fileID: 2265000915357322376}
   m_Layer: 10
   m_Name: DestructableBarrel
   m_TagString: Enemy
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 848886009
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 20a3302a314c0da418e319432ad81051, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4fb352b4c4b5c4f831ff4da2ff863d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 1
+  _maxHealth: 2
   _onHealth:
     m_PersistentCalls:
       m_Calls: []
@@ -252,9 +252,9 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 9108447039800305650}
-          m_TargetAssemblyTypeName: SpawnComponent, Assembly-CSharp
-          m_MethodName: Spawn
+        - m_Target: {fileID: 2265000915357322376}
+          m_TargetAssemblyTypeName: RandomLootSpawner, Assembly-CSharp
+          m_MethodName: TrySpawnLoot
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -276,7 +276,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &9108447039800305650
+--- !u!114 &2265000915357322376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -285,9 +285,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 9108447039800305610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f1206fb978600418e95a4fda896cc7, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ff99277feac9024dba56308e508768a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _capacity: 20
-  _template: {fileID: 7192447708336251534, guid: dc790ff45bd3c484f971e7b40e1a7204, type: 3}
-  _spawnPoint: {fileID: 9108447039800305654}
+  _guaranteedLoot:
+  - {fileID: 7192447708336251534, guid: dc790ff45bd3c484f971e7b40e1a7204, type: 3}
+  _firstVariantLoot:
+  - {fileID: 5431556435143639728, guid: 894170bbf0075ec4594239ef268ebf69, type: 3}
+  _secondVariantLoot:
+  - {fileID: 3534364673367332810, guid: 1476a16181a3dd24491016122b29efe0, type: 3}
+  _rateFirstLoot: 50
+  _possibleLoot:
+  - _prefab: {fileID: 1184946437514128501, guid: 7e6ba457a5a30c2428fea2dd6c7d8c9e, type: 3}
+    _lootRate: 50
+  - _prefab: {fileID: 8463467618225430151, guid: b634b96d687fe8b418471dcf42cf48c3, type: 3}
+    _lootRate: 20
+  _force: 1
