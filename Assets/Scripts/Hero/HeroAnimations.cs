@@ -89,7 +89,6 @@ public class HeroAnimations : MonoBehaviour
     public void TakeDamageAnimation()
     {
         _animator.SetTrigger(HitKey);
-        _particleCreator.BurstCoinOnHit();
     }
 
     public void DieAnimation()

@@ -1,6 +1,10 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
+using Random = UnityEngine.Random;
+
 
 public class RandomLootSpawner : MonoBehaviour
 {
@@ -13,11 +17,11 @@ public class RandomLootSpawner : MonoBehaviour
 
     [SerializeField] private LootObject[] _possibleLoot;
 
-    [SerializeField] private float _force;
+    [SerializeField] private UnityEvent<List<GameObject>> _onRandomCalculated;
+    private List<GameObject> _loots = new List<GameObject>();
 
-    private System.Random random = new System.Random();
-
-    public void TrySpawnLoot()
+    [ContextMenu("Calculate")]
+    public void RandomCalculate()
     {
         if(_guaranteedLoot.Length > 0)
             SpawnGuaranteedLoot(_guaranteedLoot);
@@ -27,17 +31,20 @@ public class RandomLootSpawner : MonoBehaviour
 
         if (_possibleLoot.Length > 0)
             SpawnPossibleLoot(_possibleLoot);
+
+        _onRandomCalculated?.Invoke(_loots);
+        _loots.Clear();
     }
 
     private void SpawnGuaranteedLoot(GameObject[] list)
     {
         foreach (GameObject obj in list)
-            CreateLoot(obj);
+            _loots.Add(obj);
     }
 
     private void SpawnGuaranteedLootBetween()
     {
-        int rateBetween = random.Next(0,100);
+        int rateBetween = Random.Range(0,100);
         Debug.Log("RateBetween: " + rateBetween);
         if (_rateFirstLoot  > rateBetween)
         {
@@ -56,7 +63,7 @@ public class RandomLootSpawner : MonoBehaviour
     }
     private void SpawnPossibleLoot(LootObject[] list)
     {
-        int rate = random.Next(0,100);
+        int rate = Random.Range(0,100);
 
         Debug.Log("rate: " + rate);
 
@@ -70,7 +77,7 @@ public class RandomLootSpawner : MonoBehaviour
     }
     private void CreateLoot(GameObject go)
     {
-        var loot = Instantiate(go, transform.position, Quaternion.identity);
+        _loots.Add(go);
     }
 }
 

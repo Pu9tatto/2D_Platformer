@@ -72,6 +72,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7210914245588710540, guid: a8d11c993aab8784abbc4b7e7152a7bb, type: 3}
+      propertyPath: m_Radius
+      value: 0.14428872
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210914245588710540, guid: a8d11c993aab8784abbc4b7e7152a7bb, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.006869614
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210914245588710540, guid: a8d11c993aab8784abbc4b7e7152a7bb, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.112203665
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210914245588710540, guid: a8d11c993aab8784abbc4b7e7152a7bb, type: 3}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
@@ -101,6 +113,7 @@ PrefabInstance:
       objectReference: {fileID: 764896521, guid: 345a6f7a06f7f8d48b01ad24e252948c, type: 3}
     m_RemovedComponents:
     - {fileID: 7210914245588710543, guid: a8d11c993aab8784abbc4b7e7152a7bb, type: 3}
+    - {fileID: 7210914245588710540, guid: a8d11c993aab8784abbc4b7e7152a7bb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a8d11c993aab8784abbc4b7e7152a7bb, type: 3}
 --- !u!114 &3209916479055786713 stripped
 MonoBehaviour:
@@ -124,11 +137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e7c93169147174fa35222044e6a6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &3534364673367332803 stripped
-CircleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 7210914245588710540, guid: a8d11c993aab8784abbc4b7e7152a7bb, type: 3}
-  m_PrefabInstance: {fileID: 6133557157739733839}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3534364673367332810 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7210914245588710533, guid: a8d11c993aab8784abbc4b7e7152a7bb, type: 3}
@@ -172,7 +180,7 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3534364673367332803}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -208,3 +216,19 @@ MonoBehaviour:
           m_StringArgument: Destroing
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!70 &2671195755541552422
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3534364673367332810}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.021392033, y: -0.1211105}
+  m_Size: {x: 0.10931286, y: 0.37768567}
+  m_Direction: 0
