@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class HeroParticleManager : MonoBehaviour
 {
-    [SerializeField] private SpawnComponent _footStepParticle;
-    [SerializeField] private SpawnComponent _fallParticle;
-    [SerializeField] private SpawnComponent _jumpParticle;
-    [SerializeField] private SpawnComponent _attack1Particle;
+    [SerializeField] private PoolObjectSpawnComponent _footStepParticle;
+    [SerializeField] private PoolObjectSpawnComponent _fallParticle;
+    [SerializeField] private PoolObjectSpawnComponent _jumpParticle;
+    [SerializeField] private PoolObjectSpawnComponent _attack1Particle;
     [SerializeField] private ParticleSystem _burstCoinOnHitParticle;
     [SerializeField] private int _coinsForDrop;
 

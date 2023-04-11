@@ -15,8 +15,7 @@ GameObject:
   - component: {fileID: 9108447039800305653}
   - component: {fileID: 9108447039800305652}
   - component: {fileID: 9108447039800305655}
-  - component: {fileID: 1370373699}
-  - component: {fileID: 1370373707}
+  - component: {fileID: 1370373708}
   m_Layer: 10
   m_Name: DestructableBarrel
   m_TagString: Enemy
@@ -254,9 +253,9 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1370373707}
-          m_TargetAssemblyTypeName: RandomLootSpawner, Assembly-CSharp
-          m_MethodName: RandomCalculate
+        - m_Target: {fileID: 1370373708}
+          m_TargetAssemblyTypeName: SpawnComponent, Assembly-CSharp
+          m_MethodName: Spawn
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -264,7 +263,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
         - m_Target: {fileID: 9108447039800305653}
           m_TargetAssemblyTypeName: DestroyObjectComponent, Assembly-CSharp
@@ -278,7 +277,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1370373699
+--- !u!114 &1370373708
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -287,50 +286,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 9108447039800305610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee3f5bd24f41c6b48ad0118f95651598, type: 3}
+  m_Script: {fileID: 11500000, guid: 76298c278d63b794da12c7f8cda6ad59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sectorAngle: 90
-  _sectorRotation: 0
-  _waitTime: 0.1
-  _speed: 6
---- !u!114 &1370373707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9108447039800305610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ff99277feac9024dba56308e508768a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _guaranteedLoot:
-  - {fileID: 3534364673367332810, guid: 1476a16181a3dd24491016122b29efe0, type: 3}
+  _prefabs:
+  - {fileID: 2013938887417767497, guid: a4434af95dfbe8647a08253f406b8091, type: 3}
   - {fileID: 7192447708336251534, guid: dc790ff45bd3c484f971e7b40e1a7204, type: 3}
-  _firstVariantLoot:
-  - {fileID: 1184946437514128501, guid: 7e6ba457a5a30c2428fea2dd6c7d8c9e, type: 3}
-  _secondVariantLoot:
-  - {fileID: 3376224802312340376, guid: 8b6c95cfb98bf4c419c06d49c1a02c6c, type: 3}
-  _rateFirstLoot: 50
-  _possibleLoot:
-  - _prefab: {fileID: 7481713851128641670, guid: 23c3353abc9032f48881f1cc54bf6656, type: 3}
-    _lootRate: 25
-  - _prefab: {fileID: 8463467618225430151, guid: b634b96d687fe8b418471dcf42cf48c3, type: 3}
-    _lootRate: 5
-  _onRandomCalculated:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1370373699}
-        m_TargetAssemblyTypeName: RandomSpawner, Assembly-CSharp
-        m_MethodName: StartDrop
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2

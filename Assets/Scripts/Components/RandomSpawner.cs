@@ -18,21 +18,22 @@ public class RandomSpawner : MonoBehaviour
 
     private Coroutine _coroutine;
 
+
     public void StartDrop(List<GameObject> items)
     {
         TryStopCoroutine();
 
-        _coroutine = StartCoroutine(StartSpawn(items));
+        _coroutine = StartCoroutine(StartSpawn(items.ToArray()));
     }
 
-    private IEnumerator StartSpawn(List<GameObject> items)
+    private IEnumerator StartSpawn(GameObject[] items)
     {
-        for (int i = 0; i < items.Count; i++)
+        for (int i = 0; i < items.Length; i++)
         {
             Spawn(items[i]);
+            yield return new WaitForSeconds(_waitTime);
         }
 
-        yield return new WaitForSeconds(_waitTime);
     }
 
     [ContextMenu("Spawn")]

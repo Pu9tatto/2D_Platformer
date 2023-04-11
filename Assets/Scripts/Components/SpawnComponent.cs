@@ -2,23 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnComponent : ObjectPool
+public class SpawnComponent : MonoBehaviour
 {
-    [SerializeField] private GameObject _template;
-    [SerializeField] private Transform _spawnPoint;
-
-    private void Start()
-    {
-        Initialize(_template);
-    }
+    [SerializeField] private GameObject[] _prefabs;
 
     public void Spawn()
     {
-        if(TryGetObject(out GameObject tamplate))
+        foreach (var prefab in _prefabs)
         {
-            tamplate.SetActive(true);
-            tamplate.transform.position = _spawnPoint.position;
-            tamplate.transform.localScale = _spawnPoint.lossyScale;
+            Instantiate(prefab, transform.position, Quaternion.identity);
         }
     }
 }

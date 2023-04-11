@@ -8,6 +8,8 @@ using Random = UnityEngine.Random;
 
 public class RandomLootSpawner : MonoBehaviour
 {
+    [SerializeField] private bool _startOnEnable;
+    [Space]
     [SerializeField] private GameObject[] _guaranteedLoot;
 
     [Space, Header("GuaranteedLootBetween")]
@@ -19,6 +21,14 @@ public class RandomLootSpawner : MonoBehaviour
 
     [SerializeField] private UnityEvent<List<GameObject>> _onRandomCalculated;
     private List<GameObject> _loots = new List<GameObject>();
+
+    private void OnEnable()
+    {
+        if (_startOnEnable)
+        {
+            RandomCalculate();
+        }
+    }
 
     [ContextMenu("Calculate")]
     public void RandomCalculate()
