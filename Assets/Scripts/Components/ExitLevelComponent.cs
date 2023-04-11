@@ -7,6 +7,7 @@ public class ExitLevelComponent : MonoBehaviour
 
     public void Exit()
     {
+        GameSession.Session.Save();
         SceneManager.LoadScene(_levelName);
     }
 }

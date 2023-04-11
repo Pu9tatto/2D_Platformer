@@ -3549,10 +3549,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1150272108, guid: d4af3c27d12951946a1d8fa6df3b05c3, type: 3}
-      propertyPath: _waitTime
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 3859588810645882597, guid: d4af3c27d12951946a1d8fa6df3b05c3, type: 3}
       propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -3560,10 +3556,6 @@ PrefabInstance:
     - target: {fileID: 9091516000774250534, guid: d4af3c27d12951946a1d8fa6df3b05c3, type: 3}
       propertyPath: m_Name
       value: Hero
-      objectReference: {fileID: 0}
-    - target: {fileID: 9091516000774250549, guid: d4af3c27d12951946a1d8fa6df3b05c3, type: 3}
-      propertyPath: _burstCoinOnHitParticle
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9091516000774250552, guid: d4af3c27d12951946a1d8fa6df3b05c3, type: 3}
       propertyPath: m_RootOrder

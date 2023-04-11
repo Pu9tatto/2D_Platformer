@@ -9,5 +9,6 @@ public class ReloadLevelComponent : MonoBehaviour
     {
         var scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+        GameSession.Session.LoadLastSave();
     }
 }
