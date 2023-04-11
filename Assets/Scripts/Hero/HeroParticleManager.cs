@@ -8,8 +8,6 @@ public class HeroParticleManager : MonoBehaviour
     [SerializeField] private PoolObjectSpawnComponent _fallParticle;
     [SerializeField] private PoolObjectSpawnComponent _jumpParticle;
     [SerializeField] private PoolObjectSpawnComponent _attack1Particle;
-    [SerializeField] private ParticleSystem _burstCoinOnHitParticle;
-    [SerializeField] private int _coinsForDrop;
 
     public void CreateAttack1Particle()
     {

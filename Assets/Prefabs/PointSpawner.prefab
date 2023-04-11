@@ -48,7 +48,7 @@ MonoBehaviour:
   _sectorAngle: 90
   _sectorRotation: 0
   _waitTime: 0.1
-  _speed: 6
+  _speed: 10
   _isTimeDestroy: 0
   _lifeTime: 3
 --- !u!114 &2013938887417767496

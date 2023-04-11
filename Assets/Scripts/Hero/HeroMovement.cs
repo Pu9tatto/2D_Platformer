@@ -23,19 +23,12 @@ public class HeroMovement : MonoBehaviour, IControllable
     private bool _canMultiplyJump;
     private bool _isDamageJump = false;
     private bool _isGround;
-    private Collider2D[] _interactResults = new Collider2D[1];
 
     private Rigidbody2D _rigidbody;
-    private GameSession _session;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-    }
-    private void Start()
-    {
-        _session = GetComponent<GameSession>();
-
     }
 
     private void Update()
