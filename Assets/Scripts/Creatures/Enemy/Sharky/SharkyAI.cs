@@ -8,24 +8,28 @@ public class SharkyAI : MonoBehaviour
     [SerializeField] private LayerCheck _vision;
     [SerializeField] private LayerCheck _canAttack;
     [SerializeField] private float _attackCooldown;
+    [SerializeField] private float _delayBeforeAttack = 0.5f;
 
     [Header("Particles")]
     [SerializeField] private GameObject _alarmParticle;
     [SerializeField] private float _alarmDuration = 0.5f;
     [SerializeField] private GameObject _missParticle;
     [SerializeField] private float _missDuration = 0.5f;
+    [SerializeField] private GameObject _attackParticle;
+    [SerializeField] private float _attackParticleDuration = 0.25f;
 
     private Coroutine _current;
     private GameObject _target;
     private CreaturesMovement _movement;
     private CreatureAnimation _animation;
     private Patrol _patrol;
+    private bool _isDie = false;
 
 
     private void Awake()
     {
         _movement = GetComponent<CreaturesMovement>();
-        _animation = GetComponent<CreatureAnimation>();    
+        _animation = GetComponent<CreatureAnimation>();
         _patrol = GetComponent<Patrol>();
     }
 
@@ -36,26 +40,27 @@ public class SharkyAI : MonoBehaviour
 
     public void OnHeroInVision(GameObject go)
     {
-        _target = go;
+        if (_isDie) return;
 
-        StartState(AgroToHero());
+        _target = go;
+        StartState(Co_AgroToHero());
     }
 
-    private IEnumerator AgroToHero()
+    private IEnumerator Co_AgroToHero()
     {
         _alarmParticle.SetActive(true);
         yield return new WaitForSeconds(_alarmDuration);
         _alarmParticle.SetActive(false);
-        StartState(GoToHero());
+        StartState(Co_GoToHero());
     }
 
-    private IEnumerator GoToHero()
+    private IEnumerator Co_GoToHero()
     {
-        while(_vision.IsTouchingLayer)
+        while (_vision.IsTouchingLayer)
         {
-            if(_canAttack.IsTouchingLayer)
+            if (_canAttack.IsTouchingLayer)
             {
-                StartState(Attack());
+                StartState(Co_Attack());
             }
             else
             {
@@ -69,18 +74,19 @@ public class SharkyAI : MonoBehaviour
         yield return new WaitForSeconds(_missDuration);
         _missParticle.SetActive(false);
         StartState(_patrol.DoPatrol());
-        
+
     }
 
-    private IEnumerator Attack()
+    private IEnumerator Co_Attack()
     {
+        yield return new WaitForSeconds(_delayBeforeAttack);
         while (_canAttack.IsTouchingLayer)
         {
             _animation.SetAttack();
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(_attackCooldown);
         }
 
-        StartState(GoToHero());
+        StartState(Co_GoToHero());
     }
 
     private void SetDirectionToTarget(Vector2 direction)
@@ -88,11 +94,6 @@ public class SharkyAI : MonoBehaviour
         direction.y = 0;
         _movement.SetDirection(direction);
         _animation.SetDirectionX(direction.x);
-    }
-
-    private IEnumerator Patrolling()
-    {
-        yield return null;
     }
 
     private void StartState(IEnumerator corotine)
@@ -104,11 +105,11 @@ public class SharkyAI : MonoBehaviour
         _current = StartCoroutine(corotine);
     }
 
-    private IEnumerator SetDialogParticle(GameObject particle, float duration)
+    public void OnDie()
     {
-        particle.SetActive(true);
-        yield return new WaitForSeconds(duration);
-        particle.SetActive(false);
+        _isDie = true;
+        SetDirectionToTarget(Vector2.zero);
+        StopCoroutine(_current);
     }
 
 }

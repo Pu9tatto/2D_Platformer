@@ -5,7 +5,7 @@ using UnityEngine;
 public class SharkyParticleManager : MonoBehaviour
 {
     [SerializeField] private PoolObjectSpawnComponent _attackParticle;
-    public void CreateAttack1Particle()
+    public void CreateAttackParticle()
     {
         _attackParticle.Spawn();
     }

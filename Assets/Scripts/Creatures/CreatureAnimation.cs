@@ -13,7 +13,7 @@ public class CreatureAnimation : MonoBehaviour
     protected static readonly int IsRunningKey = Animator.StringToHash("is-running");
     protected static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velosity");
     protected static readonly int HitKey = Animator.StringToHash("hit");
-    protected static readonly int DieKey = Animator.StringToHash("die");
+    protected static readonly int DieKey = Animator.StringToHash("is-die");
     protected static readonly int AtatckKey = Animator.StringToHash("attack");
 
 
@@ -47,7 +47,7 @@ public class CreatureAnimation : MonoBehaviour
 
     public virtual void DieAnimation()
     {
-        _animator.SetTrigger(DieKey);
+        _animator.SetBool(DieKey, true);
     }
 
     public virtual void SetDirectionX(float directionX) =>
