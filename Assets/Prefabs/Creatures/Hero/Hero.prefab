@@ -64,6 +64,52 @@ MonoBehaviour:
   _capacity: 5
   _template: {fileID: 6187093142089424322, guid: e8adf792d02892e42bc220c11e5fc510, type: 3}
   _spawnPoint: {fileID: 1110923512}
+--- !u!1 &8421752023883772960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8589793484686870390}
+  - component: {fileID: 1697124117}
+  m_Layer: 9
+  m_Name: ThrowSwordSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8589793484686870390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8421752023883772960}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.14999998, y: -0.029, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9091516000774250552}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1697124117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8421752023883772960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76298c278d63b794da12c7f8cda6ad59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefabs:
+  - {fileID: 5540727174248946512, guid: bf214deb5d4a1004783751feae15df79, type: 3}
 --- !u!1 &9091516000128797272
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +226,7 @@ GameObject:
   - component: {fileID: 9091516000774250549}
   - component: {fileID: 2099764261}
   - component: {fileID: 3859588810645882597}
+  - component: {fileID: 2099764268}
   m_Layer: 9
   m_Name: Hero
   m_TagString: Player
@@ -205,6 +252,7 @@ Transform:
   - {fileID: 9091516000128797273}
   - {fileID: 9091516000197471839}
   - {fileID: 1110923512}
+  - {fileID: 8589793484686870390}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -304,7 +352,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 6200000, guid: 750e7bc04b34eeb439fad4e9c31a76d0, type: 2}
+  m_Material: {fileID: 6200000, guid: a3bffcc99e5d4b94893ef0448a3fc147, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -396,7 +444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 7
-  _damage: 10
+  _damage: 1
   _jumpForce: 12
   _jumpDamageForce: 12
   _groundCheck: {fileID: 9091516001614608510}
@@ -534,6 +582,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2099764268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9091516000774250534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dccfa7096bff71d498d0c0c96aaf2a27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectile: {fileID: 1697124117}
+  _throwPoint: {fileID: 1110923512}
+  _timeForMultiThrow: 1
+  _countMultiThrow: 10
+  _timeBetweenThrow: 0.2
 --- !u!1 &9091516000959949774
 GameObject:
   m_ObjectHideFlags: 0

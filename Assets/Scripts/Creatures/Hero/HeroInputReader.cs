@@ -7,13 +7,14 @@ public class HeroInputReader : MonoBehaviour
     private HeroMovement _heroMovement;
     private HeroInputActions _inputActions;
     private HeroAnimations _heroAnimations;
-
+    private HeroThrow _heroThrow;
 
     private void Awake()
     {
         _heroMovement = GetComponent<HeroMovement>();
         _inputActions = new HeroInputActions();
         _heroAnimations = GetComponent<HeroAnimations>();
+        _heroThrow = GetComponent<HeroThrow>();
 
     }
 
@@ -53,15 +54,14 @@ public class HeroInputReader : MonoBehaviour
     }
     private void OnThrow(InputAction.CallbackContext obj)
     {
-        Debug.Log("Press");
+        _heroThrow.PressThrow();
     }
     private void OnHoldThrow(InputAction.CallbackContext obj)
     {
-        Debug.Log("Pressing");
     }
     private void OnTryMultyThrow(InputAction.CallbackContext obj)
     {
-        Debug.Log("Unpress");
+        _heroAnimations.TryThrow();
     }
 
     private void OnInteract(InputAction.CallbackContext context)

@@ -3,12 +3,12 @@ using UnityEngine.Events;
 
 public class EnterTriggerComponent : MonoBehaviour
 {
-    [SerializeField] private string _tag;
+    [SerializeField] private LayerMask _layer;
     [SerializeField] private UnityEvent<GameObject> _action;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag(_tag))
+        if(other.gameObject.IsInLayer(_layer))
         {
             _action?.Invoke(other.gameObject);
         }

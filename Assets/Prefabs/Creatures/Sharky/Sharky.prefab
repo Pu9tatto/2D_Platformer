@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1639580673}
   - component: {fileID: 1639580675}
   - component: {fileID: 1639580674}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: ObstackleChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 13376
 --- !u!1 &417159979418709537
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 7697877860628370444}
   - component: {fileID: 2171855431713398910}
   - component: {fileID: 737534347779973440}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7efbcfbc6f6d22c479c5dffe04ef8146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: Player
+  _layer:
+    serializedVersion: 2
+    m_Bits: 512
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -346,7 +348,7 @@ GameObject:
   - component: {fileID: 3206097764970402900}
   - component: {fileID: 3206097764970402907}
   - component: {fileID: 3206097764970402906}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +412,6 @@ GameObject:
   - component: {fileID: 3206097765869636636}
   - component: {fileID: 3206097765869636611}
   - component: {fileID: 3206097765869636628}
-  - component: {fileID: 2051501140638596576}
   - component: {fileID: 3206097765869636633}
   - component: {fileID: 3206097765869636635}
   - component: {fileID: 3206097765869636714}
@@ -516,22 +517,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.02}
   m_Size: {x: 0.5, y: 0.75}
   m_Direction: 0
---- !u!70 &2051501140638596576
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3206097765869636610}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.04, y: 0.02}
-  m_Size: {x: 0.7, y: 0.5}
-  m_Direction: 1
 --- !u!50 &3206097765869636633
 Rigidbody2D:
   serializedVersion: 4
@@ -851,7 +836,7 @@ GameObject:
   - component: {fileID: 5861899686023312407}
   - component: {fileID: 5861899686023312406}
   - component: {fileID: 5861899686023312401}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: EndPlatformChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -917,7 +902,7 @@ GameObject:
   - component: {fileID: 5932882606727099608}
   - component: {fileID: 4019166567144474717}
   - component: {fileID: 4019166567144474716}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: DamageRadius
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -951,10 +936,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d54e43e7c3f46346bdbd562f3ff37ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 0.35
+  _radius: 0.3
   _layer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 4608
 --- !u!114 &5932882606727099608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1000,7 +985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 4608
 --- !u!1 &8364822112626642225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,7 +996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7851769072617433571}
   - component: {fileID: 8158300198413916982}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: DieCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

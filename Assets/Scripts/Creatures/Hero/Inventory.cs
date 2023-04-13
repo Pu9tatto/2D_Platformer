@@ -12,6 +12,7 @@ public class Inventory : MonoBehaviour
     {
         _data = GameSession.Session.Data;
         _coins = _data.Coins;
+        _swords = _data.Swords;
     }
 
     public int GetSwordValue() => _swords;
@@ -21,26 +22,34 @@ public class Inventory : MonoBehaviour
     public void AddCoin(int value)
     {
         _coins += value;
-        UpdateSession();
+        UpdateCoins();
         Debug.Log(_coins);
     }
 
     public void AddSword()
     {
         _swords++;
+        UpdateSwords();
     }
 
     public int DropCoins(int valueDropCoins)
     {
         var coinsForDrop = Mathf.Min(_coins, valueDropCoins);
         _coins -= coinsForDrop;
-        UpdateSession();
+        UpdateCoins();
         Debug.Log(_coins);
         return coinsForDrop;
     }
 
-    private void UpdateSession()
+    public void ThrowSwords()
     {
-        _data.Coins = _coins;
+        _swords--;
+        UpdateSwords();
     }
+
+    private void UpdateCoins() =>
+        _data.Coins = _coins;
+
+    private void UpdateSwords() =>
+    _data.Swords = _swords;
 }

@@ -30,7 +30,7 @@ public class SpriteClipAnimation : MonoBehaviour
 
     private void OnEnable()
     {
-        _nextFrameTime = Time.time + _secPerFrame;
+        _nextFrameTime = Time.time;
     }
 
     private void OnBecameVisible()
@@ -60,7 +60,7 @@ public class SpriteClipAnimation : MonoBehaviour
 
     private void StartAnimation()
     {
-        _nextFrameTime = Time.time + _secPerFrame;
+        _nextFrameTime = Time.time;
         enabled = _isPlaying = true;
         _currentFrame = 0;
     }

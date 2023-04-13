@@ -13,9 +13,14 @@ public class LayerCheck : MonoBehaviour
         _collider = GetComponent<Collider2D>();
     }
 
-    private void Update()
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        IsTouchingLayer = CheckTouchingLayer();
+        IsTouchingLayer = _collider.IsTouchingLayers(_layer);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        IsTouchingLayer = _collider.IsTouchingLayers(_layer);
     }
 
     public bool CheckTouchingLayer()

@@ -10,7 +10,8 @@ public class SpawnComponent : MonoBehaviour
     {
         foreach (var prefab in _prefabs)
         {
-            Instantiate(prefab, transform.position, Quaternion.identity);
+            var tamplate = Instantiate(prefab, transform.position, Quaternion.identity);
+            tamplate.transform.localScale = transform.lossyScale;
         }
     }
 }

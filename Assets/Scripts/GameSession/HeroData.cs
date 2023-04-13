@@ -6,7 +6,7 @@ public class HeroData
 {
     public int Health;
     public int Coins;
-    public bool IsArmed;
+    public int Swords;
 
     public HeroData Clone()
     {

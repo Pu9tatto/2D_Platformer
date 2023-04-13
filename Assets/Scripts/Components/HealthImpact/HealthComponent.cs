@@ -11,6 +11,8 @@ public class HealthComponent : MonoBehaviour
 
     public virtual void ChangeHealth(int value)
     {
+        if(_health<=0) return;
+
         _health += value;
 
         if(value < 0)

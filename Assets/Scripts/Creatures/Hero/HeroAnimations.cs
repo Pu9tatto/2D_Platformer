@@ -7,11 +7,14 @@ public class HeroAnimations : CreatureAnimation
 
     [SerializeField] private AnimatorController _armed;
     [SerializeField] private AnimatorController _disArmed;
-
+    [SerializeField] private Cooldown _throwCooldown;
+    
     private bool _isHightFall;
+    private bool _isArmed;
     private HeroData _data;
 
     private static readonly int IsHightFallKey = Animator.StringToHash("is-hightFall");
+    private static readonly int ThrowKey = Animator.StringToHash("throw");
 
 
     protected override void Awake()
@@ -22,6 +25,7 @@ public class HeroAnimations : CreatureAnimation
     private void Start()
     {
         _data = GameSession.Session.Data;
+        _isArmed = _data.Swords>0;
         UpdateArmed();
     }
 
@@ -40,13 +44,13 @@ public class HeroAnimations : CreatureAnimation
 
     public void Armed()
     {
-        _data.IsArmed = true;
+        if (_isArmed) return;
+
         UpdateArmed();
     }
 
     public void DisArmed()
     {
-        _data.IsArmed = false;
         UpdateArmed();
     }
 
@@ -58,7 +62,7 @@ public class HeroAnimations : CreatureAnimation
 
     public override void SetAttack()
     {
-        if (!_data.IsArmed) return;
+        if (!_isArmed) return;
         base.SetAttack();
     }
 
@@ -81,8 +85,26 @@ public class HeroAnimations : CreatureAnimation
     protected override bool IsGrounded() =>
         base.IsGrounded();
 
+    public void TryThrow()
+    {
+        if (_throwCooldown.IsReady())
+        {
+            _animator.SetTrigger(ThrowKey);
+            _throwCooldown.Reset();
+        }
+    }
+
     private void UpdateArmed()
     {
-        _animator.runtimeAnimatorController = _data.IsArmed ? _armed : _disArmed;
+        if(_data.Swords > 0)
+        {
+            _animator.runtimeAnimatorController = _armed;
+            _isArmed = true;
+        }
+        else
+        {
+            _animator.runtimeAnimatorController = _disArmed;
+            _isArmed = false;
+        }
     }
 }
