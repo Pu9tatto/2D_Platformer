@@ -533,7 +533,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 6200000, guid: 750e7bc04b34eeb439fad4e9c31a76d0, type: 2}
+  m_Material: {fileID: 6200000, guid: a3bffcc99e5d4b94893ef0448a3fc147, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -996,7 +996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7851769072617433571}
   - component: {fileID: 8158300198413916982}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: DieCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
