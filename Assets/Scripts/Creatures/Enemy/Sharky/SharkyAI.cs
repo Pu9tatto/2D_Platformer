@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SharkyAI : MonoBehaviour
@@ -15,8 +16,6 @@ public class SharkyAI : MonoBehaviour
     [SerializeField] private float _alarmDuration = 0.5f;
     [SerializeField] private GameObject _missParticle;
     [SerializeField] private float _missDuration = 0.5f;
-    [SerializeField] private GameObject _attackParticle;
-    [SerializeField] private float _attackParticleDuration = 0.25f;
 
     private Coroutine _current;
     private GameObject _target;
@@ -48,18 +47,20 @@ public class SharkyAI : MonoBehaviour
 
     private IEnumerator Co_AgroToHero()
     {
-        _alarmParticle.SetActive(true);
+        StartCoroutine(Co_Diolog(_alarmParticle, _alarmDuration));
         yield return new WaitForSeconds(_alarmDuration);
-        _alarmParticle.SetActive(false);
         StartState(Co_GoToHero());
+        yield return null;
     }
 
     private IEnumerator Co_GoToHero()
     {
         while (_vision.IsTouchingLayer)
         {
+            Debug.Log("Vision");
             if (_canAttack.IsTouchingLayer)
             {
+                Debug.Log("Attack");
                 StartState(Co_Attack());
             }
             else
@@ -69,11 +70,10 @@ public class SharkyAI : MonoBehaviour
             }
             yield return null;
         }
-
-        _missParticle.SetActive(true);
-        yield return new WaitForSeconds(_missDuration);
-        _missParticle.SetActive(false);
+        yield return null;
         StartState(_patrol.DoPatrol());
+        StartCoroutine(Co_Diolog(_missParticle, _missDuration));
+
 
     }
 
@@ -102,14 +102,23 @@ public class SharkyAI : MonoBehaviour
             StopCoroutine(_current);
 
         SetDirectionToTarget(Vector2.zero);
-        _current = StartCoroutine(corotine);
+        _current = StartCoroutine(corotine); ;
     }
 
     public void OnDie()
     {
         _isDie = true;
         SetDirectionToTarget(Vector2.zero);
-        StopCoroutine(_current);
+
+        if (_current != null)
+            StopAllCoroutines();
+
     }
 
+    private IEnumerator Co_Diolog(GameObject _particle, float _duration)
+    {
+        _particle.SetActive(true);
+        yield return new WaitForSeconds(_duration);
+        _particle.SetActive(false);
+    }
 }

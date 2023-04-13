@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,7 +24,12 @@ public class HeroInputReader : MonoBehaviour
         _inputActions.Hero.Movement.canceled += OnGetDirection;
         _inputActions.Hero.Interact.started += OnInteract;
         _inputActions.Hero.Attack.started += OnAttack;
+        _inputActions.Hero.Throw.started += OnThrow;
+        _inputActions.Hero.Throw.performed += OnHoldThrow;
+        _inputActions.Hero.Throw.canceled += OnTryMultyThrow;
+
     }
+
 
     private void OnDisable()
     {
@@ -32,14 +38,30 @@ public class HeroInputReader : MonoBehaviour
         _inputActions.Hero.Movement.canceled -= OnGetDirection;
         _inputActions.Hero.Interact.started -= OnInteract;
         _inputActions.Hero.Attack.started -= OnAttack;
+        _inputActions.Hero.Throw.started -= OnThrow;
+        _inputActions.Hero.Throw.performed -= OnHoldThrow;
+        _inputActions.Hero.Throw.canceled -= OnTryMultyThrow;
 
     }
+
 
     private void OnGetDirection(InputAction.CallbackContext context)
     {
         var direction = context.ReadValue<Vector2>();
         _heroMovement.SetDirection(direction);
         _heroAnimations.SetDirectionX(direction.x);
+    }
+    private void OnThrow(InputAction.CallbackContext obj)
+    {
+        Debug.Log("Press");
+    }
+    private void OnHoldThrow(InputAction.CallbackContext obj)
+    {
+        Debug.Log("Pressing");
+    }
+    private void OnTryMultyThrow(InputAction.CallbackContext obj)
+    {
+        Debug.Log("Unpress");
     }
 
     private void OnInteract(InputAction.CallbackContext context)
@@ -51,4 +73,5 @@ public class HeroInputReader : MonoBehaviour
     {
         _heroAnimations.SetAttack();
     }
+
 }
