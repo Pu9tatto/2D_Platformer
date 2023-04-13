@@ -114,6 +114,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7210914245588710543, guid: a8d11c993aab8784abbc4b7e7152a7bb, type: 3}
     - {fileID: 7210914245588710540, guid: a8d11c993aab8784abbc4b7e7152a7bb, type: 3}
+    - {fileID: 2642177948046916353, guid: a8d11c993aab8784abbc4b7e7152a7bb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a8d11c993aab8784abbc4b7e7152a7bb, type: 3}
 --- !u!114 &3209916479055786713 stripped
 MonoBehaviour:
@@ -163,6 +164,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &2671195755541552422
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3534364673367332810}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.021392033, y: -0.1211105}
+  m_Size: {x: 0.10931286, y: 0.37768567}
+  m_Direction: 0
 --- !u!114 &2665340393012972548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,19 +233,3 @@ MonoBehaviour:
           m_StringArgument: Destroing
           m_BoolArgument: 0
         m_CallState: 2
---- !u!70 &2671195755541552422
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3534364673367332810}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.021392033, y: -0.1211105}
-  m_Size: {x: 0.10931286, y: 0.37768567}
-  m_Direction: 0
