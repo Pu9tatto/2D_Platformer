@@ -1,35 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SeaShellAttack : MonoBehaviour
+public class SeaShellAttack : RangeTrapAI
 {
-    [SerializeField] private Cooldown _attackCooldown;
-
     [SerializeField] private LayerCheck _canMeeleAttack;
-    [SerializeField] protected CheckCircleOverlap _checkDamageableProps;
+    [SerializeField] private CheckCircleOverlap _checkDamageableProps;
     [SerializeField] private int _meleeDamage;  
 
-    [SerializeField] private LayerCheck _vision;
-    [SerializeField] private SpawnComponent _pearlSpawner;
-
-    [SerializeField] private SpawnComponent _destroyedShellSpawner;
-
-
-    private Animator _animator;
     protected static readonly int MeeleAtatckKey = Animator.StringToHash("meele-attack");
-    protected static readonly int RangeAtatckKey = Animator.StringToHash("range-attack");
 
-    private void Awake()
+    protected override void Awake()
     {
-        _animator = GetComponent<Animator>();
+        base.Awake();
     }
 
-    private void Update()
+    protected override void Update()
     {
         if (!_attackCooldown.IsReady()) return;
 
         _attackCooldown.Reset();
+
         if (_canMeeleAttack.IsTouchingLayer)
         {
             _animator.SetTrigger(MeeleAtatckKey);
@@ -55,14 +44,14 @@ public class SeaShellAttack : MonoBehaviour
         }
     }
 
-    public  void RangeAttack()
+    public override void RangeAttack()
     {
-        _pearlSpawner.Spawn();
+        base.RangeAttack();
     }
 
-    public void Die()
+    public override void Die()
     {
-        _destroyedShellSpawner.Spawn();
+        base.Die();
     }
 
 
