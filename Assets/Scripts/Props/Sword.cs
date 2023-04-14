@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
+    [SerializeField] private int _swordValue=1;
     public void AddSword(GameObject target)
     {
         if (target.TryGetComponent(out Inventory inventory))
         {
-            inventory.AddSword();
+            inventory.AddInInventoryData("Sword", _swordValue);
         }
     }
     public void Armed(GameObject target)

@@ -4,9 +4,11 @@ using UnityEngine;
 [Serializable]
 public class HeroData 
 {
+    [SerializeField] private InventoryData _inventory;
+
     public int Health;
-    public int Coins;
-    public int Swords;
+
+    public InventoryData Inventory=> _inventory;
 
     public HeroData Clone()
     {

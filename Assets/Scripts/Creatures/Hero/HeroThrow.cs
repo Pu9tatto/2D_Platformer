@@ -10,8 +10,11 @@ public class HeroThrow : MonoBehaviour
     [SerializeField] private int _countMultiThrow;
     [SerializeField] private float _timeBetweenThrow;
 
+    private float _startPressThrowTimer;
     private Inventory _inventory;
-    private float _startPressTHrowTimer;
+
+    private int _swordsValue => _inventory.Count("Sword");
+
 
     private void Start()
     {
@@ -20,22 +23,20 @@ public class HeroThrow : MonoBehaviour
 
     public void PressThrow()
     {
-        _startPressTHrowTimer = Time.time;
+        _startPressThrowTimer = Time.time;
     }
 
     public void DoThrow()
     {
-        var swordsValue = _inventory.GetSwordValue()-1;
+        if (_swordsValue <= 1) return;
 
-        if (swordsValue <= 0) return;
-
-        if(swordsValue< _countMultiThrow)
+        if(_swordsValue < _countMultiThrow)
         {
             SingleThrow();
             return;
         }
 
-        if (_startPressTHrowTimer + _timeForMultiThrow < Time.time)
+        if (_startPressThrowTimer + _timeForMultiThrow < Time.time)
             StartCoroutine(MultiThrow());
         else
             SingleThrow();
@@ -44,9 +45,8 @@ public class HeroThrow : MonoBehaviour
     private void SingleThrow()
     {
         _projectile.Spawn();
-        _inventory.ThrowSwords();
+        _inventory.RemoveInInventoryData("Sword", 1);
 
-        Debug.Log("1 sword throw");
     }
 
     private IEnumerator MultiThrow()
@@ -54,7 +54,7 @@ public class HeroThrow : MonoBehaviour
         for (int i =0; i < _countMultiThrow; i++)
         {
             _projectile.Spawn();
-            _inventory.ThrowSwords();
+            _inventory.RemoveInInventoryData("Sword", 1);
             yield return new WaitForSeconds(_timeBetweenThrow);
         }
     }

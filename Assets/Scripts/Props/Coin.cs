@@ -8,7 +8,7 @@ public class Coin : MonoBehaviour
     {
         if (target.TryGetComponent(out Inventory inventory))
         {
-            inventory.AddCoin(_coinValue);
+            inventory.AddInInventoryData("Coin", _coinValue);
         }
     }
 }

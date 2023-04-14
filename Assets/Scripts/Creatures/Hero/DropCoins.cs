@@ -6,16 +6,26 @@ public class DropCoins : MonoBehaviour
 {
     [SerializeField] private int _maxCount = 5;
     [SerializeField] private GameObject _template;
-    [SerializeField] private Inventory _inventory;
     [SerializeField] private UnityEvent<List<GameObject>> _onDrop;
     private List<GameObject> _coins = new List<GameObject>();
-    
+
+    private InventoryData _inventory;
+
+    private int _coinsValue => _inventory.GetCount("Coin");
+
+
+    private void Start()
+    {
+        _inventory = GameSession.Session.Data.Inventory;
+    }
+
     public void Drop()
     {
-        if (_inventory.GetCoinsValue() > 0)
+        if (_coinsValue > 0)
         {
-            var coinsCount = _inventory.DropCoins(_maxCount);
-            for(int i = 0; i < coinsCount; i++)
+            var coinsForDrop = Mathf.Min(_maxCount, _coinsValue);
+            _inventory.Remove("Coin", coinsForDrop);
+            for(int i = 0; i < coinsForDrop; i++)
             {
                 _coins.Add(_template);
             }

@@ -11,11 +11,12 @@ public class HeroAnimations : CreatureAnimation
     
     private bool _isHightFall;
     private bool _isArmed;
-    private HeroData _data;
+    private InventoryData _inventory;
 
     private static readonly int IsHightFallKey = Animator.StringToHash("is-hightFall");
     private static readonly int ThrowKey = Animator.StringToHash("throw");
 
+    private int _swordsValue => _inventory.GetCount("Sword");
 
     protected override void Awake()
     {
@@ -24,8 +25,8 @@ public class HeroAnimations : CreatureAnimation
 
     private void Start()
     {
-        _data = GameSession.Session.Data;
-        _isArmed = _data.Swords>0;
+        _inventory = GameSession.Session.Data.Inventory;
+        _isArmed = _swordsValue > 0;
         UpdateArmed();
     }
 
@@ -96,7 +97,7 @@ public class HeroAnimations : CreatureAnimation
 
     private void UpdateArmed()
     {
-        if(_data.Swords > 0)
+        if(_swordsValue > 0)
         {
             _animator.runtimeAnimatorController = _armed;
             _isArmed = true;
