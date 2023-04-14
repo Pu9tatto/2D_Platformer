@@ -20,12 +20,12 @@ public class RangeTrapAI : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (!_attackCooldown.IsReady()) return;
-
-        _attackCooldown.Reset();
 
         if (_vision.IsTouchingLayer)
         {
+            if (!_attackCooldown.IsReady()) return;
+
+            _attackCooldown.Reset();
             _animator.SetTrigger(RangeAtatckKey);
         }
     }

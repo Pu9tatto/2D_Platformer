@@ -69,12 +69,6 @@ MonoBehaviour:
   - {fileID: 5431556435143639728, guid: 894170bbf0075ec4594239ef268ebf69, type: 3}
   - {fileID: 5431556435143639728, guid: 894170bbf0075ec4594239ef268ebf69, type: 3}
   - {fileID: 5431556435143639728, guid: 894170bbf0075ec4594239ef268ebf69, type: 3}
-  - {fileID: 5431556435143639728, guid: 894170bbf0075ec4594239ef268ebf69, type: 3}
-  - {fileID: 5431556435143639728, guid: 894170bbf0075ec4594239ef268ebf69, type: 3}
-  - {fileID: 5431556435143639728, guid: 894170bbf0075ec4594239ef268ebf69, type: 3}
-  - {fileID: 5431556435143639728, guid: 894170bbf0075ec4594239ef268ebf69, type: 3}
-  - {fileID: 5431556435143639728, guid: 894170bbf0075ec4594239ef268ebf69, type: 3}
-  - {fileID: 5431556435143639728, guid: 894170bbf0075ec4594239ef268ebf69, type: 3}
   _firstVariantLoot:
   - {fileID: 1184946437514128501, guid: 7e6ba457a5a30c2428fea2dd6c7d8c9e, type: 3}
   _secondVariantLoot:
@@ -82,9 +76,9 @@ MonoBehaviour:
   _rateFirstLoot: 50
   _possibleLoot:
   - _prefab: {fileID: 7481713851128641670, guid: 23c3353abc9032f48881f1cc54bf6656, type: 3}
-    _lootRate: 25
+    _lootRate: 100
   - _prefab: {fileID: 8463467618225430151, guid: b634b96d687fe8b418471dcf42cf48c3, type: 3}
-    _lootRate: 5
+    _lootRate: 100
   _onRandomCalculated:
     m_PersistentCalls:
       m_Calls:

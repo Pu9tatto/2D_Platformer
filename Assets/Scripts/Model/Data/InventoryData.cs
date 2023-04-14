@@ -1,4 +1,3 @@
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,11 +7,15 @@ public class InventoryData
 {
     [SerializeField] private List<InventoryItemData> _inventory = new List<InventoryItemData>();
 
+    private int _itemsCount = 0;
+
+    private bool _inventoryIsFool => _itemsCount >= DefsFacade.I.Capacity;
+
     private InventoryItemData GetItem(string id)
     {
         foreach (var item in _inventory)
         {
-            if(item.Id == id) 
+            if (item.Id == id)
                 return item;
         }
         return null;
@@ -23,16 +26,26 @@ public class InventoryData
         if (value < 0) return;
 
         var ItemDef = DefsFacade.I.Items.Get(id);
-        if(ItemDef.isVoid) return;
+        if (ItemDef.isVoid) return;
 
         var item = GetItem(id);
-        if (item == null) 
+
+        if (item == null)
         {
             item = new InventoryItemData(id);
             _inventory.Add(item);
         }
 
         item.Value += value;
+        
+    }
+
+    private void TryAddNewItem(InventoryItemData item, string id)
+    {
+        if (_inventoryIsFool) return;
+        item = new InventoryItemData(id);
+        _inventory.Add(item);
+        _itemsCount++;
     }
 
     public void Remove(string id, int value)
@@ -42,28 +55,26 @@ public class InventoryData
 
         var item = GetItem(id);
         if (item == null) return;
-        
+
         item.Value -= value;
 
-        Debug.Log("Item.Value :" + item.Value);
-
-        //if(item.Value <= 0)
-        //{
-        //    _inventory.Remove(item);
-        //}
+        if (item.Value <= 0)
+        {
+            _inventory.Remove(item);
+            _itemsCount--;
+        }
     }
 
     public int GetCount(string id)
     {
         var count = 0;
-        foreach(var item in _inventory)
+        foreach (var item in _inventory)
         {
-            if(item.Id == id) 
-                count+=item.Value;
+            if (item.Id == id)
+                count += item.Value;
         }
         return count;
     }
-
 }
 
 [Serializable]

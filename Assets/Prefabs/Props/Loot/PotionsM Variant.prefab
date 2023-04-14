@@ -123,6 +123,17 @@ PrefabInstance:
     - {fileID: 911071220719036186, guid: 2ce81718dbcaebd4690a261b1ffbc3cb, type: 3}
     - {fileID: 2481646160042496471, guid: 2ce81718dbcaebd4690a261b1ffbc3cb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2ce81718dbcaebd4690a261b1ffbc3cb, type: 3}
+--- !u!114 &3279362253540865604 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -4111214776295691822, guid: 2ce81718dbcaebd4690a261b1ffbc3cb, type: 3}
+  m_PrefabInstance: {fileID: 7741869630572879766}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7481713851128641670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b21672d53ac424fa36d47a00bd51d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4612588471598154152 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -6092365686153814466, guid: 2ce81718dbcaebd4690a261b1ffbc3cb, type: 3}
@@ -189,9 +200,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7481713851128641678}
-        m_TargetAssemblyTypeName: AddHealthComponent, Assembly-CSharp
-        m_MethodName: AddHealth
+      - m_Target: {fileID: 3279362253540865604}
+        m_TargetAssemblyTypeName: AddItemInCollision, Assembly-CSharp
+        m_MethodName: AddItem
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -218,14 +229,3 @@ CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 911071220719036187, guid: 2ce81718dbcaebd4690a261b1ffbc3cb, type: 3}
   m_PrefabInstance: {fileID: 7741869630572879766}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7481713851128641678 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 911071220719036184, guid: 2ce81718dbcaebd4690a261b1ffbc3cb, type: 3}
-  m_PrefabInstance: {fileID: 7741869630572879766}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7481713851128641670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90e7c93169147174fa35222044e6a6ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

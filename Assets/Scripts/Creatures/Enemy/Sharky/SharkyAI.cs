@@ -57,10 +57,8 @@ public class SharkyAI : MonoBehaviour
     {
         while (_vision.IsTouchingLayer)
         {
-            Debug.Log("Vision");
             if (_canAttack.IsTouchingLayer)
             {
-                Debug.Log("Attack");
                 StartState(Co_Attack());
             }
             else

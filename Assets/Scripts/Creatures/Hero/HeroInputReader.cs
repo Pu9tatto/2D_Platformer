@@ -8,11 +8,13 @@ public class HeroInputReader : MonoBehaviour
     private HeroInputActions _inputActions;
     private HeroAnimations _heroAnimations;
     private HeroThrow _heroThrow;
+    private HeroActions _heroActions;
 
     private void Awake()
     {
-        _heroMovement = GetComponent<HeroMovement>();
         _inputActions = new HeroInputActions();
+        _heroActions = GetComponent<HeroActions>();
+        _heroMovement = GetComponent<HeroMovement>();
         _heroAnimations = GetComponent<HeroAnimations>();
         _heroThrow = GetComponent<HeroThrow>();
 
@@ -28,7 +30,7 @@ public class HeroInputReader : MonoBehaviour
         _inputActions.Hero.Throw.started += OnThrow;
         _inputActions.Hero.Throw.performed += OnHoldThrow;
         _inputActions.Hero.Throw.canceled += OnTryMultyThrow;
-
+        _inputActions.Hero.UsePoison.started += OnUsePoision;
     }
 
 
@@ -42,7 +44,7 @@ public class HeroInputReader : MonoBehaviour
         _inputActions.Hero.Throw.started -= OnThrow;
         _inputActions.Hero.Throw.performed -= OnHoldThrow;
         _inputActions.Hero.Throw.canceled -= OnTryMultyThrow;
-
+        _inputActions.Hero.UsePoison.started -= OnUsePoision;
     }
 
 
@@ -66,7 +68,12 @@ public class HeroInputReader : MonoBehaviour
 
     private void OnInteract(InputAction.CallbackContext context)
     {
-        _heroMovement.Interact();
+        _heroActions.Interact();
+    }
+
+    private void OnUsePoision(InputAction.CallbackContext context)
+    {
+        _heroActions.DrinkPoision();
     }
 
     private void OnAttack(InputAction.CallbackContext context)

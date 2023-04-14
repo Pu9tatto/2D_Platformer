@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class HeroThrow : MonoBehaviour
 {
+    [InventoryId] [SerializeField] private string _throwId;
     [SerializeField] private SpawnComponent _projectile;
     [SerializeField] private Transform _throwPoint;
     [SerializeField] private float _timeForMultiThrow;
     [SerializeField] private int _countMultiThrow;
     [SerializeField] private float _timeBetweenThrow;
+    [SerializeField] private PlaysSoundsComponent _sounds;
 
     private float _startPressThrowTimer;
     private Inventory _inventory;
 
-    private int _swordsValue => _inventory.Count("Sword");
-
+    private int _swordsValue => _inventory.Count(_throwId);
 
     private void Start()
     {
@@ -32,31 +33,30 @@ public class HeroThrow : MonoBehaviour
 
         if(_swordsValue < _countMultiThrow)
         {
-            SingleThrow();
+            Shot();
             return;
         }
 
         if (_startPressThrowTimer + _timeForMultiThrow < Time.time)
             StartCoroutine(MultiThrow());
         else
-            SingleThrow();
-    }
-
-    private void SingleThrow()
-    {
-        _projectile.Spawn();
-        _inventory.RemoveInInventoryData("Sword", 1);
-
+            Shot();
     }
 
     private IEnumerator MultiThrow()
     {
         for (int i =0; i < _countMultiThrow; i++)
         {
-            _projectile.Spawn();
-            _inventory.RemoveInInventoryData("Sword", 1);
+            Shot();
             yield return new WaitForSeconds(_timeBetweenThrow);
         }
+    }
+
+    private void Shot()
+    {
+        _projectile.Spawn();
+        _inventory.RemoveInInventoryData(_throwId, 1);
+        _sounds.Play("Range");
     }
 
     private void OnDisable()

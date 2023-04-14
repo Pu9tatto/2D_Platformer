@@ -55,7 +55,6 @@ public class RandomLootSpawner : MonoBehaviour
     private void SpawnGuaranteedLootBetween()
     {
         int rateBetween = Random.Range(0,100);
-        Debug.Log("RateBetween: " + rateBetween);
         if (_rateFirstLoot  > rateBetween)
         {
             foreach(GameObject obj in _firstVariantLoot)
@@ -74,8 +73,6 @@ public class RandomLootSpawner : MonoBehaviour
     private void SpawnPossibleLoot(LootObject[] list)
     {
         int rate = Random.Range(0,100);
-
-        Debug.Log("rate: " + rate);
 
         foreach (LootObject obj in _possibleLoot)
         {

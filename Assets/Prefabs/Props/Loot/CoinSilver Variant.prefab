@@ -165,9 +165,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5455802261888386742}
-        m_TargetAssemblyTypeName: Coin, Assembly-CSharp
-        m_MethodName: AddCoin
+      - m_Target: {fileID: -3347172643249828114}
+        m_TargetAssemblyTypeName: AddItemInCollision, Assembly-CSharp
+        m_MethodName: AddItem
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -189,6 +189,32 @@ MonoBehaviour:
           m_StringArgument: Destroing
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6780494561646348794}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-3347172643249828114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5431556435143639728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b21672d53ac424fa36d47a00bd51d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _count: 1
+  _id: Coin
 --- !u!114 &8479205760724856935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,14 +241,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5448761365161569119, guid: a72d5700e8d640949a66dcb88c89d940, type: 3}
   m_PrefabInstance: {fileID: 71248744630888928}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5455802261888386742 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5425649096399253334, guid: a72d5700e8d640949a66dcb88c89d940, type: 3}
+--- !u!82 &6780494561646348794 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: -2385773407052718054, guid: a72d5700e8d640949a66dcb88c89d940, type: 3}
   m_PrefabInstance: {fileID: 71248744630888928}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5431556435143639728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b16bca4301f432d449fae2dcea3fe8b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

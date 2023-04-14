@@ -4,8 +4,7 @@ using UnityEngine;
 public class HeroMovement : CreaturesMovement
 {
     [SerializeField] private int _multiplyJump;
-
-    [SerializeField] private CheckCircleOverlap _checkInteractableProps;
+    [SerializeField] private PlaysSoundsComponent _sounds;
 
     private int _multiplJumpyIndex = 0;
     private bool _canMultiplyJump;
@@ -69,6 +68,7 @@ public class HeroMovement : CreaturesMovement
     protected override void AddJumpForce()
     {
         base.AddJumpForce();
+        _sounds.Play("Jump");
     }
 
     public override void AddJumpDamageForce()
@@ -82,21 +82,9 @@ public class HeroMovement : CreaturesMovement
         base.SetDirection(direction);
     }
 
-    public override void Interact()
-    {
-        var interactableList = _checkInteractableProps.Check();
-
-        foreach(var props in interactableList)
-        {
-            if (props.TryGetComponent(out InteractableComponent target))
-            {
-                target.Interact();
-            }
-        }
-    }
-
     public override void Attack()
     {
         base.Attack();
+        _sounds.Play("Meele");
     }
 }

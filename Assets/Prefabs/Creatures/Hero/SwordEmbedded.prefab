@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -6543882479686482801}
   - component: {fileID: 3347786352515085632}
   - component: {fileID: 4846850910201283471}
+  - component: {fileID: -5020007502756198118}
   m_Layer: 11
   m_Name: SwordEmbedded
   m_TagString: Untagged
@@ -177,6 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c109c030e3f9fbe4dac0ffc1daacf352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _swordValue: 1
+  _id: Sword
 --- !u!114 &3347786352515085632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,9 +197,9 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -6543882479686482801}
-        m_TargetAssemblyTypeName: Sword, Assembly-CSharp
-        m_MethodName: AddSword
+      - m_Target: {fileID: -5020007502756198118}
+        m_TargetAssemblyTypeName: AddItemInCollision, Assembly-CSharp
+        m_MethodName: AddItem
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -243,3 +246,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectForDestroy: {fileID: 2980107919031994723}
+--- !u!114 &-5020007502756198118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2980107919031994723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b21672d53ac424fa36d47a00bd51d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _count: 1
+  _id: Sword

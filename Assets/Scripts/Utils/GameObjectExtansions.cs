@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Bson;
 using UnityEngine;
 
 public static class GameObjectExtansions
@@ -13,6 +14,20 @@ public static class GameObjectExtansions
             result &= layer == (layer | 1 << gameObject.layer);
         }
         return result;
+    }
+
+    public static TInterfaceType GetInterface<TInterfaceType>(this GameObject go)
+    {
+        var components = go.GetComponents<Component>();
+        foreach(var component in components)
+        {
+            if(component is  TInterfaceType type)
+            {
+                return type;
+            }
+        }
+
+        return default;
     }
 
 }

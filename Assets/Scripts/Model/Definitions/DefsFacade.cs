@@ -4,7 +4,10 @@
 public class DefsFacade : ScriptableObject
 {
     [SerializeField] private InventoryItemsDef _items;
+    
+    private int _capacity;
 
+    public int Capacity => _items.Capacity;
     public InventoryItemsDef Items => _items;
 
     private static DefsFacade _instance;

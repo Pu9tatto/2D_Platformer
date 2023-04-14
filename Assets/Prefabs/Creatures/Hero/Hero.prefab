@@ -48,7 +48,7 @@ MonoBehaviour:
   _radius: 0.3
   _layer:
     serializedVersion: 2
-    m_Bits: 1152
+    m_Bits: 5248
 --- !u!114 &1110923516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +64,143 @@ MonoBehaviour:
   _capacity: 5
   _template: {fileID: 6187093142089424322, guid: e8adf792d02892e42bc220c11e5fc510, type: 3}
   _spawnPoint: {fileID: 1110923512}
+--- !u!1 &1562502516247898902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 991675710122411474}
+  - component: {fileID: 462084090865537023}
+  - component: {fileID: 8243287779203473336}
+  m_Layer: 0
+  m_Name: Sounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &991675710122411474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562502516247898902}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9091516000774250552}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &462084090865537023
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562502516247898902}
+  m_Enabled: 1
+--- !u!82 &8243287779203473336
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562502516247898902}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 599918c4242b01c40989f1efb042d8aa, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8421752023883772960
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +364,7 @@ GameObject:
   - component: {fileID: 2099764261}
   - component: {fileID: 3859588810645882597}
   - component: {fileID: 2099764268}
+  - component: {fileID: 8192383288997572524}
   m_Layer: 9
   m_Name: Hero
   m_TagString: Player
@@ -253,6 +391,7 @@ Transform:
   - {fileID: 9091516000197471839}
   - {fileID: 1110923512}
   - {fileID: 8589793484686870390}
+  - {fileID: 991675710122411474}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -446,11 +585,10 @@ MonoBehaviour:
   _speed: 7
   _damage: 1
   _jumpForce: 12
-  _jumpDamageForce: 12
+  _jumpDamageForce: 6
   _groundCheck: {fileID: 9091516001614608510}
   _checkDamageableProps: {fileID: 1110923514}
   _multiplyJump: 1
-  _checkInteractableProps: {fileID: 2099764261}
 --- !u!114 &9091516000774250546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,6 +605,8 @@ MonoBehaviour:
   _speedForHithgFall: -12
   _armed: {fileID: 9100000, guid: 135423ea29ed71a449e668e5871c1dd3, type: 2}
   _disArmed: {fileID: 9100000, guid: 5da3f5fdbc8268343aac90bb23636e7f, type: 2}
+  _throwCooldown:
+    _value: 1
 --- !u!114 &9091516000774250549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,11 +734,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dccfa7096bff71d498d0c0c96aaf2a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _throwId: Sword
   _projectile: {fileID: 1697124117}
   _throwPoint: {fileID: 1110923512}
   _timeForMultiThrow: 1
-  _countMultiThrow: 10
+  _countMultiThrow: 3
   _timeBetweenThrow: 0.2
+--- !u!114 &8192383288997572524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9091516000774250534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffcb0e860683c6641945e7b1e052096f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _checkInteractableProps: {fileID: 1110923514}
+  _poisionId: Coin
 --- !u!1 &9091516000959949774
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +801,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxCount: 5
   _template: {fileID: 5431556435143639728, guid: 894170bbf0075ec4594239ef268ebf69, type: 3}
-  _inventory: {fileID: 9091516000774250558}
   _onDrop:
     m_PersistentCalls:
       m_Calls:
@@ -790,4 +944,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 5184
