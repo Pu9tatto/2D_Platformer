@@ -78,7 +78,7 @@ public class HeroInputReader : MonoBehaviour
 
     private void OnAttack(InputAction.CallbackContext context)
     {
-        _heroAnimations.SetAttack();
+        _heroAnimations.TrySetAttack();
     }
 
 }

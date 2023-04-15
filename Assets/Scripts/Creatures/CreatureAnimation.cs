@@ -35,7 +35,7 @@ public class CreatureAnimation : MonoBehaviour
         _animator.SetBool(IsRunningKey, _isHorizontalMovement);
         _animator.SetFloat(VerticalVelocityKey, _rigidbody.velocity.y);
     }
-    public virtual void SetAttack()
+    public virtual void TrySetAttack()
     {
         _animator.SetTrigger(AtatckKey);
     }

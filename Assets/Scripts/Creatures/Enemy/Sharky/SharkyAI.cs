@@ -80,7 +80,7 @@ public class SharkyAI : MonoBehaviour
         yield return new WaitForSeconds(_delayBeforeAttack);
         while (_canAttack.IsTouchingLayer)
         {
-            _animation.SetAttack();
+            _animation.TrySetAttack();
             yield return new WaitForSeconds(_attackCooldown);
         }
 

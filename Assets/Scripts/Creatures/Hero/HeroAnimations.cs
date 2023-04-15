@@ -5,6 +5,8 @@ public class HeroAnimations : CreatureAnimation
 {
     [SerializeField] private float _speedForHithgFall;
 
+    [SerializeField] private Cooldown _attackCooldown;
+
     [SerializeField] private AnimatorController _armed;
     [SerializeField] private AnimatorController _disArmed;
     [SerializeField] private Cooldown _throwCooldown;
@@ -61,10 +63,15 @@ public class HeroAnimations : CreatureAnimation
         base.SetAnimations();
     }
 
-    public override void SetAttack()
+    public override void TrySetAttack()
     {
         if (!_isArmed) return;
-        base.SetAttack();
+
+        if (_attackCooldown.IsReady())
+        {
+            base.TrySetAttack();
+            _attackCooldown.Reset();
+        }
     }
 
     private void CheckHithgFall() => _isHightFall = _rigidbody.velocity.y < _speedForHithgFall;

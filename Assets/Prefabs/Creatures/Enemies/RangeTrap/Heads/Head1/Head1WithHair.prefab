@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4650085013416546059, guid: 1ad51ae6c6174d94c908d0b3593b7e7a, type: 3}
       propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -4650085013416546059, guid: 1ad51ae6c6174d94c908d0b3593b7e7a, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
@@ -73,11 +73,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7656704377867367930, guid: 1ad51ae6c6174d94c908d0b3593b7e7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 22.78
       objectReference: {fileID: 0}
     - target: {fileID: 7656704377867367930, guid: 1ad51ae6c6174d94c908d0b3593b7e7a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 6.82
       objectReference: {fileID: 0}
     - target: {fileID: 7656704377867367930, guid: 1ad51ae6c6174d94c908d0b3593b7e7a, type: 3}
       propertyPath: m_LocalPosition.z
