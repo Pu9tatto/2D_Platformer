@@ -23,17 +23,19 @@ public class PlatformPatrol : Patrol
         while (enabled)
         {
 
-            _movement.SetDirection(direction);
-            _animation.SetDirectionX(1);
-            yield return new WaitForFixedUpdate();
-            if (!_endPlatformChecker.CheckTouchingLayer())
+            if (!_endPlatformChecker.IsTouchingLayer)
             {
-                direction*=-1;
-            } else if (_obstackleChecker.CheckTouchingLayer())
+                direction *= -1;
+            }
+            else if (_obstackleChecker.IsTouchingLayer)
             {
                 direction *= -1;
             }
 
+            _movement.SetDirection(direction);
+            //_animation.SetDirection(1);
+            _animation.DoMove();
+            yield return null;
         }
     }
 }

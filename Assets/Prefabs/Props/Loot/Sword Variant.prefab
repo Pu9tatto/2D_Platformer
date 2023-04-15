@@ -25,11 +25,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3698030565483310578, guid: cb60e49760999324faa4c0e10efbdcbe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.3483706
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3698030565483310578, guid: cb60e49760999324faa4c0e10efbdcbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6727967
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3698030565483310578, guid: cb60e49760999324faa4c0e10efbdcbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -41,15 +41,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3698030565483310578, guid: cb60e49760999324faa4c0e10efbdcbe, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3698030565483310578, guid: cb60e49760999324faa4c0e10efbdcbe, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3698030565483310578, guid: cb60e49760999324faa4c0e10efbdcbe, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3698030565483310578, guid: cb60e49760999324faa4c0e10efbdcbe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -102,18 +102,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4888040102317014987, guid: cb60e49760999324faa4c0e10efbdcbe, type: 3}
     - {fileID: 3698030565483310583, guid: cb60e49760999324faa4c0e10efbdcbe, type: 3}
+    - {fileID: -4811005965905372252, guid: cb60e49760999324faa4c0e10efbdcbe, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cb60e49760999324faa4c0e10efbdcbe, type: 3}
---- !u!114 &1203558321125373348 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6239077762994718422, guid: cb60e49760999324faa4c0e10efbdcbe, type: 3}
-  m_PrefabInstance: {fileID: 5054813126456931186}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8463467618225430151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c109c030e3f9fbe4dac0ffc1daacf352, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8463467618225430145 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3698030565483310579, guid: cb60e49760999324faa4c0e10efbdcbe, type: 3}
@@ -177,7 +167,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.625, y: 0.17854913}
   m_EdgeRadius: 0
---- !u!114 &-47584443207158511
+--- !u!114 &2020551762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,6 +181,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _count: 1
   _id: Sword
+  _isStackable: 0
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8463467618225430145}
+        m_TargetAssemblyTypeName: DestroyObjectComponent, Assembly-CSharp
+        m_MethodName: DestroyToObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5595110169887709792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,34 +214,10 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -47584443207158511}
-        m_TargetAssemblyTypeName: AddItemInCollision, Assembly-CSharp
-        m_MethodName: AddItem
+      - m_Target: {fileID: 2020551762}
+        m_TargetAssemblyTypeName: TryAddItemInCollision, Assembly-CSharp
+        m_MethodName: TryAddItem
         m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1203558321125373348}
-        m_TargetAssemblyTypeName: Sword, Assembly-CSharp
-        m_MethodName: Armed
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8463467618225430145}
-        m_TargetAssemblyTypeName: DestroyObjectComponent, Assembly-CSharp
-        m_MethodName: DestroyToObject
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

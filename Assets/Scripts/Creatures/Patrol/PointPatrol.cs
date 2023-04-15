@@ -27,7 +27,7 @@ public class PointPatrol : Patrol
 
             Vector2 direction = (_points[_destinationPointIndex].position - transform.position).normalized;
             _movement.SetDirection(direction);
-            _animation.SetDirectionX(direction.x);
+            _animation.SetDirection(direction);
 
             yield return null;
         }

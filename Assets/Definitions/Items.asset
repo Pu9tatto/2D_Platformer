@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5edc988313eebbd449c9e6df3cbb0752, type: 3}
   m_Name: Items
   m_EditorClassIdentifier: 
-  _capacityItems: 10
+  _capacity: 10
   _items:
   - _id: Coin
     _isStackable: 1

@@ -145,12 +145,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7299654457564368111}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e040fb1ee26c5274bb21b9b8c87ed46b, type: 3}
+  m_Script: {fileID: 11500000, guid: e87624c3579de8f43bf7b58423ea55ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
     m_Bits: 512
+  _isTouchingLayer: 0
 --- !u!1 &7656704377867367925
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +324,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &4607298907450112451
 MonoBehaviour:
   m_ObjectHideFlags: 0

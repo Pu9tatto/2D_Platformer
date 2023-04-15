@@ -99,11 +99,17 @@ PrefabInstance:
     - {fileID: 7510835776783116469, guid: ba66bb6dd0d7d0442a931404322b8c37, type: 3}
     - {fileID: -7405692806319970490, guid: ba66bb6dd0d7d0442a931404322b8c37, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ba66bb6dd0d7d0442a931404322b8c37, type: 3}
---- !u!82 &660249059563454664 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: -1052801227931794422, guid: ba66bb6dd0d7d0442a931404322b8c37, type: 3}
+--- !u!114 &394184286939956618 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9021399845965906248, guid: ba66bb6dd0d7d0442a931404322b8c37, type: 3}
   m_PrefabInstance: {fileID: 8667775453799843010}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184946437514128501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b21672d53ac424fa36d47a00bd51d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1184946437514128501 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7510835776783116471, guid: ba66bb6dd0d7d0442a931404322b8c37, type: 3}
@@ -147,21 +153,9 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1184946437514128502}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 923100148361307973}
-        m_TargetAssemblyTypeName: AddItemInCollision, Assembly-CSharp
-        m_MethodName: AddItem
+      - m_Target: {fileID: 394184286939956618}
+        m_TargetAssemblyTypeName: TryAddItemInCollision, Assembly-CSharp
+        m_MethodName: TryAddItem
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -171,57 +165,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1524990141366581701}
-        m_TargetAssemblyTypeName: SpriteClipAnimation, Assembly-CSharp
-        m_MethodName: SetClip
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Destroing
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 660249059563454664}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &923100148361307973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1184946437514128501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67b21672d53ac424fa36d47a00bd51d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _count: 10
-  _id: Coin
---- !u!58 &1184946437514128502 stripped
-CircleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 7510835776783116468, guid: ba66bb6dd0d7d0442a931404322b8c37, type: 3}
-  m_PrefabInstance: {fileID: 8667775453799843010}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1524990141366581701 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -1341010913536787193, guid: ba66bb6dd0d7d0442a931404322b8c37, type: 3}
-  m_PrefabInstance: {fileID: 8667775453799843010}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1184946437514128501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f7cf4287b0b7ff448bee378f9f6788a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

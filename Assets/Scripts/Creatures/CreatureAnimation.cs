@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CreatureAnimation : MonoBehaviour
 {
-    [SerializeField] protected LayerCheck _groundCheck;
+    [SerializeField] protected ColliderCheck _groundCheck;
 
     protected bool _isHorizontalMovement;
 
@@ -50,9 +50,10 @@ public class CreatureAnimation : MonoBehaviour
         _animator.SetBool(DieKey, true);
     }
 
-    public virtual void SetDirectionX(float directionX) =>
-   _isHorizontalMovement = directionX == 0 ? false : true;
+    public virtual void SetDirection(Vector2 direction) =>
+        _isHorizontalMovement = direction.x == 0 ? false : true;
 
+    public void DoMove() => _isHorizontalMovement = true;
 
     protected virtual bool IsGrounded() =>
         _groundCheck.IsTouchingLayer;

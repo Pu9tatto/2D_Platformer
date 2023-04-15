@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 1355576009}
   - component: {fileID: 3221719271047270026}
   - component: {fileID: -2385773407052718054}
+  - component: {fileID: 2125394832}
+  - component: {fileID: 2125394831}
   m_Layer: 0
   m_Name: CoinSilver
   m_TagString: Untagged
@@ -125,46 +127,10 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5448761365161569117}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 3221719271047270026}
-        m_TargetAssemblyTypeName: AddItemInCollision, Assembly-CSharp
-        m_MethodName: AddItem
+        m_TargetAssemblyTypeName: TryAddItemInCollision, Assembly-CSharp
+        m_MethodName: TryAddItem
         m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1355576009}
-        m_TargetAssemblyTypeName: SpriteClipAnimation, Assembly-CSharp
-        m_MethodName: SetClip
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Destroing
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: -2385773407052718054}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -263,6 +229,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _count: 1
   _id: Coin
+  _isStackable: 1
+  _action:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &-2385773407052718054
 AudioSource:
   m_ObjectHideFlags: 0
@@ -359,3 +329,39 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!50 &2125394832
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5448761365161569104}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &2125394831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5448761365161569104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5597248ea6861e34d92f7d3e43bdf4d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frequancy: 5
+  _amplitude: 0.1
+  _randomize: 1

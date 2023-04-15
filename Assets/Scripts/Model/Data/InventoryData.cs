@@ -7,9 +7,9 @@ public class InventoryData
 {
     [SerializeField] private List<InventoryItemData> _inventory = new List<InventoryItemData>();
 
-    private int _itemsCount = 0;
+    private bool _isFool => _inventory.Count >= DefsFacade.I.Player.InventorySize;
 
-    private bool _inventoryIsFool => _itemsCount >= DefsFacade.I.Capacity;
+    public bool IsFool => _isFool;
 
     private InventoryItemData GetItem(string id)
     {
@@ -28,25 +28,32 @@ public class InventoryData
         var ItemDef = DefsFacade.I.Items.Get(id);
         if (ItemDef.isVoid) return;
 
-        var item = GetItem(id);
-
-        if (item == null)
+        if (ItemDef.IsStackable)
         {
-            item = new InventoryItemData(id);
-            _inventory.Add(item);
+            var item = GetItem(id);
+
+            if (item == null)
+            {
+                if (_isFool) return;
+
+                item = new InventoryItemData(id);
+                _inventory.Add(item);
+            }
+
+            item.Value += value;
         }
+        else
+        {
+            for(int i = 0; i < value; i++)
+            {
+                if(_isFool) return;
 
-        item.Value += value;
-        
+                var item = new InventoryItemData(id); { item.Value = 1; };
+                _inventory.Add(item);
+            }
+        }        
     }
 
-    private void TryAddNewItem(InventoryItemData item, string id)
-    {
-        if (_inventoryIsFool) return;
-        item = new InventoryItemData(id);
-        _inventory.Add(item);
-        _itemsCount++;
-    }
 
     public void Remove(string id, int value)
     {
@@ -58,10 +65,11 @@ public class InventoryData
 
         item.Value -= value;
 
+        if (id == "Coin") return;
+
         if (item.Value <= 0)
         {
             _inventory.Remove(item);
-            _itemsCount--;
         }
     }
 

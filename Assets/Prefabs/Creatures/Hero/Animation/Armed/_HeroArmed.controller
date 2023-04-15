@@ -489,49 +489,49 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: is-running
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: is-ground
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: is-hightFall
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: is-die
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: hit
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_DefaultBool: 1
+    m_Controller: {fileID: 0}
   - m_Name: attack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: throw
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Hero
@@ -668,10 +668,10 @@ AnimatorStateMachine:
     m_Position: {x: 160, y: 450, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4477278311716322567}
-    m_Position: {x: -10, y: 350, z: 0}
+    m_Position: {x: -40, y: 360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8941268624352273144}
-    m_Position: {x: 610, y: 380, z: 0}
+    m_Position: {x: 760, y: 380, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3176951173449451516}
     m_Position: {x: 100, y: 110, z: 0}
@@ -680,22 +680,22 @@ AnimatorStateMachine:
     m_Position: {x: -90, y: -10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1449676787436349469}
-    m_Position: {x: -230, y: 250, z: 0}
+    m_Position: {x: -250, y: 80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6439438243757417926}
     m_Position: {x: 400, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 77766126857712782}
-    m_Position: {x: 150, y: 530, z: 0}
+    m_Position: {x: 160, y: 530, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4727894771018407301}
     m_Position: {x: 560, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 356920962320425035}
-    m_Position: {x: -470, y: 250, z: 0}
+    m_Position: {x: -270, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6712455301554373350}
-    m_Position: {x: -720, y: 250, z: 0}
+    m_Position: {x: 570, y: 450, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 7660063271806239469}

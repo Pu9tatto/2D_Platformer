@@ -4,7 +4,7 @@ public class RangeTrapAI : MonoBehaviour
 {
     [SerializeField] protected Cooldown _attackCooldown;
 
-    [SerializeField] protected LayerCheck _vision;
+    [SerializeField] protected ColliderCheck _vision;
     [SerializeField] protected SpawnComponent _projectileSpawner;
 
     [SerializeField] protected SpawnComponent _destroyedMobSpawner;

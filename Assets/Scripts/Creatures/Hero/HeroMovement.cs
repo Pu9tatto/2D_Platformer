@@ -8,6 +8,7 @@ public class HeroMovement : CreaturesMovement
 
     private int _multiplJumpyIndex = 0;
     private bool _canMultiplyJump;
+    private bool _isJumpPress;
 
     protected override void Awake()
     {
@@ -42,10 +43,10 @@ public class HeroMovement : CreaturesMovement
     public override void Jump()
     {
         base.Jump();
-        var isJumpPress = _direction.y > 0;
+        //var isJumpPress = _direction.y > 0;
         var isFalling = _rigidbody.velocity.y < -0.001;
         _canMultiplyJump = _multiplJumpyIndex < _multiplyJump;
-        if (isJumpPress)
+        if (_isJumpPress)
         {
             if (_isGround)
             {
@@ -65,6 +66,10 @@ public class HeroMovement : CreaturesMovement
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _rigidbody.velocity.y * 0.5f);
         }
     }
+
+    public void HoldJump() => _isJumpPress = true;
+    public void CancelJump() => _isJumpPress = false;
+
     protected override void AddJumpForce()
     {
         base.AddJumpForce();

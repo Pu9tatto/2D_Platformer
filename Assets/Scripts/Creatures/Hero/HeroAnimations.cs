@@ -86,8 +86,12 @@ public class HeroAnimations : CreatureAnimation
         _animator.SetTrigger(DieKey);
     }
 
-    public override void SetDirectionX(float directionX) =>
-       base.SetDirectionX(directionX);
+    public override void SetDirection(Vector2 direction)
+    {
+        base.SetDirection(direction);
+    }
+
+
 
 
     protected override bool IsGrounded() =>

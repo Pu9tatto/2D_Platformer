@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "53a07360-422a-43a9-8357-ec92415f5273",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -176,7 +185,7 @@
                 {
                     "name": "",
                     "id": "351e2864-8c62-4e9c-934c-a4cef00c673d",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -198,7 +207,7 @@
                 {
                     "name": "",
                     "id": "85b80362-2b3d-4ae9-8f25-c746241743a8",
-                    "path": "<Keyboard>/f",
+                    "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -225,6 +234,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "UsePoison",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1710c69f-7e3c-4f06-8aa7-68352b7e73eb",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

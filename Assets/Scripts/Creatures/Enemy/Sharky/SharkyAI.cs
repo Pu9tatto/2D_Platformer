@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class SharkyAI : MonoBehaviour
 {
-    [SerializeField] private LayerCheck _vision;
-    [SerializeField] private LayerCheck _canAttack;
+    [SerializeField] private ColliderCheck _vision;
+    [SerializeField] private ColliderCheck _canAttack;
     [SerializeField] private float _attackCooldown;
     [SerializeField] private float _delayBeforeAttack = 0.5f;
 
@@ -91,7 +91,7 @@ public class SharkyAI : MonoBehaviour
     {
         direction.y = 0;
         _movement.SetDirection(direction);
-        _animation.SetDirectionX(direction.x);
+        _animation.SetDirection(direction);
     }
 
     private void StartState(IEnumerator corotine)

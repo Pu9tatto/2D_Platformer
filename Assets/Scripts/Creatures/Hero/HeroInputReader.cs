@@ -25,6 +25,8 @@ public class HeroInputReader : MonoBehaviour
         _inputActions.Enable();
         _inputActions.Hero.Movement.performed += OnGetDirection;
         _inputActions.Hero.Movement.canceled += OnGetDirection;
+        _inputActions.Hero.Jump.performed += OnPressJump;
+        _inputActions.Hero.Jump.canceled += OnCancelJump;
         _inputActions.Hero.Interact.started += OnInteract;
         _inputActions.Hero.Attack.started += OnAttack;
         _inputActions.Hero.Throw.started += OnThrow;
@@ -39,6 +41,8 @@ public class HeroInputReader : MonoBehaviour
         _inputActions.Disable();
         _inputActions.Hero.Movement.performed -= OnGetDirection;
         _inputActions.Hero.Movement.canceled -= OnGetDirection;
+        _inputActions.Hero.Jump.performed -= OnPressJump;
+        _inputActions.Hero.Jump.canceled -= OnCancelJump;
         _inputActions.Hero.Interact.started -= OnInteract;
         _inputActions.Hero.Attack.started -= OnAttack;
         _inputActions.Hero.Throw.started -= OnThrow;
@@ -52,8 +56,18 @@ public class HeroInputReader : MonoBehaviour
     {
         var direction = context.ReadValue<Vector2>();
         _heroMovement.SetDirection(direction);
-        _heroAnimations.SetDirectionX(direction.x);
+        _heroAnimations.SetDirection(direction);
     }
+
+    public void OnPressJump(InputAction.CallbackContext context)
+    {
+        _heroMovement.HoldJump();
+    }
+    public void OnCancelJump(InputAction.CallbackContext context)
+    {
+        _heroMovement.CancelJump();
+    }
+
     private void OnThrow(InputAction.CallbackContext obj)
     {
         _heroThrow.PressThrow();

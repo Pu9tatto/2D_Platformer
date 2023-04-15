@@ -4,6 +4,7 @@ public class Inventory : MonoBehaviour
 {
     private InventoryData _inventory;
     [SerializeField] private PlaysSoundsComponent _sounds;
+    public bool IsFull => _inventory.IsFool;
 
     private void Start()
     {
@@ -23,4 +24,5 @@ public class Inventory : MonoBehaviour
     }
 
     public int Count(string id) => _inventory.GetCount(id);
+
 }

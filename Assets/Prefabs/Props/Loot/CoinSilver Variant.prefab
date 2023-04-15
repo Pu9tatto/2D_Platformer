@@ -98,16 +98,17 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5448761365161569106, guid: a72d5700e8d640949a66dcb88c89d940, type: 3}
     - {fileID: -6931208956662687143, guid: a72d5700e8d640949a66dcb88c89d940, type: 3}
+    - {fileID: 2125394831, guid: a72d5700e8d640949a66dcb88c89d940, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a72d5700e8d640949a66dcb88c89d940, type: 3}
---- !u!114 &71248745440140073 stripped
+--- !u!114 &3191073842171160426 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1355576009, guid: a72d5700e8d640949a66dcb88c89d940, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3221719271047270026, guid: a72d5700e8d640949a66dcb88c89d940, type: 3}
   m_PrefabInstance: {fileID: 71248744630888928}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431556435143639728}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f7cf4287b0b7ff448bee378f9f6788a, type: 3}
+  m_Script: {fileID: 11500000, guid: 67b21672d53ac424fa36d47a00bd51d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5431556435143639728 stripped
@@ -153,21 +154,9 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5431556435143639741}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: -3347172643249828114}
-        m_TargetAssemblyTypeName: AddItemInCollision, Assembly-CSharp
-        m_MethodName: AddItem
+      - m_Target: {fileID: 3191073842171160426}
+        m_TargetAssemblyTypeName: TryAddItemInCollision, Assembly-CSharp
+        m_MethodName: TryAddItem
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -177,44 +166,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 71248745440140073}
-        m_TargetAssemblyTypeName: SpriteClipAnimation, Assembly-CSharp
-        m_MethodName: SetClip
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Destroing
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6780494561646348794}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &-3347172643249828114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5431556435143639728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67b21672d53ac424fa36d47a00bd51d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _count: 1
-  _id: Coin
 --- !u!114 &8479205760724856935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,18 +182,8 @@ MonoBehaviour:
   _force: 10
   _objectsForExplosion:
   - {fileID: 5431556435143639728}
---- !u!58 &5431556435143639741 stripped
-CircleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 5448761365161569117, guid: a72d5700e8d640949a66dcb88c89d940, type: 3}
-  m_PrefabInstance: {fileID: 71248744630888928}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5431556435143639743 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5448761365161569119, guid: a72d5700e8d640949a66dcb88c89d940, type: 3}
-  m_PrefabInstance: {fileID: 71248744630888928}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &6780494561646348794 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: -2385773407052718054, guid: a72d5700e8d640949a66dcb88c89d940, type: 3}
   m_PrefabInstance: {fileID: 71248744630888928}
   m_PrefabAsset: {fileID: 0}

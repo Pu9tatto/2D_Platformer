@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SeaShellAttack : RangeTrapAI
 {
-    [SerializeField] private LayerCheck _canMeeleAttack;
+    [SerializeField] private ColliderCheck _canMeeleAttack;
     [SerializeField] private CheckCircleOverlap _checkDamageableProps;
     [SerializeField] private int _meleeDamage;  
 
