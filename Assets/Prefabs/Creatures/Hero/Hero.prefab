@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1110923512}
   - component: {fileID: 1110923514}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: DamageRadius
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -58,7 +58,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6500793181087681591}
   - component: {fileID: 1851815796998551419}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Attack3
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -105,7 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3697282445476828425}
   - component: {fileID: 5065732558972643397}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Attack2
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -415,7 +415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8817265662382373254}
   - component: {fileID: 1200168576400413472}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: FallAtrtack
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -462,7 +462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2912938087735949988}
   - component: {fileID: 1278286017897388821}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Attack1
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -508,7 +508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8873462200677182785}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: ParticleSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,7 +548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2801106243899947295}
   - component: {fileID: 5694936462129092444}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: JumpAttack
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -595,7 +595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8589793484686870390}
   - component: {fileID: 1697124117}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: ThrowSwordSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -641,7 +641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9091516000128797273}
   - component: {fileID: 9091516000128797274}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -688,7 +688,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9091516000197471839}
   - component: {fileID: 9091516000197471824}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Fall
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
@@ -1193,7 +1193,7 @@ GameObject:
   - component: {fileID: 9091516000959949761}
   - component: {fileID: 1150272107}
   - component: {fileID: 1150272108}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: CoinDropper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1272,7 +1272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9091516001073821706}
   - component: {fileID: 9091516001073821707}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: FootStep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1320,7 +1320,7 @@ GameObject:
   - component: {fileID: 9091516001614608496}
   - component: {fileID: 9091516001614608511}
   - component: {fileID: 9091516001614608510}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1372,5 +1372,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 5184
+    m_Bits: 7232
   _isTouchingLayer: 0

@@ -1,6 +1,4 @@
-using UnityEngine;
-
-public class SharkyMovement : CreaturesMovement
+public class EnemyMovement : CreaturesMovement
 {
     private PlaysSoundsComponent _sounds;
 
@@ -13,6 +11,6 @@ public class SharkyMovement : CreaturesMovement
     public override void Attack()
     {
         base.Attack();
-        _sounds.Play("Attack");
+        _sounds?.Play("Attack");
     }
 }

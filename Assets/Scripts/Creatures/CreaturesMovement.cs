@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -17,6 +15,7 @@ public class CreaturesMovement : MonoBehaviour, IControllable
     [SerializeField] protected CheckCircleOverlap _checkDamageableProps;
 
     protected Vector2 _direction;
+    protected Vector3 _scale;
     protected bool _isDamageJump = false;
     protected bool _isGround;
 
@@ -27,13 +26,18 @@ public class CreaturesMovement : MonoBehaviour, IControllable
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
+    protected virtual void Start()
+    {
+        _scale = transform.localScale;
+    }
+
     protected virtual void Update()
     {
-        IsGrounded();
     }
 
     protected virtual void FixedUpdate()
     {
+        IsGrounded();
         Move();
         //Jump();
     }
@@ -48,9 +52,14 @@ public class CreaturesMovement : MonoBehaviour, IControllable
     {
         _rigidbody.velocity = new Vector2(_direction.x * _speed, _rigidbody.velocity.y);
         if (_direction.x > 0)
-            transform.localScale = Vector3.one;
+        {
+            transform.localScale = _scale;
+        }
         if (_direction.x < 0)
-            transform.localScale = new Vector3(-1, 1, 1);
+        {
+            var flipScale = new Vector3(-_scale.x, _scale.y, _scale.z);
+            transform.localScale = flipScale;
+        }
     }
 
     public virtual void Jump()
@@ -68,7 +77,7 @@ public class CreaturesMovement : MonoBehaviour, IControllable
         _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpDamageForce);
     }
 
-    public virtual void SetDirection(Vector2 direction) 
+    public virtual void SetDirection(Vector2 direction)
     {
         _direction = direction;
     }

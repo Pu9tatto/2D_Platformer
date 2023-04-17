@@ -1,11 +1,10 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SharkyAI : MonoBehaviour
 {
+    [SerializeField] private string Co_name;
+
     [SerializeField] private ColliderCheck _vision;
     [SerializeField] private ColliderCheck _canAttack;
     [SerializeField] private float _attackCooldown;
@@ -35,6 +34,7 @@ public class SharkyAI : MonoBehaviour
     private void Start()
     {
         StartState(_patrol.DoPatrol());
+        Co_name = "patrol";
     }
 
     public void OnHeroInVision(GameObject go)
@@ -47,22 +47,25 @@ public class SharkyAI : MonoBehaviour
 
     private IEnumerator Co_AgroToHero()
     {
+        Co_name = "Agro";
         StartCoroutine(Co_Diolog(_alarmParticle, _alarmDuration));
         yield return new WaitForSeconds(_alarmDuration);
         StartState(Co_GoToHero());
         yield return null;
     }
 
-    private IEnumerator Co_GoToHero()
+    protected virtual IEnumerator Co_GoToHero()
     {
         while (_vision.IsTouchingLayer)
         {
+            yield return null;
             if (_canAttack.IsTouchingLayer)
             {
                 StartState(Co_Attack());
             }
             else
             {
+                Co_name = "GoToHero";
                 var direction = (_target.transform.position - transform.position).normalized;
                 SetDirectionToTarget(direction);
             }
@@ -71,12 +74,12 @@ public class SharkyAI : MonoBehaviour
         yield return null;
         StartState(_patrol.DoPatrol());
         StartCoroutine(Co_Diolog(_missParticle, _missDuration));
-
-
+        Co_name = "patrol";
     }
 
     private IEnumerator Co_Attack()
     {
+        Co_name = "Attack";
         yield return new WaitForSeconds(_delayBeforeAttack);
         while (_canAttack.IsTouchingLayer)
         {
@@ -100,7 +103,7 @@ public class SharkyAI : MonoBehaviour
             StopCoroutine(_current);
 
         SetDirectionToTarget(Vector2.zero);
-        _current = StartCoroutine(corotine); ;
+        _current = StartCoroutine(corotine);
     }
 
     public void OnDie()

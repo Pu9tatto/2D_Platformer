@@ -6,7 +6,7 @@ public class HeroMovement : CreaturesMovement
     [SerializeField] private int _multiplyJump;
     [SerializeField] private PlaysSoundsComponent _sounds;
 
-    private int _multiplJumpyIndex = 0;
+    private int _multiplyJumpyIndex = 0;
     private bool _canMultiplyJump;
     private bool _isJumpPress;
 
@@ -30,7 +30,7 @@ public class HeroMovement : CreaturesMovement
         base.IsGrounded();
         if (_isGround)
         {
-            _multiplJumpyIndex = 0;
+            _multiplyJumpyIndex = 0;
             _isDamageJump = false;
         }
     }
@@ -43,9 +43,8 @@ public class HeroMovement : CreaturesMovement
     public override void Jump()
     {
         base.Jump();
-        //var isJumpPress = _direction.y > 0;
         var isFalling = _rigidbody.velocity.y < -0.001;
-        _canMultiplyJump = _multiplJumpyIndex < _multiplyJump;
+        _canMultiplyJump = _multiplyJumpyIndex < _multiplyJump;
         if (_isJumpPress)
         {
             if (_isGround)
@@ -57,7 +56,7 @@ public class HeroMovement : CreaturesMovement
                 if (_canMultiplyJump)
                 {
                     AddJumpForce();
-                    _multiplJumpyIndex++;
+                    _multiplyJumpyIndex++;
                 }
             }
         }
