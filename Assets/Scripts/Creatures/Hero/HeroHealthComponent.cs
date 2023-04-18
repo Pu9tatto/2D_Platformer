@@ -5,12 +5,12 @@ public class HeroHealthComponent : HealthComponent
     private void Start()
     {
         _data = GameSession.Session.Data;
-        _health = _data.Health;
+        _health = _data.Hp.Value;
     }
 
     public override void ChangeHealth(int value)
     {
         base.ChangeHealth(value);
-        _data.Health = _health;
+        _data.Hp.Value = _health;
     }
 }

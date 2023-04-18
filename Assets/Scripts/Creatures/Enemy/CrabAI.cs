@@ -17,6 +17,7 @@ public class CrabAI : MonoBehaviour
     private CrabAnimation _animation;
     private Patrol _patrol;
     private bool _isDie = false;
+    private bool _isGoToHero = false;
 
 
     private void Awake()
@@ -35,8 +36,10 @@ public class CrabAI : MonoBehaviour
     public void OnHeroInVision(GameObject go)
     {
         if (_isDie) return;
+        if(_isGoToHero) return;
 
         _target = go;
+        _isGoToHero=true;
         StartState(Co_GoToHero());
     }
 
@@ -58,6 +61,7 @@ public class CrabAI : MonoBehaviour
             yield return null;
         }
         yield return null;
+        _isGoToHero = false;
         StartState(Co_Miss());
         Co_name = "patrol";
     }

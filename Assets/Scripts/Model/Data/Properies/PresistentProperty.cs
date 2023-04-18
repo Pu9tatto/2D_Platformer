@@ -4,8 +4,8 @@ using UnityEngine;
 [Serializable]
 public abstract class PresistentProperty<TPropertyType>
 {
-    [SerializeField] private TPropertyType _value;
-    private TPropertyType _stored;
+    [SerializeField] protected TPropertyType _value;
+    protected TPropertyType _stored;
 
     private TPropertyType _defoultValue;
 

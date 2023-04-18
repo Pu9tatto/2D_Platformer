@@ -6,7 +6,7 @@ public class HeroData
 {
     [SerializeField] private InventoryData _inventory;
 
-    public int Health;
+    public IntProperty Hp = new IntProperty();
 
     public InventoryData Inventory=> _inventory;
 
