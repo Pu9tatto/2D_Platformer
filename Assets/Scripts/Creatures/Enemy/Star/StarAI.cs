@@ -17,6 +17,8 @@ public class StarAI : MonoBehaviour
     private Patrol _patrol;
     private Vector3 _direction;
     private bool _isDie = false;
+    private bool _isPrepare = false;
+    private bool _isSpin = false;
 
 
     private void Awake()
@@ -36,6 +38,9 @@ public class StarAI : MonoBehaviour
     public void OnHeroInVision(GameObject go)
     {
         if (_isDie) return;
+        if (_isPrepare) return;
+        if(_isSpin) return; 
+
         _direction = (go.transform.position - transform.position).normalized;
         StartState(Co_PrepareToSpin());
     }
@@ -44,8 +49,10 @@ public class StarAI : MonoBehaviour
         Co_name = "PrepareToSpin";
 
         _animation.SetPrepare(true);
+        _isPrepare = true;
         yield return new WaitForSeconds(_timeToPrepareForSpin);
         _animation.SetPrepare(false);
+        _isPrepare = false;
 
         StartState(Co_SpinToTarget());
     }
@@ -55,6 +62,7 @@ public class StarAI : MonoBehaviour
         _spinDelay.Reset();
         _movement.IsSpin(true);
         _animation.SetSpin(true);
+        _isSpin = true;
         while (!_spinDelay.IsReady())
         {
             _rigidbody.MovePosition(transform.position + _direction * _speedSpin * Time.deltaTime);
@@ -63,6 +71,7 @@ public class StarAI : MonoBehaviour
         yield return null;
         _movement.IsSpin(false);
         _animation.SetSpin(false);
+        _isSpin = false;
         StartState(_patrol.DoPatrol());
         Co_name = "patrol";
     }
@@ -86,6 +95,10 @@ public class StarAI : MonoBehaviour
     public void OnDie()
     {
         _isDie = true;
+        _movement.IsSpin(false);
+        _animation.SetSpin(false);
+        _animation.SetPrepare(false);
+
         SetDirectionToTarget(Vector2.zero);
 
         if (_current != null)
