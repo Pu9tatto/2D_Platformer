@@ -10,19 +10,28 @@ public class TryAddItemInCollision : MonoBehaviour
 
     private Collider2D _collider;
     private SpriteClipAnimation _animator;
-    private AudioSource _audio;
-
     private void Awake()
     {
         _animator = GetComponent<SpriteClipAnimation>();
         _collider = GetComponent<Collider2D>();
     }
 
+    private void Start()
+    {
+        var item = DefsFacade.I.Items.Get(_id);
+        _isStackable = item.IsStackable;
+
+    }
+
     public void TryAddItem(GameObject target)
     {
         if (target.TryGetComponent(out Inventory inventory))
         {
-            if (inventory.IsFull && !_isStackable) return;
+            if (inventory.IsFull)
+            {
+                if(!_isStackable) return;
+                if (GameSession.Session.Data.Inventory.GetItem(_id) == null) return;
+            }  
 
             DoEventsAfterCollide();
             inventory.AddInInventoryData(_id, _count);

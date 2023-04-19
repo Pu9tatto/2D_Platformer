@@ -4,10 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="Defs/InventoryItems", fileName ="InventoruItems")]
 public class InventoryItemsDef : ScriptableObject
 {
-    [SerializeField] private int _capacity=10;
     [SerializeField] private ItemDef[] _items;
-
-    public int Capacity => _capacity;
 
     public ItemDef Get(string id)
     {

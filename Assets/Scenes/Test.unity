@@ -603,6 +603,10 @@ MonoBehaviour:
         Value: 1
       - Id: Sword
         Value: 1
+      - Id: Sword
+        Value: 1
+      - Id: Sword
+        Value: 1
     Hp:
       _value: 200
 --- !u!4 &225612844
@@ -6596,11 +6600,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1592130706 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4314805344452750934, guid: 3c6d104a9d8fe374c9234900bdf4dd97, type: 3}
-  m_PrefabInstance: {fileID: 8619608003969676432}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1604322187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7846,6 +7845,10 @@ PrefabInstance:
       value: Key
       objectReference: {fileID: 0}
     - target: {fileID: 8619608004977899001, guid: 3c6d104a9d8fe374c9234900bdf4dd97, type: 3}
+      propertyPath: _isStackable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619608004977899001, guid: 3c6d104a9d8fe374c9234900bdf4dd97, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -7860,11 +7863,11 @@ PrefabInstance:
     - target: {fileID: 8619608004977899001, guid: 3c6d104a9d8fe374c9234900bdf4dd97, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1592130706}
+      objectReference: {fileID: 0}
     - target: {fileID: 8619608004977899001, guid: 3c6d104a9d8fe374c9234900bdf4dd97, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1592130706}
+      objectReference: {fileID: 0}
     - target: {fileID: 8619608004977899001, guid: 3c6d104a9d8fe374c9234900bdf4dd97, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Play
@@ -7903,7 +7906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8619608004977899003, guid: 3c6d104a9d8fe374c9234900bdf4dd97, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0011508466
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8619608004977899003, guid: 3c6d104a9d8fe374c9234900bdf4dd97, type: 3}
       propertyPath: m_LocalRotation.w

@@ -11,7 +11,7 @@ public class InventoryData
 
     public bool IsFool => _isFool;
 
-    private InventoryItemData GetItem(string id)
+    public InventoryItemData GetItem(string id)
     {
         foreach (var item in _inventory)
         {
