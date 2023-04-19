@@ -41,8 +41,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3914837632527689173}
   - component: {fileID: 2136762961887964994}
-  - component: {fileID: 7923228656241018233}
   - component: {fileID: 5141469130671670621}
+  - component: {fileID: 430931318}
   m_Layer: 0
   m_Name: Vision
   m_TagString: Untagged
@@ -91,7 +91,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 2}
   m_EdgeRadius: 0
---- !u!114 &7923228656241018233
+--- !u!114 &5141469130671670621
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,7 +100,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 3146031573175148996}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7efbcfbc6f6d22c479c5dffe04ef8146, type: 3}
+  m_Script: {fileID: 11500000, guid: e87624c3579de8f43bf7b58423ea55ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 512
+  _isTouchingLayer: 0
+--- !u!114 &430931318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3146031573175148996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5e2c80137248134c87e85650f8ad790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _layer:
@@ -121,22 +137,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5141469130671670621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3146031573175148996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e87624c3579de8f43bf7b58423ea55ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _layer:
-    serializedVersion: 2
-    m_Bits: 512
-  _isTouchingLayer: 0
 --- !u!1 &3914390853438090000
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +520,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4fb352b4c4b5c4f831ff4da2ff863d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 3
   _health: 3
   _onHealth:
     m_PersistentCalls:
