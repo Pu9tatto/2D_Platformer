@@ -57,13 +57,13 @@ GameObject:
   - component: {fileID: 5540727174248946515}
   - component: {fileID: 5540727174248946514}
   - component: {fileID: 5540727174248946513}
-  - component: {fileID: 5540727174248946525}
   - component: {fileID: 5540727174248946524}
   - component: {fileID: 5540727174248946526}
   - component: {fileID: -3630182614657627852}
   - component: {fileID: -4722269788170225419}
   - component: {fileID: -2463399736262097885}
   - component: {fileID: 4952757181695516850}
+  - component: {fileID: 1556044232720440423}
   m_Layer: 0
   m_Name: SwordSpinning
   m_TagString: Untagged
@@ -167,22 +167,6 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
---- !u!58 &5540727174248946525
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5540727174248946512}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.3
 --- !u!50 &5540727174248946524
 Rigidbody2D:
   serializedVersion: 4
@@ -328,3 +312,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!70 &1556044232720440423
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5540727174248946512}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.011909723, y: -0.010718468}
+  m_Size: {x: 0.56307197, y: 0.20817268}
+  m_Direction: 1

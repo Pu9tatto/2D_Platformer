@@ -493,9 +493,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 32
-  m_RefResolutionX: 960
-  m_RefResolutionY: 540
+  m_AssetsPPU: 64
+  m_RefResolutionX: 640
+  m_RefResolutionY: 360
   m_UpscaleRT: 1
   m_PixelSnapping: 0
   m_CropFrameX: 0
@@ -552,7 +552,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209156034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.31, y: 8.752001, z: -9.998849}
+  m_LocalPosition: {x: -6.270001, y: 10.63305, z: -9.998849}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -597,18 +597,10 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory:
-      - Id: Coin
-        Value: 1
-      - Id: Key
-        Value: 1
-      - Id: Sword
-        Value: 1
-      - Id: Sword
-        Value: 1
-      - Id: Sword
-        Value: 1
+      - Id: PoisionXL
+        Value: 30
     Hp:
-      _value: 200
+      _value: 80
 --- !u!4 &225612844
 Transform:
   m_ObjectHideFlags: 0
@@ -2156,7 +2148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086604712}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.31, y: 8.752001, z: -9.998849}
+  m_LocalPosition: {x: -6.27, y: 13.782001, z: -9.998849}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7430,11 +7422,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9091516000774250552, guid: d4af3c27d12951946a1d8fa6df3b05c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.31
+      value: -6.27
       objectReference: {fileID: 0}
     - target: {fileID: 9091516000774250552, guid: d4af3c27d12951946a1d8fa6df3b05c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.8
+      value: 12.83
       objectReference: {fileID: 0}
     - target: {fileID: 9091516000774250552, guid: d4af3c27d12951946a1d8fa6df3b05c3, type: 3}
       propertyPath: m_LocalPosition.z

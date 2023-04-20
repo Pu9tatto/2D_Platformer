@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,20 +8,32 @@ public class GameSession : MonoBehaviour
     public HeroData Data => _data;
     private HeroData _save;
 
+    private readonly CompositeDisposeable _trash = new CompositeDisposeable();
+    public QuickInvetoryModel QuickInvetory { get; private set; }
+
     private static GameSession session;
     public static GameSession Session => session;
 
     private void Awake()
     {
         LoadHud();
+
         if (IsSession())
         {
             Destroy(gameObject);
         }
         else
         {
+            Save();
+            InitModels();
             DontDestroyOnLoad(this);
         }
+    }
+
+    private void InitModels()
+    {
+        QuickInvetory = new QuickInvetoryModel(_data);
+        _trash.Retain(QuickInvetory);
     }
 
     private void LoadHud()
@@ -49,5 +60,12 @@ public class GameSession : MonoBehaviour
     public void LoadLastSave()
     {
         _data = _save.Clone();
+
+        _trash.Dispose();
+        InitModels();
+    }
+    private void OnDestroy()
+    {
+        _trash.Dispose();
     }
 }

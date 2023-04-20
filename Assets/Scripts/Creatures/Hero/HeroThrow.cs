@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HeroThrow : MonoBehaviour
 {
-    [InventoryId] [SerializeField] private string _throwId;
-    [SerializeField] private SpawnComponent _projectile;
+    [InventoryId] [SerializeField] private string _throwDefoultId;
+    [SerializeField] private SpawnComponent _throwSpawner;
     [SerializeField] private Transform _throwPoint;
     [SerializeField] private float _timeForMultiThrow;
     [SerializeField] private int _countMultiThrow;
@@ -14,24 +14,39 @@ public class HeroThrow : MonoBehaviour
 
     private float _startPressThrowTimer;
     private Inventory _inventory;
+    private GameSession _session;
 
-    private int _swordsValue => _inventory.Count(_throwId);
+    private string _throwId;
+    private int _projectileValue => _inventory.Count(_throwId);
 
     private void Start()
     {
         _inventory = GetComponent<Inventory>();
+        _session = GameSession.Session;
     }
 
     public void PressThrow()
     {
         _startPressThrowTimer = Time.time;
+
+        _throwId = _session.QuickInvetory.SelectedItem.Id;
+
+        var selectedItem = DefsFacade.I.Items.Get(_throwId);
+        if(!selectedItem.HasTag(ItemTag.Throwable))
+        {
+            _throwId = _throwDefoultId;
+        }
+
+        var throwableDef = DefsFacade.I.ThrowableItems.Get(_throwId);
+        _throwSpawner.SetPrefab(throwableDef.Projectile);
     }
 
     public void DoThrow()
     {
-        if (_swordsValue <= 1) return;
+        var minvalue = _throwId == "Sword"? 1: 0;
+        if (_projectileValue <= minvalue) return;
 
-        if(_swordsValue < _countMultiThrow)
+        if(_projectileValue < _countMultiThrow)
         {
             Shot();
             return;
@@ -54,7 +69,7 @@ public class HeroThrow : MonoBehaviour
 
     private void Shot()
     {
-        _projectile.Spawn();
+        _throwSpawner.Spawn();
         _inventory.RemoveInInventoryData(_throwId, 1);
         _sounds.Play("Range");
     }

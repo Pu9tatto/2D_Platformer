@@ -14,10 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items:
   - _id: Coin
-    _isStackable: 1
+    _icon: {fileID: -1171650957, guid: ed09e5a9c2f202144ae92d5218fde4fa, type: 3}
+    _tags: 00000000
   - _id: Key
-    _isStackable: 1
+    _icon: {fileID: 21300000, guid: 207aed176ededa244a7e9345d4b3dae0, type: 3}
+    _tags: 0000000001000000
   - _id: Sword
-    _isStackable: 1
+    _icon: {fileID: 21300000, guid: fee1b2f94c5198e41a725106d88fa0e1, type: 3}
+    _tags: 010000000000000002000000
   - _id: PoisionXL
-    _isStackable: 1
+    _icon: {fileID: -1163122151, guid: 345a6f7a06f7f8d48b01ad24e252948c, type: 3}
+    _tags: 0100000002000000
+  - _id: Pearl
+    _icon: {fileID: 21300000, guid: 7a5bb2a0f7c7e9c41a1bb437f6234c44, type: 3}
+    _tags: 010000000000000002000000

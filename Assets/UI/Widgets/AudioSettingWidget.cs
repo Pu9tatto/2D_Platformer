@@ -9,15 +9,17 @@ public class AudioSettingWidget : MonoBehaviour
 
     private FloatPresistentProperty _model;
 
+    private readonly CompositeDisposeable _trash = new CompositeDisposeable();
+
     private void Start()
     {
-        _slider.onValueChanged.AddListener(OnSliderValueChanged);
+        _trash.Retain(_slider.onValueChanged.Subscribe(OnSliderValueChanged));
     }
 
     public void SetModel(FloatPresistentProperty model)
     {
         _model = model;
-        model.OnChanged += OnValueChanged;
+        _trash.Retain(model.Subscribe(OnValueChanged));
         OnValueChanged(model.Value, model.Value);
     }
     private void OnSliderValueChanged(float value)
@@ -34,8 +36,7 @@ public class AudioSettingWidget : MonoBehaviour
 
     private void OnDestroy()
     {
-        _model.OnChanged -= OnValueChanged;
-        _slider.onValueChanged.RemoveListener(OnSliderValueChanged);
+        _trash.Dispose();
     }
 }
 

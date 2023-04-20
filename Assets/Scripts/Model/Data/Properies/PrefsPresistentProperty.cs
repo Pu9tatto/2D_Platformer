@@ -1,4 +1,4 @@
-﻿public abstract class PrefsPresistentProperty<TPropertyType> : PresistentProperty<TPropertyType>
+﻿public abstract class PrefsPresistentProperty<TPropertyType> : PeresistentProperty<TPropertyType>
 {
     protected string Key;
     private float defaultValue;

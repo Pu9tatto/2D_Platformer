@@ -1,24 +1,21 @@
 ﻿using System;
 using UnityEngine;
 
-[Serializable]
-public abstract class PresistentProperty<TPropertyType>
+
+public abstract class PeresistentProperty<TPropertyType>: ObservableProperty<TPropertyType>
 {
-    [SerializeField] protected TPropertyType _value;
     protected TPropertyType _stored;
 
     private TPropertyType _defoultValue;
 
-    public PresistentProperty(TPropertyType defaultValue)
+    public PeresistentProperty(TPropertyType defaultValue)
     {
         _defoultValue = defaultValue;
     }
 
-    public delegate void OnPropertyChanged(TPropertyType newValue, TPropertyType oldValue);
-
     public event OnPropertyChanged OnChanged;
 
-    public TPropertyType Value
+    public override TPropertyType Value
     {
         get => _stored;
         set
@@ -30,7 +27,7 @@ public abstract class PresistentProperty<TPropertyType>
             Write(value);
             _stored = _value = value;
 
-            OnChanged?.Invoke(value, oldValue);
+            InvokeChangedEvent(value, oldValue);
         }
     }
 

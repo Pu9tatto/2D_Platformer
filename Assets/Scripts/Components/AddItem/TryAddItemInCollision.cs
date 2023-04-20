@@ -19,7 +19,7 @@ public class TryAddItemInCollision : MonoBehaviour
     private void Start()
     {
         var item = DefsFacade.I.Items.Get(_id);
-        _isStackable = item.IsStackable;
+        _isStackable = item.HasTag(ItemTag.Stackable);
 
     }
 

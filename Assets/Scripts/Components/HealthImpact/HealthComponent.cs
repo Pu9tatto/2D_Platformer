@@ -8,6 +8,8 @@ public class HealthComponent : MonoBehaviour
     [SerializeField] protected UnityEvent _onDamage;
     [SerializeField] protected UnityEvent _onDie;
 
+    [SerializeField] private ProgressBarWidget _healthBar;
+
     protected int _maxHealth;
 
     protected virtual void Start()
@@ -37,6 +39,12 @@ public class HealthComponent : MonoBehaviour
                 _health = _maxHealth;
             }
         }
+    }
+
+    public void SetProgressBar()
+    {
+        var progress = (float) _health / _maxHealth;
+        _healthBar?.SetProgress(progress);
     }
 
 }

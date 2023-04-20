@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnComponent : MonoBehaviour
@@ -13,5 +11,10 @@ public class SpawnComponent : MonoBehaviour
             var tamplate = Instantiate(prefab, transform.position, Quaternion.identity);
             tamplate.transform.localScale = transform.lossyScale;
         }
+    }
+
+    public void SetPrefab(GameObject prefab)
+    {
+        _prefabs[0] = prefab;
     }
 }

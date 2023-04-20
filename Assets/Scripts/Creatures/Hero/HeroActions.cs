@@ -8,12 +8,14 @@ public class HeroActions : MonoBehaviour
     [InventoryId] [SerializeField] private string _poisionId;
     
     private Inventory _inventory;
+    private GameSession _session;
     private HealthComponent _healthComponent;
 
     private int _poisionCount => _inventory.Count(_poisionId);
 
     private void Start()
     {
+        _session = GameSession.Session;
         _inventory = GetComponent<Inventory>();
         _healthComponent = GetComponent<HealthComponent>();
     }
@@ -40,5 +42,10 @@ public class HeroActions : MonoBehaviour
             _healthComponent.ChangeHealth(1000);
             _inventory.RemoveInInventoryData(_poisionId, 1);
         }
+    }
+
+    public void OnNextItem()
+    {
+        _session.QuickInvetory.SetNextItem();
     }
 }

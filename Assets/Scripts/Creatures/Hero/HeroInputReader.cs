@@ -33,6 +33,7 @@ public class HeroInputReader : MonoBehaviour
         _inputActions.Hero.Throw.performed += OnHoldThrow;
         _inputActions.Hero.Throw.canceled += OnTryMultyThrow;
         _inputActions.Hero.UsePoison.started += OnUsePoision;
+        _inputActions.Hero.NextItem.started += OnNextItem;
     }
 
 
@@ -49,8 +50,13 @@ public class HeroInputReader : MonoBehaviour
         _inputActions.Hero.Throw.performed -= OnHoldThrow;
         _inputActions.Hero.Throw.canceled -= OnTryMultyThrow;
         _inputActions.Hero.UsePoison.started -= OnUsePoision;
+        _inputActions.Hero.NextItem.started -= OnNextItem;
     }
 
+    private void OnNextItem(InputAction.CallbackContext obj)
+    {
+        _heroActions.OnNextItem();
+    }
 
     private void OnGetDirection(InputAction.CallbackContext context)
     {
