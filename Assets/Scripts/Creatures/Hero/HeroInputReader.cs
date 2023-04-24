@@ -32,8 +32,9 @@ public class HeroInputReader : MonoBehaviour
         _inputActions.Hero.Throw.started += OnThrow;
         _inputActions.Hero.Throw.performed += OnHoldThrow;
         _inputActions.Hero.Throw.canceled += OnTryMultyThrow;
-        _inputActions.Hero.UsePoison.started += OnUsePoision;
+        _inputActions.Hero.UseItem.started += OnUseItem;
         _inputActions.Hero.NextItem.started += OnNextItem;
+        _inputActions.Hero.Pause.started += OnPause;
     }
 
 
@@ -49,8 +50,13 @@ public class HeroInputReader : MonoBehaviour
         _inputActions.Hero.Throw.started -= OnThrow;
         _inputActions.Hero.Throw.performed -= OnHoldThrow;
         _inputActions.Hero.Throw.canceled -= OnTryMultyThrow;
-        _inputActions.Hero.UsePoison.started -= OnUsePoision;
+        _inputActions.Hero.UseItem.started -= OnUseItem;
         _inputActions.Hero.NextItem.started -= OnNextItem;
+        _inputActions.Hero.Pause.started -= OnPause;
+    }
+    private void OnPause(InputAction.CallbackContext obj)
+    {
+        _heroActions.OnPause();
     }
 
     private void OnNextItem(InputAction.CallbackContext obj)
@@ -91,9 +97,9 @@ public class HeroInputReader : MonoBehaviour
         _heroActions.Interact();
     }
 
-    private void OnUsePoision(InputAction.CallbackContext context)
+    private void OnUseItem(InputAction.CallbackContext context)
     {
-        _heroActions.DrinkPoision();
+        _heroActions.UseItem();
     }
 
     private void OnAttack(InputAction.CallbackContext context)

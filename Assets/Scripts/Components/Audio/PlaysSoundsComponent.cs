@@ -9,7 +9,7 @@ public class PlaysSoundsComponent : MonoBehaviour
     public void Play(string id)
     {
         if (_source == null)
-            _source = GameObject.FindWithTag("SfxAudioSource").GetComponent<AudioSource>();
+            _source = AudioUtils.FindSfxSource();
 
         foreach (var audioData in _sounds)
         {

@@ -64,7 +64,7 @@ public partial class @HeroInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""UsePoison"",
+                    ""name"": ""UseItem"",
                     ""type"": ""Button"",
                     ""id"": ""c5c764dc-9e8f-4f50-9434-72c2eaee5a50"",
                     ""expectedControlType"": ""Button"",
@@ -85,6 +85,15 @@ public partial class @HeroInputActions: IInputActionCollection2, IDisposable
                     ""name"": ""NextItem"",
                     ""type"": ""Button"",
                     ""id"": ""2083bb6f-022a-4bd7-8d1b-523ed05eed78"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""ad3ff740-930f-4a75-986c-dff8edec3c04"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -260,11 +269,11 @@ public partial class @HeroInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""632bb4e1-af6a-4674-bfa0-ba3de3e0a916"",
-                    ""path"": ""<Keyboard>/1"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""UsePoison"",
+                    ""action"": ""UseItem"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -289,6 +298,17 @@ public partial class @HeroInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""NextItem"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bb3b160a-f29a-4cf9-934f-c103773101e7"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -301,9 +321,10 @@ public partial class @HeroInputActions: IInputActionCollection2, IDisposable
         m_Hero_Interact = m_Hero.FindAction("Interact", throwIfNotFound: true);
         m_Hero_Attack = m_Hero.FindAction("Attack", throwIfNotFound: true);
         m_Hero_Throw = m_Hero.FindAction("Throw", throwIfNotFound: true);
-        m_Hero_UsePoison = m_Hero.FindAction("UsePoison", throwIfNotFound: true);
+        m_Hero_UseItem = m_Hero.FindAction("UseItem", throwIfNotFound: true);
         m_Hero_Jump = m_Hero.FindAction("Jump", throwIfNotFound: true);
         m_Hero_NextItem = m_Hero.FindAction("NextItem", throwIfNotFound: true);
+        m_Hero_Pause = m_Hero.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -369,9 +390,10 @@ public partial class @HeroInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Hero_Interact;
     private readonly InputAction m_Hero_Attack;
     private readonly InputAction m_Hero_Throw;
-    private readonly InputAction m_Hero_UsePoison;
+    private readonly InputAction m_Hero_UseItem;
     private readonly InputAction m_Hero_Jump;
     private readonly InputAction m_Hero_NextItem;
+    private readonly InputAction m_Hero_Pause;
     public struct HeroActions
     {
         private @HeroInputActions m_Wrapper;
@@ -380,9 +402,10 @@ public partial class @HeroInputActions: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Hero_Interact;
         public InputAction @Attack => m_Wrapper.m_Hero_Attack;
         public InputAction @Throw => m_Wrapper.m_Hero_Throw;
-        public InputAction @UsePoison => m_Wrapper.m_Hero_UsePoison;
+        public InputAction @UseItem => m_Wrapper.m_Hero_UseItem;
         public InputAction @Jump => m_Wrapper.m_Hero_Jump;
         public InputAction @NextItem => m_Wrapper.m_Hero_NextItem;
+        public InputAction @Pause => m_Wrapper.m_Hero_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Hero; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -404,15 +427,18 @@ public partial class @HeroInputActions: IInputActionCollection2, IDisposable
             @Throw.started += instance.OnThrow;
             @Throw.performed += instance.OnThrow;
             @Throw.canceled += instance.OnThrow;
-            @UsePoison.started += instance.OnUsePoison;
-            @UsePoison.performed += instance.OnUsePoison;
-            @UsePoison.canceled += instance.OnUsePoison;
+            @UseItem.started += instance.OnUseItem;
+            @UseItem.performed += instance.OnUseItem;
+            @UseItem.canceled += instance.OnUseItem;
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
             @NextItem.started += instance.OnNextItem;
             @NextItem.performed += instance.OnNextItem;
             @NextItem.canceled += instance.OnNextItem;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IHeroActions instance)
@@ -429,15 +455,18 @@ public partial class @HeroInputActions: IInputActionCollection2, IDisposable
             @Throw.started -= instance.OnThrow;
             @Throw.performed -= instance.OnThrow;
             @Throw.canceled -= instance.OnThrow;
-            @UsePoison.started -= instance.OnUsePoison;
-            @UsePoison.performed -= instance.OnUsePoison;
-            @UsePoison.canceled -= instance.OnUsePoison;
+            @UseItem.started -= instance.OnUseItem;
+            @UseItem.performed -= instance.OnUseItem;
+            @UseItem.canceled -= instance.OnUseItem;
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
             @NextItem.started -= instance.OnNextItem;
             @NextItem.performed -= instance.OnNextItem;
             @NextItem.canceled -= instance.OnNextItem;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IHeroActions instance)
@@ -461,8 +490,9 @@ public partial class @HeroInputActions: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
-        void OnUsePoison(InputAction.CallbackContext context);
+        void OnUseItem(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnNextItem(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }

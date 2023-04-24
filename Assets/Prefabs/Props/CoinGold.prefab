@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -6997769675086725708}
   - component: {fileID: -7405692806319970490}
   - component: {fileID: 9021399845965906248}
-  - component: {fileID: 9089131632144139242}
+  - component: {fileID: 3236650076703632831}
   m_Layer: 0
   m_Name: CoinGold
   m_TagString: Untagged
@@ -269,10 +269,10 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9089131632144139242}
-        m_TargetAssemblyTypeName: PlaysSoundsComponent, Assembly-CSharp
+      - m_Target: {fileID: 3236650076703632831}
+        m_TargetAssemblyTypeName: PlaySfxSound, Assembly-CSharp
         m_MethodName: Play
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -281,7 +281,7 @@ MonoBehaviour:
           m_StringArgument: Coin
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &9089131632144139242
+--- !u!114 &3236650076703632831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -290,10 +290,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7510835776783116471}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 015147dd75c311b4baeaf20715018f2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3420d8c86f86bf044b60cbb4f2a3fe5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 0}
-  _sounds:
-  - _id: Coin
-    _clip: {fileID: 8300000, guid: ade1dc29d8b4da246b653c5876bcc0ef, type: 3}
+  _clip: {fileID: 8300000, guid: ade1dc29d8b4da246b653c5876bcc0ef, type: 3}

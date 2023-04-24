@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c8fade87686e64d900bd69e019e63e, type: 3}
+  m_Name: Items
+  m_EditorClassIdentifier: 
+  _collection:
+  - _id: Coin
+    _icon: {fileID: -1171650957, guid: ed09e5a9c2f202144ae92d5218fde4fa, type: 3}
+    _tags: 00000000
+  - _id: Key
+    _icon: {fileID: 21300000, guid: 207aed176ededa244a7e9345d4b3dae0, type: 3}
+    _tags: 00000000
+  - _id: Sword
+    _icon: {fileID: 21300000, guid: fee1b2f94c5198e41a725106d88fa0e1, type: 3}
+    _tags: 000000000100000002000000
+  - _id: Pearl
+    _icon: {fileID: 21300000, guid: 7a5bb2a0f7c7e9c41a1bb437f6234c44, type: 3}
+    _tags: 000000000100000002000000
+  - _id: Poison
+    _icon: {fileID: -1963473220, guid: 345a6f7a06f7f8d48b01ad24e252948c, type: 3}
+    _tags: 010000000200000003000000

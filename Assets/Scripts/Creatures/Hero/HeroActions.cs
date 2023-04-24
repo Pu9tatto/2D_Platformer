@@ -1,26 +1,19 @@
-﻿using System.Collections;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 public class HeroActions : MonoBehaviour
 {
     [SerializeField] private CheckCircleOverlap _checkInteractableProps;
-    [InventoryId] [SerializeField] private string _poisionId;
-    
+    [SerializeField] private PlaysSoundsComponent _sounds;
+
+    private string _itemId; 
     private Inventory _inventory;
     private GameSession _session;
-    private HealthComponent _healthComponent;
-
-    private int _poisionCount => _inventory.Count(_poisionId);
 
     private void Start()
     {
         _session = GameSession.Session;
         _inventory = GetComponent<Inventory>();
-        _healthComponent = GetComponent<HealthComponent>();
     }
-
-
 
     public void Interact()
     {
@@ -35,17 +28,40 @@ public class HeroActions : MonoBehaviour
         }
     }
 
-    public void DrinkPoision()
+    public void UseItem()
     {
-        if(_poisionCount > 0)
+        if (IsSelectedItem(ItemTag.Potion))
         {
-            _healthComponent.ChangeHealth(1000);
-            _inventory.RemoveInInventoryData(_poisionId, 1);
+            _itemId = _session.QuickInvetory.SelectedItem.Id;
+            UsePotion();
         }
+    }
+
+    private void UsePotion()
+    {
+        var potion = DefsFacade.I.Potion.Get(_itemId);
+
+        _session.Data.Hp.Value += (int) potion.Value;
+        _sounds.Play("Heal");
+
+        _inventory.RemoveInInventoryData(potion.Id, 1);
     }
 
     public void OnNextItem()
     {
         _session.QuickInvetory.SetNextItem();
+    }
+
+    public void OnPause()
+    {
+        if(Time.timeScale > 0)
+        {
+            WindowUtils.CreateWindow("UI/InGameMenuWindow");
+        }
+    }
+
+    private bool IsSelectedItem(ItemTag tag)
+    {
+        return _session.QuickInvetory.SelectedDef.HasTag(tag);
     }
 }

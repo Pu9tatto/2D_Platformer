@@ -35,6 +35,10 @@ PrefabInstance:
       propertyPath: _clips.Array.data[0]._sprites.Array.data[5]
       value: 
       objectReference: {fileID: 764896521, guid: 345a6f7a06f7f8d48b01ad24e252948c, type: 3}
+    - target: {fileID: -4111214776295691822, guid: 2ce81718dbcaebd4690a261b1ffbc3cb, type: 3}
+      propertyPath: _id
+      value: Poison
+      objectReference: {fileID: 0}
     - target: {fileID: 911071220719036176, guid: 2ce81718dbcaebd4690a261b1ffbc3cb, type: 3}
       propertyPath: m_Name
       value: PotionsM Variant

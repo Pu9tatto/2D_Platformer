@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _count: 1
-  _id: PoisionXL
+  _id: Poison
   _isStackable: 0
   _action:
     m_PersistentCalls:

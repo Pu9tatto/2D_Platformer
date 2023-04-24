@@ -1,8 +1,4 @@
-﻿using System;
-using UnityEngine;
-
-
-public abstract class PeresistentProperty<TPropertyType>: ObservableProperty<TPropertyType>
+﻿public abstract class PeresistentProperty<TPropertyType>: ObservableProperty<TPropertyType>
 {
     protected TPropertyType _stored;
 
@@ -13,7 +9,7 @@ public abstract class PeresistentProperty<TPropertyType>: ObservableProperty<TPr
         _defoultValue = defaultValue;
     }
 
-    public event OnPropertyChanged OnChanged;
+    //public event OnPropertyChanged OnChanged;
 
     public override TPropertyType Value
     {
@@ -39,7 +35,9 @@ public abstract class PeresistentProperty<TPropertyType>: ObservableProperty<TPr
     public void Validate()
     {
         if (!_stored.Equals(_value))
+        {
             Value = _value;
+        }
     }
 
     protected abstract void Write(TPropertyType value);

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8619608004977898997}
   - component: {fileID: 1592130705}
   - component: {fileID: 1592130704}
-  - component: {fileID: -3550335955891982689}
+  - component: {fileID: 7015413979064233321}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -110,16 +110,16 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -3550335955891982689}
-        m_TargetAssemblyTypeName: PlaysSoundsComponent, Assembly-CSharp
+      - m_Target: {fileID: 7015413979064233321}
+        m_TargetAssemblyTypeName: PlaySfxSound, Assembly-CSharp
         m_MethodName: Play
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Key
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &8619608004977899000
@@ -272,7 +272,7 @@ MonoBehaviour:
   _frequancy: 5
   _amplitude: 0.1
   _randomize: 1
---- !u!114 &-3550335955891982689
+--- !u!114 &7015413979064233321
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,10 +281,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8619608004977898996}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 015147dd75c311b4baeaf20715018f2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3420d8c86f86bf044b60cbb4f2a3fe5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 0}
-  _sounds:
-  - _id: Key
-    _clip: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
+  _clip: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}

@@ -1,0 +1,38 @@
+using UnityEngine;
+using UnityEngine.Events;
+
+
+[RequireComponent(typeof(SpawnComponent))]
+public class CheckPointComponent : MonoBehaviour
+{
+    [SerializeField] private string _id;
+    [SerializeField] private UnityEvent _setChecked;
+    [SerializeField] private UnityEvent _setUnchecked;
+    [SerializeField] private SpawnComponent _heroSpawner;
+
+    public string Id => _id;
+
+    private GameSession _session;
+    private void Start()
+    {
+        _session = GameSession.Session;
+        if (_session.IsChecked(_id))
+        {
+            _setChecked?.Invoke();
+        }
+        else
+        {
+            _setUnchecked?.Invoke();
+        }
+    }
+
+    public void Check()
+    {
+        _session.SetChecked(_id);
+        _setChecked?.Invoke();
+    }
+    public void SpawnHero()
+    {
+        _heroSpawner.Spawn();
+    }
+}
