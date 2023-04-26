@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
-  _damage: 1
+  _damage: 5
   _jumpForce: 12
   _jumpDamageForce: 3
   _groundCheck: {fileID: 3206097764970402906}
@@ -640,8 +640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4fb352b4c4b5c4f831ff4da2ff863d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 3
-  _health: 3
+  _health: 30
   _onHealth:
     m_PersistentCalls:
       m_Calls: []
@@ -711,6 +710,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _healthBar: {fileID: 0}
 --- !u!114 &5327053644067991781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1122,6 +1122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _capacity: 2
+  _container: {fileID: 0}
   _template: {fileID: 1384036836504904233, guid: c43a0329211ea064f8ef5e03641bc072, type: 3}
   _spawnPoint: {fileID: 5932882606727099612}
 --- !u!58 &4019166567144474717

@@ -42,6 +42,6 @@ public class TryAddItemInCollision : MonoBehaviour
     private void DoEventsAfterCollide()
     {
         _collider.enabled = false;
-        _animator.SetClip("Destroing");
+        _animator?.SetClip("Destroing");
     }
 }

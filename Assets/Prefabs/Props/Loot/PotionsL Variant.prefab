@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7210914245588710541, guid: ecdd697a4be62d44fa33dcee5620f148, type: 3}
+      propertyPath: _health
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7210914246158454093, guid: ecdd697a4be62d44fa33dcee5620f148, type: 3}
       propertyPath: m_Layer
       value: 11

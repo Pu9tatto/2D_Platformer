@@ -23,7 +23,7 @@ public class HeroActions : MonoBehaviour
         {
             if (props.TryGetComponent(out InteractableComponent target))
             {
-                target.Interact();
+                target.Interact(gameObject);
             }
         }
     }

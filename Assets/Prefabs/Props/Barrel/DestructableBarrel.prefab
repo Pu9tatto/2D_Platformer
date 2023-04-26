@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 25
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -124,7 +124,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.015, y: -0.015}
+  m_Offset: {x: -0.016510248, y: -0.01197958}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -135,8 +135,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.75}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.66677475, y: 0.7197952}
+  m_EdgeRadius: 0.02
 --- !u!114 &9108447039800305653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4fb352b4c4b5c4f831ff4da2ff863d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 2
   _health: 1
   _onHealth:
     m_PersistentCalls:
@@ -185,18 +184,6 @@ MonoBehaviour:
   _onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 9108447039800305655}
         m_TargetAssemblyTypeName: SpriteClipAnimation, Assembly-CSharp
         m_MethodName: SetClip
@@ -209,6 +196,7 @@ MonoBehaviour:
           m_StringArgument: Destroing
           m_BoolArgument: 0
         m_CallState: 2
+  _healthBar: {fileID: 0}
 --- !u!114 &9108447039800305655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,5 +290,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefabs:
-  - {fileID: 2013938887417767497, guid: a4434af95dfbe8647a08253f406b8091, type: 3}
   - {fileID: 7192447708336251534, guid: dc790ff45bd3c484f971e7b40e1a7204, type: 3}

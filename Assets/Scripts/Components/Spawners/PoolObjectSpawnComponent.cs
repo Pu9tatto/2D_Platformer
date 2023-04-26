@@ -14,9 +14,9 @@ public class PoolObjectSpawnComponent : ObjectPool
     {
         if(TryGetObject(out GameObject tamplate))
         {
-            tamplate.SetActive(true);
             tamplate.transform.position = _spawnPoint.position;
             tamplate.transform.localScale = _spawnPoint.lossyScale;
+            tamplate.SetActive(true);
         }
     }
 }

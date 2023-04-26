@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class InteractableComponent : MonoBehaviour
 {
-    [SerializeField] private UnityEvent _action;
+    [SerializeField] private UnityEvent<GameObject> _actionGO;
 
-    public void Interact()
+    public void Interact(GameObject target)
     {
-        _action?.Invoke();
+        _actionGO?.Invoke(target);
     }
+
 }

@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b21672d53ac424fa36d47a00bd51d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _count: 5
+  _count: 1
   _id: Pearl
   _isStackable: 1
   _action:

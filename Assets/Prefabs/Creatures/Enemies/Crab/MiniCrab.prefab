@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1585291180268551964, guid: de7d621728970d24b99517a9c22940fd, type: 3}
+      propertyPath: _speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585291180268551964, guid: de7d621728970d24b99517a9c22940fd, type: 3}
+      propertyPath: _damage
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4409175660236570869, guid: de7d621728970d24b99517a9c22940fd, type: 3}
       propertyPath: m_Color.a
       value: 0.98039216
@@ -74,6 +82,10 @@ PrefabInstance:
     - target: {fileID: 4409175660236570874, guid: de7d621728970d24b99517a9c22940fd, type: 3}
       propertyPath: m_Name
       value: MiniCrab
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455721654958057809, guid: de7d621728970d24b99517a9c22940fd, type: 3}
+      propertyPath: _health
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de7d621728970d24b99517a9c22940fd, type: 3}
