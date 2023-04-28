@@ -655,6 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26634afc5121ce54695d143ef6605b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartLevel: HudScene
 --- !u!1 &9033005459575710856
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuAnimation : AnimatedWindow
 {
+    [SerializeField] private string StartLevel = "HudScene";
     private Action _closeAction;
 
     public void OnShowSettings()
@@ -13,7 +14,7 @@ public class MainMenuAnimation : AnimatedWindow
 
     public void OnStartGame()
     {
-        _closeAction = () => { SceneManager.LoadScene("Level1"); };
+        _closeAction = () => { SceneManager.LoadScene(StartLevel); };
         Close();
     }
 

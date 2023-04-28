@@ -83,11 +83,12 @@ public class InventoryData
 
         item.Value -= value;
 
-        if (id == "Coin") return;
-
-        if (item.Value <= 0)
+        if (!ItemDef.HasTag(ItemTag.Undrop))
         {
-            _inventory.Remove(item);
+            if (item.Value <= 0)
+            {
+                _inventory.Remove(item);
+            }
         }
         OnChanged?.Invoke(id, GetCount(id));
     }

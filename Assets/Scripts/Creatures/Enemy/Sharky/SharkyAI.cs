@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class SharkyAI : MonoBehaviour
 {
-    [SerializeField] private string Co_name;
-
     [SerializeField] private ColliderCheck _vision;
     [SerializeField] private ColliderCheck _canAttack;
     [SerializeField] private float _attackCooldown;
@@ -31,10 +29,9 @@ public class SharkyAI : MonoBehaviour
         _patrol = GetComponent<Patrol>();
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         StartState(_patrol.DoPatrol());
-        Co_name = "patrol";
     }
 
     public void OnHeroInVision(GameObject go)
@@ -47,7 +44,6 @@ public class SharkyAI : MonoBehaviour
 
     private IEnumerator Co_AgroToHero()
     {
-        Co_name = "Agro";
         StartCoroutine(Co_Diolog(_alarmParticle, _alarmDuration));
         yield return new WaitForSeconds(_alarmDuration);
         StartState(Co_GoToHero());
@@ -65,7 +61,6 @@ public class SharkyAI : MonoBehaviour
             }
             else
             {
-                Co_name = "GoToHero";
                 var direction = (_target.transform.position - transform.position).normalized;
                 SetDirectionToTarget(direction);
             }
@@ -74,12 +69,10 @@ public class SharkyAI : MonoBehaviour
         yield return null;
         StartState(_patrol.DoPatrol());
         StartCoroutine(Co_Diolog(_missParticle, _missDuration));
-        Co_name = "patrol";
     }
 
     private IEnumerator Co_Attack()
     {
-        Co_name = "Attack";
         yield return new WaitForSeconds(_delayBeforeAttack);
         while (_canAttack.IsTouchingLayer)
         {

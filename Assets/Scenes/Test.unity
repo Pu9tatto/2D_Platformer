@@ -667,6 +667,8 @@ MonoBehaviour:
       _inventory:
       - Id: Sword
         Value: 10
+      - Id: Poison
+        Value: 10
     Hp:
       _value: 80
   _defaultCheckpoint: test-startCheckpoint

@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7210914245588710541, guid: a8d11c993aab8784abbc4b7e7152a7bb, type: 3}
+      propertyPath: _health
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8760961130465808790, guid: a8d11c993aab8784abbc4b7e7152a7bb, type: 3}
       propertyPath: _clips.Array.data[0]._sprites.Array.size
       value: 1

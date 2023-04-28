@@ -26,6 +26,7 @@ public struct ItemDef : IHaveId
 public enum ItemTag
 {
     Stackable,
+    Undrop,
     Usable,
     Throwable,
     Potion
