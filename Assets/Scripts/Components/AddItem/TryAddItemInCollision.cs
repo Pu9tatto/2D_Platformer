@@ -6,6 +6,7 @@ public class TryAddItemInCollision : MonoBehaviour
     [SerializeField] private int _count;
     [InventoryId][SerializeField] private string _id;
     [SerializeField] private bool _isStackable;
+    [SerializeField] private bool _disableCollider = true;
     [SerializeField] private UnityEvent<GameObject> _action;
 
     private Collider2D _collider;
@@ -41,7 +42,8 @@ public class TryAddItemInCollision : MonoBehaviour
 
     private void DoEventsAfterCollide()
     {
-        _collider.enabled = false;
         _animator?.SetClip("Destroing");
+        if(_disableCollider)
+            _collider.enabled = false;
     }
 }

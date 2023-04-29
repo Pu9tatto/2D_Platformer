@@ -749,7 +749,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf152b10eadbd424094e1d54bc7102b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Co_name: 
+  _startCoroutine:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5327053644067991780}
+        m_TargetAssemblyTypeName: SharkyAI, Assembly-CSharp
+        m_MethodName: OnStartPatrol
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _vision: {fileID: 737534347779973440}
   _canAttack: {fileID: 4019166567144474716}
   _attackCooldown: 1

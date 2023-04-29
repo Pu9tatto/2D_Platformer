@@ -150,7 +150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6542650}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.270218, y: 12.78507, z: -9.998849}
+  m_LocalPosition: {x: -6.27, y: 13.782001, z: -9.998849}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2103,7 +2103,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8c7f2475cb72fe14297d4a6800f984d5, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7668,7 +7668,7 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.5
+  m_ScreenX: 0.301
   m_ScreenY: 0.6
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.1
@@ -7677,7 +7677,7 @@ MonoBehaviour:
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.6
   m_SoftZoneHeight: 0.4
-  m_BiasX: 0
+  m_BiasX: 0.00000005960464
   m_BiasY: -0.15
   m_CenterOnActivate: 1
   m_GroupFramingMode: 2
@@ -7829,8 +7829,8 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory:
-      - Id: Sword
-        Value: 1
+      - Id: Candle
+        Value: 10
     Hp:
       _value: 80
   _defaultCheckpoint: Start
@@ -8988,6 +8988,7 @@ MonoBehaviour:
   _deltaTargetTransform:
   - {x: 0, y: 1, z: 0}
   - {x: 2, y: 0, z: 0}
+  _startOnAwake: 0
 --- !u!58 &1690309054 stripped
 CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 1359630775, guid: 0f7d34c8981655d44969b9e190c6cb9c, type: 3}
@@ -9901,7 +9902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BoundingShape2D: {fileID: 1465067453}
+  m_BoundingShape2D: {fileID: 0}
   m_Damping: 0.5
   m_MaxWindowSize: -1
 --- !u!114 &2048475793

@@ -7,6 +7,13 @@ public class MoveTo : MonoBehaviour
     [SerializeField] private GameObject _target;
     [SerializeField] private float[] _durations;
     [SerializeField] private Vector3[] _deltaTargetTransform;
+    [SerializeField] private bool _startOnAwake;
+
+    private void OnEnable()
+    {
+        if (_startOnAwake)
+            StartMove();
+    }
 
     public void StartMove()
     {

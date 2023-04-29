@@ -7,6 +7,8 @@ public class RequireCheckItem : MonoBehaviour
     [SerializeField] private int _value;
     [SerializeField] private UnityEvent _successAction;
     [SerializeField] private UnityEvent _wrongAction;
+    [SerializeField] private UnityEvent<GameObject> _successActionGO;
+    [SerializeField] private UnityEvent<GameObject> _wrongActionGO;
 
     private InventoryData _inventory;
 
@@ -24,7 +26,18 @@ public class RequireCheckItem : MonoBehaviour
         }
         else
             _wrongAction?.Invoke();
-
     }
 
+    public void CheckMissing(GameObject GO)
+    {
+        if (_inventory.GetCount(_item) <= _value)
+        {
+            _successActionGO?.Invoke(GO);
+            _inventory.Remove(_item, _value);
+        }
+        else
+        {
+            _wrongActionGO?.Invoke(GO);
+        }
+    }
 }

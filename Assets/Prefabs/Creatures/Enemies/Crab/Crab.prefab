@@ -393,7 +393,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e4b6bfb2a7a4bb4794addec9ba7830e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Co_name: 
+  _startCoroutine:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6506366951784103537}
+        m_TargetAssemblyTypeName: CrabAI, Assembly-CSharp
+        m_MethodName: OnStartPatrol
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _vision: {fileID: 1199111358825359527}
   _canAttack: {fileID: 4451855929461643923}
   _attackCooldown: 1

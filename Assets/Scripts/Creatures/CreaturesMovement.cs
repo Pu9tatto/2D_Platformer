@@ -12,6 +12,7 @@ public class CreaturesMovement : MonoBehaviour, IControllable
     [SerializeField] protected float _jumpDamageForce;
 
     [SerializeField] protected ColliderCheck _groundCheck;
+    [SerializeField] protected ColliderCheck _platformCheck;
     [SerializeField] protected CheckCircleOverlap _checkDamageableProps;
 
     protected Vector2 _direction;

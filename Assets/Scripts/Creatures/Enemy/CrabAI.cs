@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CrabAI : MonoBehaviour
 {
-    [SerializeField] private string Co_name;
+    [SerializeField] private UnityEvent _startCoroutine;
 
     [SerializeField] private ColliderCheck _vision;
     [SerializeField] private ColliderCheck _canAttack;
@@ -29,8 +30,12 @@ public class CrabAI : MonoBehaviour
 
     private void Start()
     {
+        _startCoroutine?.Invoke();
+    }
+
+    public void OnStartPatrol()
+    {
         StartState(_patrol.DoPatrol());
-        Co_name = "patrol";
     }
 
     public void OnHeroInVision(GameObject go)
@@ -54,7 +59,6 @@ public class CrabAI : MonoBehaviour
             }
             else
             {
-                Co_name = "GoToHero";
                 var direction = (_target.transform.position - transform.position).normalized;
                 SetDirectionToTarget(direction);
             }
@@ -63,12 +67,10 @@ public class CrabAI : MonoBehaviour
         yield return null;
         _isGoToHero = false;
         StartState(Co_Miss());
-        Co_name = "patrol";
     }
 
     private IEnumerator Co_Miss()
     {
-        Co_name = "Miss";
         _animation.MissAnticioation();
 
         yield return new WaitForSeconds(_timeAnticipation);
@@ -78,7 +80,6 @@ public class CrabAI : MonoBehaviour
 
     private IEnumerator Co_Attack()
     {
-        Co_name = "Attack";
         yield return new WaitForSeconds(_delayBeforeAttack);
         while (_canAttack.IsTouchingLayer)
         {

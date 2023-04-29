@@ -19,3 +19,5 @@ MonoBehaviour:
     _projectile: {fileID: 7574648999330539957, guid: 7cf4aae1dda273343be1613d26bafc8a, type: 3}
   - _id: Poison
     _projectile: {fileID: 300149365363033815, guid: 0432df9cee6ccc44e9aa2cb1eb9bd96b, type: 3}
+  - _id: Candle
+    _projectile: {fileID: 2878928704635088100, guid: da56d20a66ee2dd4ea9e9b09a7116e2c, type: 3}

@@ -1,8 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SharkyAI : MonoBehaviour
 {
+    [SerializeField] private UnityEvent _startCoroutine;
+
     [SerializeField] private ColliderCheck _vision;
     [SerializeField] private ColliderCheck _canAttack;
     [SerializeField] private float _attackCooldown;
@@ -29,7 +32,12 @@ public class SharkyAI : MonoBehaviour
         _patrol = GetComponent<Patrol>();
     }
 
-    protected virtual void Start()
+    private void Start()
+    {
+        _startCoroutine?.Invoke();
+    }
+
+    public void OnStartPatrol()
     {
         StartState(_patrol.DoPatrol());
     }

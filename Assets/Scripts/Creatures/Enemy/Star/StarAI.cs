@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StarAI : MonoBehaviour
 {
-    [SerializeField] private string Co_name;
+    [SerializeField] private UnityEvent _startCoroutine;
 
     [SerializeField] private ColliderCheck _vision;
     [SerializeField] private float _speedSpin;
@@ -31,8 +32,12 @@ public class StarAI : MonoBehaviour
 
     private void Start()
     {
+        _startCoroutine?.Invoke();
+    }
+
+    public void OnStartPatrol()
+    {
         StartState(_patrol.DoPatrol());
-        Co_name = "patrol";
     }
 
     public void OnHeroInVision(GameObject go)
@@ -46,8 +51,6 @@ public class StarAI : MonoBehaviour
     }
     private IEnumerator Co_PrepareToSpin()
     {
-        Co_name = "PrepareToSpin";
-
         _animation.SetPrepare(true);
         _isPrepare = true;
         yield return new WaitForSeconds(_timeToPrepareForSpin);
@@ -73,7 +76,6 @@ public class StarAI : MonoBehaviour
         _animation.SetSpin(false);
         _isSpin = false;
         StartState(_patrol.DoPatrol());
-        Co_name = "patrol";
     }
 
 

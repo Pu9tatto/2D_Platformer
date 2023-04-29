@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1110923512}
   - component: {fileID: 1110923514}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: DamageRadius
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -309,6 +309,54 @@ MonoBehaviour:
   _container: {fileID: 0}
   _template: {fileID: 6187093142089424322, guid: e8adf792d02892e42bc220c11e5fc510, type: 3}
   _spawnPoint: {fileID: 2912938087735949988}
+--- !u!1 &3241177828875607433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7925126217840943713}
+  - component: {fileID: 3304015786408543293}
+  m_Layer: 15
+  m_Name: InterakctCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7925126217840943713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3241177828875607433}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.257, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9091516000774250552}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3304015786408543293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3241177828875607433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d54e43e7c3f46346bdbd562f3ff37ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 0.3
+  _layer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &5752593433187285933
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,7 +606,6 @@ GameObject:
   - component: {fileID: 9091516000774250545}
   - component: {fileID: 9091516000774250546}
   - component: {fileID: 9091516000774250549}
-  - component: {fileID: 2099764261}
   - component: {fileID: 3859588810645882597}
   - component: {fileID: 2099764268}
   - component: {fileID: 8192383288997572524}
@@ -588,6 +635,7 @@ Transform:
   - {fileID: 8589793484686870390}
   - {fileID: 991675710122411474}
   - {fileID: 8873462200677182785}
+  - {fileID: 7925126217840943713}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -785,6 +833,7 @@ MonoBehaviour:
   _jumpForce: 12
   _jumpDamageForce: 6
   _groundCheck: {fileID: 9091516001614608510}
+  _platformCheck: {fileID: 0}
   _checkDamageableProps: {fileID: 1110923514}
   _multiplyJump: 1
   _sounds: {fileID: 1128170990}
@@ -828,22 +877,6 @@ MonoBehaviour:
   _attack3Particle: {fileID: 1851815796998551419}
   _attackJumpParticle: {fileID: 5694936462129092444}
   _attackFallParticle: {fileID: 1200168576400413472}
---- !u!114 &2099764261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9091516000774250534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d54e43e7c3f46346bdbd562f3ff37ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _radius: 1
-  _layer:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!114 &3859588810645882597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -994,7 +1027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffcb0e860683c6641945e7b1e052096f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _checkInteractableProps: {fileID: 2099764261}
+  _checkInteractableProps: {fileID: 3304015786408543293}
   _sounds: {fileID: 1128170990}
 --- !u!114 &8518814186692113501
 MonoBehaviour:
@@ -1147,7 +1180,7 @@ GameObject:
   - component: {fileID: 9091516001614608496}
   - component: {fileID: 9091516001614608511}
   - component: {fileID: 9091516001614608510}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
