@@ -234,12 +234,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2887dd292c1ca03419a91188423aa09d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0
-  _lifeTime: 0
-  _ySpeed: 0
-  _angle: 0
-  _gravity: 10
-  _rotetionSpeed: 0
+  _speed: 1
+  _lifeTime: 3
+  _ySpeed: 1
+  _angle: 45
+  _gravity: 3
+  _rotetionSpeed: 720
 --- !u!114 &2522829844527460570
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -100,11 +100,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7574648999330539957}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0af3726b284f0941a31ed1cb7074ebb, type: 3}
+  m_Script: {fileID: 11500000, guid: 416563041f855ec4d90cde387acffc54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 4
-  _lifeTime: 2
+  _speed: 10
+  _lifeTime: 3
 --- !u!50 &7574648999330539953
 Rigidbody2D:
   serializedVersion: 4
@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectForDestroy: {fileID: 7574648999330539957}
+  _delay: 0
 --- !u!114 &7574648999330539964
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectForDestroy: {fileID: 7210914245588710533}
+  _delay: 0
 --- !u!58 &7210914245588710540
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -272,7 +273,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7210914245588710533}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5597248ea6861e34d92f7d3e43bdf4d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 264418dce42d213498623d4d621343a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _frequancy: 5

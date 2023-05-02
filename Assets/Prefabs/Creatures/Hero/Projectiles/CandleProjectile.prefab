@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2878928704635088095}
   - component: {fileID: 2878928704635088092}
   - component: {fileID: 2878928704635088093}
-  - component: {fileID: 2878928704635088090}
   - component: {fileID: 2878928704635088088}
   - component: {fileID: 2878928704635088089}
+  - component: {fileID: 5062253406114804381}
   m_Layer: 0
   m_Name: CandleProjectile
   m_TagString: Untagged
@@ -141,24 +141,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
---- !u!114 &2878928704635088090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2878928704635088100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d476013a09e8964eb36b53ebfe5379e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 0.5
-  _lifeTime: 5
-  _ySpeed: 1
-  _angle: 45
-  _gravity: 3
-  _rotetionSpeed: 720
 --- !u!114 &2878928704635088088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +207,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2878928704635088090}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -251,6 +233,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectForDestroy: {fileID: 2878928704635088100}
   _delay: 0.5
+--- !u!114 &5062253406114804381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2878928704635088100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2887dd292c1ca03419a91188423aa09d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 1
+  _lifeTime: 3
+  _ySpeed: 1
+  _angle: 45
+  _gravity: 3
+  _rotetionSpeed: 720
 --- !u!1001 &3309114896532563179
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -107,6 +107,7 @@ MonoBehaviour:
   _count: 1
   _id: Key
   _isStackable: 1
+  _disableCollider: 1
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -236,6 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectForDestroy: {fileID: 8619608004977898996}
+  _delay: 0
 --- !u!50 &1592130705
 Rigidbody2D:
   serializedVersion: 4
@@ -266,7 +268,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8619608004977898996}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5597248ea6861e34d92f7d3e43bdf4d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 264418dce42d213498623d4d621343a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _frequancy: 5
@@ -285,3 +287,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clip: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
+  _playOnAwake: 0

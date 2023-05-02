@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectForDestroy: {fileID: 7574648999330539957}
+  _delay: 0
 --- !u!114 &7574648999330539964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,11 +265,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7574648999330539957}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c37ac03b4ccf3c408e9d1d3e9922b1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 05e42cd4befaf4b4faee79568b932c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 0.1
-  _lifeTime: 100
+  _lifeTime: 5
   _frequancy: 20
   _amplitude: 0.5
   _xOffer: -1.5

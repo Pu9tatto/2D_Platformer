@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class SinProjectile : BaseProjectile
 {
-    [SerializeField] private float _frequancy = 1f;
-    [SerializeField] private float _amplitude = 1f;
+    [SerializeField] private float _frequancy = 40f;
+    [SerializeField] private float _amplitude = 0.25f;
     [SerializeField] private float _xOffer = -1.5f;
-    [SerializeField] private float _yOffer = 1f;
+    [SerializeField] private float _yOffer = 0.125f;
 
 
     private float _originalY;
