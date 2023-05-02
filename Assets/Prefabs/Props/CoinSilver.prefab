@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectForDestroy: {fileID: 5448761365161569104}
+  _delay: 0
 --- !u!114 &5425649096399253334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +231,7 @@ MonoBehaviour:
   _count: 1
   _id: Coin
   _isStackable: 1
+  _disableCollider: 1
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -275,7 +277,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5448761365161569104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5597248ea6861e34d92f7d3e43bdf4d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 264418dce42d213498623d4d621343a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _frequancy: 5
@@ -294,3 +296,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clip: {fileID: 8300000, guid: ade1dc29d8b4da246b653c5876bcc0ef, type: 3}
+  _playOnAwake: 0

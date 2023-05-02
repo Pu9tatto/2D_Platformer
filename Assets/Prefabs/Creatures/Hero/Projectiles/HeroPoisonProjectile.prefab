@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectForDestroy: {fileID: 300149365363033815}
+  _delay: 0
 --- !u!114 &300149365363033822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,15 +231,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 300149365363033815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d476013a09e8964eb36b53ebfe5379e, type: 3}
+  m_Script: {fileID: 11500000, guid: 2887dd292c1ca03419a91188423aa09d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.5
-  _lifeTime: 5
-  _ySpeed: 1
-  _angle: 45
-  _gravity: 3
-  _rotetionSpeed: 720
+  _speed: 0
+  _lifeTime: 0
+  _ySpeed: 0
+  _angle: 0
+  _gravity: 10
+  _rotetionSpeed: 0
 --- !u!114 &2522829844527460570
 MonoBehaviour:
   m_ObjectHideFlags: 0
