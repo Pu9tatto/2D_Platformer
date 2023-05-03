@@ -1029,6 +1029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _checkInteractableProps: {fileID: 3304015786408543293}
   _sounds: {fileID: 1128170990}
+  _health: {fileID: 3859588810645882597}
 --- !u!114 &8518814186692113501
 MonoBehaviour:
   m_ObjectHideFlags: 0

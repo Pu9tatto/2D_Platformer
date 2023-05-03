@@ -624,6 +624,7 @@ MonoBehaviour:
   _jumpForce: 12
   _jumpDamageForce: 3
   _groundCheck: {fileID: 4379952811882006476}
+  _platformCheck: {fileID: 0}
   _checkDamageableProps: {fileID: 3245106182265083615}
   _attackCheck: {fileID: 7428788971165077743}
   _timeToAttack:
@@ -780,7 +781,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6030140414887996003}
   - component: {fileID: 2165874919936094515}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: DieCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

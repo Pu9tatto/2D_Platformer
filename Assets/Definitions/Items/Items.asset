@@ -27,7 +27,7 @@ MonoBehaviour:
     _tags: 000000000200000003000000
   - _id: Poison
     _icon: {fileID: -1963473220, guid: 345a6f7a06f7f8d48b01ad24e252948c, type: 3}
-    _tags: 0200000003000000
+    _tags: 020000000300000004000000
   - _id: Candle
     _icon: {fileID: 21300000, guid: 6822f294825118a4f8ab4fd6e3500f6c, type: 3}
-    _tags: 0200000003000000
+    _tags: 020000000300000000000000

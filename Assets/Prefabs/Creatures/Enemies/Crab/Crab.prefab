@@ -282,6 +282,7 @@ MonoBehaviour:
   _jumpForce: 12
   _jumpDamageForce: 3
   _groundCheck: {fileID: 7571915481116159903}
+  _platformCheck: {fileID: 0}
   _checkDamageableProps: {fileID: 3078621831823306106}
 --- !u!114 &6455721654958057811
 MonoBehaviour:
@@ -309,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4fb352b4c4b5c4f831ff4da2ff863d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 30
+  _health: 35
   _onHealth:
     m_PersistentCalls:
       m_Calls: []
@@ -467,7 +468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1291493234604726480}
   - component: {fileID: 3898534074258293408}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: DieCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

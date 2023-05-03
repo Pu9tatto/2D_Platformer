@@ -83,6 +83,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MiniCrab
       objectReference: {fileID: 0}
+    - target: {fileID: 5632671056542755849, guid: de7d621728970d24b99517a9c22940fd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6455721654958057809, guid: de7d621728970d24b99517a9c22940fd, type: 3}
       propertyPath: _health
       value: 10

@@ -282,6 +282,7 @@ MonoBehaviour:
   _jumpForce: 12
   _jumpDamageForce: 3
   _groundCheck: {fileID: 7344650761392278645}
+  _platformCheck: {fileID: 0}
   _checkDamageableProps: {fileID: 2756449029330325136}
 --- !u!114 &6156136274486954681
 MonoBehaviour:
@@ -309,8 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4fb352b4c4b5c4f831ff4da2ff863d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 3
-  _health: 3
+  _health: 35
   _onHealth:
     m_PersistentCalls:
       m_Calls: []
@@ -368,6 +368,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _healthBar: {fileID: 0}
 --- !u!114 &6156136274486954662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,7 +394,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e4b6bfb2a7a4bb4794addec9ba7830e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Co_name: 
+  _startCoroutine:
+    m_PersistentCalls:
+      m_Calls: []
   _vision: {fileID: 2043983983075167053}
   _canAttack: {fileID: 3544757965089438073}
   _attackCooldown: 1
@@ -422,7 +425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2095835970737552186}
   - component: {fileID: 4243457249798742346}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: DieCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -630,6 +633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _capacity: 2
+  _container: {fileID: 0}
   _template: {fileID: 7267802594235190389, guid: 7b15b4025595fc3468dfd4429877c92b, type: 3}
   _spawnPoint: {fileID: 5868028210292496860}
 --- !u!58 &95108802204619783

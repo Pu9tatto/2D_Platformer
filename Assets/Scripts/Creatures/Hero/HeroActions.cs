@@ -4,6 +4,7 @@ public class HeroActions : MonoBehaviour
 {
     [SerializeField] private CheckCircleOverlap _checkInteractableProps;
     [SerializeField] private PlaysSoundsComponent _sounds;
+    [SerializeField] private HealthComponent _health;
 
     private string _itemId; 
     private Inventory _inventory;
@@ -41,7 +42,7 @@ public class HeroActions : MonoBehaviour
     {
         var potion = DefsFacade.I.Potion.Get(_itemId);
 
-        _session.Data.Hp.Value += (int) potion.Value;
+        _health.ChangeHealth((int)potion.Value);
         _sounds.Play("Heal");
 
         _inventory.RemoveInInventoryData(potion.Id, 1);

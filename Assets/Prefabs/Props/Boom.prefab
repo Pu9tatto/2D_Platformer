@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f7cf4287b0b7ff448bee378f9f6788a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _franeRate: 10
+  _franeRate: 25
   _onComplete:
     m_PersistentCalls:
       m_Calls: []

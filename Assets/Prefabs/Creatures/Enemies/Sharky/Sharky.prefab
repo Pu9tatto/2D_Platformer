@@ -67,6 +67,98 @@ MonoBehaviour:
     m_Bits: 13376
   _isTouchingLayer: 0
   _target: {fileID: 5066770419103841741}
+--- !u!1 &194305590634127652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2471073348850117910}
+  - component: {fileID: 2839260540149354721}
+  - component: {fileID: 3156639860904841147}
+  m_Layer: 0
+  m_Name: LootSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2471073348850117910
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194305590634127652}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3206097765869636636}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2839260540149354721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194305590634127652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee3f5bd24f41c6b48ad0118f95651598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sectorAngle: 90
+  _sectorRotation: 0
+  _waitTime: 0.1
+  _speed: 5
+  _isTimeDestroy: 0
+  _lifeTime: 3
+--- !u!114 &3156639860904841147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194305590634127652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff99277feac9024dba56308e508768a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startOnEnable: 0
+  _guaranteedLoot:
+  - {fileID: 5431556435143639728, guid: 894170bbf0075ec4594239ef268ebf69, type: 3}
+  - {fileID: 5431556435143639728, guid: 894170bbf0075ec4594239ef268ebf69, type: 3}
+  _firstVariantLoot: []
+  _secondVariantLoot: []
+  _rateFirstLoot: 0
+  _possibleLoot:
+  - _prefab: {fileID: 5431556435143639728, guid: 894170bbf0075ec4594239ef268ebf69, type: 3}
+    _lootRate: 50
+  - _prefab: {fileID: 3534364673367332810, guid: 1476a16181a3dd24491016122b29efe0, type: 3}
+    _lootRate: 25
+  - _prefab: {fileID: 8463467618225430151, guid: b634b96d687fe8b418471dcf42cf48c3, type: 3}
+    _lootRate: 5
+  _onRandomCalculated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2839260540149354721}
+        m_TargetAssemblyTypeName: RandomSpawner, Assembly-CSharp
+        m_MethodName: StartDrop
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &417159979418709537
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +550,6 @@ GameObject:
   - component: {fileID: 3206097765869636608}
   - component: {fileID: -1536402338592955939}
   - component: {fileID: 2866693448360083465}
-  - component: {fileID: 1841809401}
   m_Layer: 10
   m_Name: Sharky
   m_TagString: Enemy
@@ -485,6 +576,7 @@ Transform:
   - {fileID: 7851769072617433571}
   - {fileID: 5861899686023312407}
   - {fileID: 1639580673}
+  - {fileID: 2471073348850117910}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -615,6 +707,7 @@ MonoBehaviour:
   _jumpForce: 12
   _jumpDamageForce: 3
   _groundCheck: {fileID: 3206097764970402906}
+  _platformCheck: {fileID: 0}
   _checkDamageableProps: {fileID: 5932882606727099614}
 --- !u!114 &3206097765869636629
 MonoBehaviour:
@@ -711,9 +804,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1841809401}
-        m_TargetAssemblyTypeName: PoolObjectSpawnComponent, Assembly-CSharp
-        m_MethodName: Spawn
+      - m_Target: {fileID: 3156639860904841147}
+        m_TargetAssemblyTypeName: RandomLootSpawner, Assembly-CSharp
+        m_MethodName: RandomCalculate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -900,22 +993,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1841809401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3206097765869636610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f1206fb978600418e95a4fda896cc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _capacity: 1
-  _container: {fileID: 0}
-  _template: {fileID: 0}
-  _spawnPoint: {fileID: 3206097765869636636}
 --- !u!1 &3872663980640182804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,7 +1318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7851769072617433571}
   - component: {fileID: 6521569639008390074}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: DieCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
