@@ -25,9 +25,5 @@ public class Platform : LayerCheck
     private void OnDestroy()
     {
         Destroy(gameObject);
-        //foreach(GameObject child in _platformChilds)
-        //{
-        //    child.transform.parent = null;
-        //}
     }
 }

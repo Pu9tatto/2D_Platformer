@@ -5,9 +5,15 @@ public class Boat : MonoBehaviour
     [SerializeField] private float _speed = 1;
     [SerializeField] private float _acceleration;
 
+    private Hero _hero;
     private float _deltaSpeed;
     private float _direction;
     private bool _isSetSail;
+
+    private void Start()
+    {
+        _hero = FindAnyObjectByType<Hero>();
+    }
 
     private void FixedUpdate()
     {
@@ -41,5 +47,13 @@ public class Boat : MonoBehaviour
             return;
         }
         _deltaSpeed += _direction * _acceleration;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out TryAddItemInCollision loot))
+        {
+            loot.TryAddItem(_hero.gameObject);
+        }
     }
 }

@@ -27,7 +27,7 @@ public class SeaShellAttack : RangeTrapAI
 
         if(_vision.IsTouchingLayer)
         {
-            _animator.SetTrigger(RangeAtatckKey);
+            _animator.SetTrigger(BaseAtatckKey);
         }
     }
 
