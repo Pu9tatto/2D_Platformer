@@ -55,9 +55,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6269484501759831882}
-  - component: {fileID: 8254124705238117140}
-  - component: {fileID: 2775473912135423429}
   - component: {fileID: 7614341280691267350}
+  - component: {fileID: 184105184}
+  - component: {fileID: 184105185}
   m_Layer: 0
   m_Name: Vision
   m_TagString: Untagged
@@ -80,8 +80,24 @@ Transform:
   m_Father: {fileID: 7656704377867367930}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &8254124705238117140
-BoxCollider2D:
+--- !u!114 &7614341280691267350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7299654457564368111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e87624c3579de8f43bf7b58423ea55ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 512
+  _isTouchingLayer: 0
+--- !u!58 &184105184
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -93,20 +109,10 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 2.5, y: 0}
   serializedVersion: 2
-  m_Size: {x: 6, y: 0.75}
-  m_EdgeRadius: 0
---- !u!114 &2775473912135423429
+  m_Radius: 2.5
+--- !u!114 &184105185
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,9 +130,9 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SharkyAI, Assembly-CSharp
-        m_MethodName: OnHeroInVision
+      - m_Target: {fileID: 611990180}
+        m_TargetAssemblyTypeName: SpawnProjectileToTarget, Assembly-CSharp
+        m_MethodName: SetTarget
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -136,22 +142,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7614341280691267350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7299654457564368111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e87624c3579de8f43bf7b58423ea55ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _layer:
-    serializedVersion: 2
-    m_Bits: 512
-  _isTouchingLayer: 0
 --- !u!1 &7656704377867367925
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +327,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4fb352b4c4b5c4f831ff4da2ff863d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 10
   _health: 10
   _onHealth:
     m_PersistentCalls:
@@ -408,6 +397,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _healthBar: {fileID: 0}
 --- !u!114 &4607298907450112478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,6 +411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectForDestroy: {fileID: 7656704377867367925}
+  _delay: 0
 --- !u!114 &7656704377867367924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,7 +427,7 @@ MonoBehaviour:
   _attackCooldown:
     _value: 2
   _vision: {fileID: 7614341280691267350}
-  _projectileSpawner: {fileID: 302381953804501090}
+  _projectileSpawner: {fileID: 611990180}
   _destroyedMobSpawner: {fileID: 7189669485315161454}
 --- !u!82 &-4650085013416546059
 AudioSource:
@@ -543,7 +534,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6582988543076797051}
-  - component: {fileID: 302381953804501090}
+  - component: {fileID: 611990180}
   m_Layer: 0
   m_Name: WoodSpikeSpawner
   m_TagString: Untagged
@@ -566,7 +557,7 @@ Transform:
   m_Father: {fileID: 7656704377867367930}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &302381953804501090
+--- !u!114 &611990180
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -575,8 +566,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8153941774685566643}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76298c278d63b794da12c7f8cda6ad59, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b2e2d5fd094a77418f105102644e156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabs:
-  - {fileID: 4993329111879400893, guid: 8bd86b78010382749a821b91cbd09411, type: 3}
+  _prefabs: []
+  _projectile: {fileID: 4993329111879400893, guid: 1a662646062f7b148b90807b3584c920, type: 3}
+  _speed: 8
+  _lifeTime: 3
+  _target: {fileID: 0}

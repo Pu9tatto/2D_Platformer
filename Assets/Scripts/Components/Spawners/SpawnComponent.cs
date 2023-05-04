@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class SpawnComponent : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _prefabs;
+    [SerializeField] protected GameObject[] _prefabs;
 
-    public void Spawn()
+    public virtual void Spawn()
     {
         foreach (var prefab in _prefabs)
         {
@@ -13,7 +13,7 @@ public class SpawnComponent : MonoBehaviour
         }
     }
 
-    public void SetPrefab(GameObject prefab)
+    public virtual void SetPrefab(GameObject prefab)
     {
         _prefabs[0] = prefab;
     }

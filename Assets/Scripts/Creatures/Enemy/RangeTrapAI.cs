@@ -11,7 +11,7 @@ public class RangeTrapAI : MonoBehaviour
 
 
     protected Animator _animator;
-    protected static readonly int RangeAtatckKey = Animator.StringToHash("range-attack");
+    protected static readonly int BaseAtatckKey = Animator.StringToHash("base-attack");
 
     protected virtual void Awake()
     {
@@ -20,13 +20,13 @@ public class RangeTrapAI : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (!_attackCooldown.IsReady()) return;
+
+        _attackCooldown.Reset();
 
         if (_vision.IsTouchingLayer)
         {
-            if (!_attackCooldown.IsReady()) return;
-
-            _attackCooldown.Reset();
-            _animator.SetTrigger(RangeAtatckKey);
+            _animator.SetTrigger(BaseAtatckKey);
         }
     }
 
