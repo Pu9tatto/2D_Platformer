@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 763373692680114829}
   - component: {fileID: 763373692680114828}
   - component: {fileID: 763373692680114831}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PalmLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,9 +72,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1245885563
-  m_SortingLayer: -1
-  m_SortingOrder: 1
+  m_SortingLayerID: 848886009
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -123660140, guid: 1d9933335768c3d4bb11ab9912a4248f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 7327308002301177320}
   - component: {fileID: 7327308002301177334}
   - component: {fileID: 7327308002301177335}
-  m_Layer: 6
+  m_Layer: 14
   m_Name: Platform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

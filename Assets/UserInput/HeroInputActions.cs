@@ -98,6 +98,15 @@ public partial class @HeroInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""JumpOff"",
+                    ""type"": ""Button"",
+                    ""id"": ""37de0a44-78a7-4ad2-916c-4c35673b69c0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -309,6 +318,28 @@ public partial class @HeroInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""93147b44-ce55-4ef4-886d-9dabf70d5d71"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JumpOff"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6fa92711-9bf8-43ba-bf54-a7605493e696"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JumpOff"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -325,6 +356,7 @@ public partial class @HeroInputActions: IInputActionCollection2, IDisposable
         m_Hero_Jump = m_Hero.FindAction("Jump", throwIfNotFound: true);
         m_Hero_NextItem = m_Hero.FindAction("NextItem", throwIfNotFound: true);
         m_Hero_Pause = m_Hero.FindAction("Pause", throwIfNotFound: true);
+        m_Hero_JumpOff = m_Hero.FindAction("JumpOff", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -394,6 +426,7 @@ public partial class @HeroInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Hero_Jump;
     private readonly InputAction m_Hero_NextItem;
     private readonly InputAction m_Hero_Pause;
+    private readonly InputAction m_Hero_JumpOff;
     public struct HeroActions
     {
         private @HeroInputActions m_Wrapper;
@@ -406,6 +439,7 @@ public partial class @HeroInputActions: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Hero_Jump;
         public InputAction @NextItem => m_Wrapper.m_Hero_NextItem;
         public InputAction @Pause => m_Wrapper.m_Hero_Pause;
+        public InputAction @JumpOff => m_Wrapper.m_Hero_JumpOff;
         public InputActionMap Get() { return m_Wrapper.m_Hero; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -439,6 +473,9 @@ public partial class @HeroInputActions: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @JumpOff.started += instance.OnJumpOff;
+            @JumpOff.performed += instance.OnJumpOff;
+            @JumpOff.canceled += instance.OnJumpOff;
         }
 
         private void UnregisterCallbacks(IHeroActions instance)
@@ -467,6 +504,9 @@ public partial class @HeroInputActions: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @JumpOff.started -= instance.OnJumpOff;
+            @JumpOff.performed -= instance.OnJumpOff;
+            @JumpOff.canceled -= instance.OnJumpOff;
         }
 
         public void RemoveCallbacks(IHeroActions instance)
@@ -494,5 +534,6 @@ public partial class @HeroInputActions: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnNextItem(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnJumpOff(InputAction.CallbackContext context);
     }
 }

@@ -35,6 +35,7 @@ public class HeroInputReader : MonoBehaviour
         _inputActions.Hero.UseItem.started += OnUseItem;
         _inputActions.Hero.NextItem.started += OnNextItem;
         _inputActions.Hero.Pause.started += OnPause;
+        _inputActions.Hero.JumpOff.started += OnJumpOff;
     }
 
 
@@ -53,10 +54,15 @@ public class HeroInputReader : MonoBehaviour
         _inputActions.Hero.UseItem.started -= OnUseItem;
         _inputActions.Hero.NextItem.started -= OnNextItem;
         _inputActions.Hero.Pause.started -= OnPause;
+        _inputActions.Hero.JumpOff.started -= OnJumpOff;
     }
     private void OnPause(InputAction.CallbackContext obj)
     {
         _heroActions.OnPause();
+    }
+    private void OnJumpOff(InputAction.CallbackContext obj)
+    {
+        _heroActions.JumpOffPlatform();
     }
 
     private void OnNextItem(InputAction.CallbackContext obj)

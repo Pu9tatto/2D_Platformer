@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5708497127432553656}
   - component: {fileID: 5708497127432553658}
   - component: {fileID: 5708497127432553659}
-  m_Layer: 6
+  m_Layer: 14
   m_Name: Platform (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5708497127527699455}
   - component: {fileID: 5708497127527699452}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: BigPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,8 +145,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 848886009
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -1952347164, guid: 93e0c00189a23db49a63fc9680f9bfda, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

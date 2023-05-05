@@ -17,4 +17,14 @@ public class Door : MonoBehaviour
         _isOpened = !_isOpened;
         _animator.SetBool(IsOpenKey, _isOpened);
     }
+
+    public void Open()
+    {
+        _animator.SetBool(IsOpenKey, true);
+    }
+
+    public void Close()
+    {
+        _animator.SetBool(IsOpenKey, false);
+    }
 }

@@ -1,12 +1,15 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class HeroActions : MonoBehaviour
 {
     [SerializeField] private CheckCircleOverlap _checkInteractableProps;
+    [SerializeField] private CheckCircleOverlap _checkPlatform;
+    [SerializeField] private float _timeForPlatformOff = 0.1f;
     [SerializeField] private PlaysSoundsComponent _sounds;
     [SerializeField] private HealthComponent _health;
 
-    private string _itemId; 
+    private string _itemId;
     private Inventory _inventory;
     private GameSession _session;
 
@@ -27,6 +30,26 @@ public class HeroActions : MonoBehaviour
                 target.Interact(gameObject);
             }
         }
+    }
+
+    public void JumpOffPlatform()
+    {
+        var platformList = _checkPlatform.Check();
+
+        foreach (var platform in platformList)
+        {
+            if(platform.TryGetComponent(out Collider2D collider))
+            {
+                StartCoroutine(switchCollider(collider));
+            }
+        }
+    }
+
+    private IEnumerator switchCollider(Collider2D collider)
+    {
+        collider.enabled = false;
+        yield return new WaitForSeconds(_timeForPlatformOff);
+        collider.enabled = true;
     }
 
     public void UseItem()
@@ -55,7 +78,7 @@ public class HeroActions : MonoBehaviour
 
     public void OnPause()
     {
-        if(Time.timeScale > 0)
+        if (Time.timeScale > 0)
         {
             WindowUtils.CreateWindow("UI/InGameMenuWindow");
         }
