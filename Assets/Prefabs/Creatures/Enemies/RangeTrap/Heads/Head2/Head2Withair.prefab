@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 22100000, guid: adab386e478b2a74a967599b1bbdf5d4, type: 2}
     - target: {fileID: 4607298907450112451, guid: 4c989ae5bf6d4824386e748b14dc9585, type: 3}
       propertyPath: _onDamage.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4607298907450112451, guid: 4c989ae5bf6d4824386e748b14dc9585, type: 3}
       propertyPath: _onDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -22,11 +22,11 @@ PrefabInstance:
     - target: {fileID: 4607298907450112451, guid: 4c989ae5bf6d4824386e748b14dc9585, type: 3}
       propertyPath: _onDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1386623407055438453}
+      objectReference: {fileID: 0}
     - target: {fileID: 4607298907450112451, guid: 4c989ae5bf6d4824386e748b14dc9585, type: 3}
       propertyPath: _onDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1386623407055438453}
+      objectReference: {fileID: 1386623407251606884}
     - target: {fileID: 4607298907450112451, guid: 4c989ae5bf6d4824386e748b14dc9585, type: 3}
       propertyPath: _onDamage.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
@@ -41,7 +41,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4607298907450112451, guid: 4c989ae5bf6d4824386e748b14dc9585, type: 3}
       propertyPath: _onDamage.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
+      value: PlaySfxSound, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4607298907450112451, guid: 4c989ae5bf6d4824386e748b14dc9585, type: 3}
       propertyPath: _onDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -109,8 +109,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c989ae5bf6d4824386e748b14dc9585, type: 3}
---- !u!82 &1386623407055438453 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1550112047, guid: 4c989ae5bf6d4824386e748b14dc9585, type: 3}
+--- !u!114 &1386623407251606884 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1758829118, guid: 4c989ae5bf6d4824386e748b14dc9585, type: 3}
   m_PrefabInstance: {fileID: 1386623405510154074}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3420d8c86f86bf044b60cbb4f2a3fe5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

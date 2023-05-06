@@ -150,7 +150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6542650}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.270218, y: 12.78507, z: -9.998849}
+  m_LocalPosition: {x: -6.2702236, y: 12.78508, z: -9.998849}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8182,20 +8182,18 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 54.117188, y: 8.986459}
-      - {x: 53.974915, y: 19.041965}
-      - {x: 20.002453, y: 18.849735}
-      - {x: 19.942837, y: 14.048081}
+    - - {x: 62.5, y: 18.5}
+      - {x: 20, y: 18.5}
       - {x: 3.1432676, y: 14.151444}
-      - {x: -14.203846, y: 14.15262}
-      - {x: -14.192027, y: 9.047461}
-      - {x: -14.19001, y: 3.7180877}
-      - {x: 36.991413, y: 3.656714}
-      - {x: 37.168602, y: -1.0996017}
-      - {x: 53.97586, y: -1.0898886}
-      - {x: 54.15218, y: -6.0510335}
-      - {x: 70.91064, y: -6.1180096}
-      - {x: 70.84377, y: 8.933795}
+      - {x: -14, y: 14.15262}
+      - {x: -14, y: 9.047461}
+      - {x: -14, y: 4.5}
+      - {x: 54, y: 4.5}
+      - {x: 54, y: 3.5}
+      - {x: 37.099537, y: 3.5}
+      - {x: 37.112118, y: -5.5}
+      - {x: 62.5, y: -5.5}
+      - {x: 62.5, y: 4.5}
 --- !u!4 &1475303466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7210914245588710537, guid: ecdd697a4be62d44fa33dcee5620f148, type: 3}
@@ -55887,6 +55885,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1830127947}
     m_Modifications:
+    - target: {fileID: 8415990980881905103, guid: d5c49fa2c4ab6674cb60ddb78e94bb59, type: 3}
+      propertyPath: _guaranteedLoot.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9108447039800305608, guid: d5c49fa2c4ab6674cb60ddb78e94bb59, type: 3}
       propertyPath: m_Mass
       value: 100
