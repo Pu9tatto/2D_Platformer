@@ -1049,9 +1049,9 @@ MonoBehaviour:
           m_StringArgument: Die
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8518814186692113501}
-        m_TargetAssemblyTypeName: ReloadLevelComponent, Assembly-CSharp
-        m_MethodName: Reload
+      - m_Target: {fileID: 3859588810645882597}
+        m_TargetAssemblyTypeName: HeroHealthComponent, Assembly-CSharp
+        m_MethodName: OpenLoseWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class HeroHealthComponent : HealthComponent
 {
     private HeroData _data;
@@ -15,5 +17,12 @@ public class HeroHealthComponent : HealthComponent
     {
         base.ChangeHealth(value);
         _data.Hp.Value = _health;
+    }
+
+    public void OpenLoseWindow()
+    {
+        var window = Resources.Load<GameObject>("UI/LoseWindow");
+        var canvas = FindObjectOfType<UIContainerWindows>();
+        Instantiate(window, canvas.transform);
     }
 }

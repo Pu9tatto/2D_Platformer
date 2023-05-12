@@ -15,7 +15,7 @@ public class AnimatedWindow : MonoBehaviour
         _animator.SetTrigger(Show);
     }
 
-    public void Close()
+    public virtual void Close()
     {
         _animator.SetTrigger(Hide);
     }

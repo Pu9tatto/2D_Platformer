@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,6 +7,7 @@ public class GameSession : MonoBehaviour
 {
     [SerializeField] private HeroData _data;
     [SerializeField] private string _defaultCheckpoint;
+    
 
     public HeroData Data => _data;
     private HeroData _save;
@@ -65,7 +65,6 @@ public class GameSession : MonoBehaviour
         }
     }
 
-
     private void InitModels()
     {
         QuickInvetory = new QuickInvetoryModel(_data);
@@ -76,7 +75,6 @@ public class GameSession : MonoBehaviour
     {
         SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
     }
-
 
     private GameSession GetExitSession()
     {
