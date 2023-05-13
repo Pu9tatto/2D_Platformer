@@ -19,10 +19,15 @@ public class HeroHealthComponent : HealthComponent
         _data.Hp.Value = _health;
     }
 
-    public void OpenLoseWindow()
+    public void OnDie()
     {
-        var window = Resources.Load<GameObject>("UI/LoseWindow");
+        _data.Inventory.Remove("Hat", 1);
+
+        var window = Resources.Load<LoseWindow>("UI/LoseWindow");
         var canvas = FindObjectOfType<UIContainerWindows>();
-        Instantiate(window, canvas.transform);
+        var loseWindow = Instantiate(window, canvas.transform);
+
+        if (_data.Inventory.GetCount("Hat") <= 0)
+            loseWindow.DeactivateRestart();
     }
 }

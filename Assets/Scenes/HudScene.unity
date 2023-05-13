@@ -1506,8 +1506,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980451073}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.833717, y: -3.3930502, z: -0.0011508466}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.8337169, y: -3.3930502, z: -0.0011508465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8477,8 +8477,10 @@ MonoBehaviour:
         Value: 0
       - Id: Key
         Value: 0
+      - Id: Hat
+        Value: 3
     Hp:
-      _value: 50
+      _value: 5
   _defaultCheckpoint: Start
 --- !u!4 &1856991581
 Transform:

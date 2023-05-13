@@ -19,6 +19,9 @@ MonoBehaviour:
   - _id: Key
     _icon: {fileID: 21300000, guid: 207aed176ededa244a7e9345d4b3dae0, type: 3}
     _tags: 0000000001000000
+  - _id: Hat
+    _icon: {fileID: 21300000, guid: 8c6cbd63df4a52b448ef4f4c5f8e7498, type: 3}
+    _tags: 0000000001000000
   - _id: Sword
     _icon: {fileID: 21300000, guid: fee1b2f94c5198e41a725106d88fa0e1, type: 3}
     _tags: 000000000100000002000000

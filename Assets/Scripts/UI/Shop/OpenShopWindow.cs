@@ -2,21 +2,13 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class StartSceneShop : MonoBehaviour
+public class OpenShopWindow : MonoBehaviour
 {
     [SerializeField] private List<Good> goods;
-    [SerializeField] private bool _activatedOnStart = false;
     [SerializeField] private UnityEvent _closeAction;
 
     private float timeScale;
     private ShopWidget _shop;
-
-    private void Start()
-    {
-        timeScale = Time.timeScale;
-        if (_activatedOnStart)
-            OpenShop();
-    }
 
     public void OpenShop()
     {
@@ -31,7 +23,7 @@ public class StartSceneShop : MonoBehaviour
 
     private void OnCloseAction()
     {
-        Time.timeScale = timeScale;
+        Time.timeScale = 1;
         _closeAction?.Invoke();
     }
 
