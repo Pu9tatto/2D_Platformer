@@ -21,23 +21,32 @@ public class HealthComponent : MonoBehaviour
     {
         if(_health<=0) return;
 
-        _health += value;
-
         if(value < 0)
         {
-            _onDamage?.Invoke();
-            if (_health <= 0)
-            {
-                _onDie?.Invoke();
-            }
+            TakeDamage(value);
         }
         if(value > 0)
         {
-            _onHealth?.Invoke();
-            if(_health >= _maxHealth)
-            {
-                _health = _maxHealth;
-            }
+            Heal(value);
+        }
+    }
+
+    protected virtual void Heal(int value)
+    {
+        _health += value;
+        _onHealth?.Invoke();
+        if (_health >= _maxHealth)
+        {
+            _health = _maxHealth;
+        }
+    }
+    protected virtual void TakeDamage(int value)
+    {
+        _health += value;
+        _onDamage?.Invoke();
+        if (_health <= 0)
+        {
+            _onDie?.Invoke();
         }
     }
 

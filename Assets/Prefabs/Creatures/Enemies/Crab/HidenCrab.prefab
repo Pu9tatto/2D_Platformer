@@ -281,8 +281,6 @@ MonoBehaviour:
   _damage: 1
   _jumpForce: 12
   _jumpDamageForce: 3
-  _groundCheck: {fileID: 7344650761392278645}
-  _platformCheck: {fileID: 0}
   _checkDamageableProps: {fileID: 2756449029330325136}
 --- !u!114 &6156136274486954681
 MonoBehaviour:
@@ -414,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77bc317b7f093d4f85b3e67043b30d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _groundCheck: {fileID: 7344650761392278645}
+  _groundCheck: {fileID: 6188805096115320984}
 --- !u!1 &4815172139528851427
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,8 +511,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 985089825092522309}
-  - component: {fileID: 4092028894406611940}
-  - component: {fileID: 7344650761392278645}
+  - component: {fileID: 6188805096115320984}
   m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -537,23 +534,7 @@ Transform:
   m_Father: {fileID: 3587433839549506332}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &4092028894406611940
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5805164235292325072}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0019872189, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.25
---- !u!114 &7344650761392278645
+--- !u!114 &6188805096115320984
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -562,13 +543,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5805164235292325072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e87624c3579de8f43bf7b58423ea55ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d54e43e7c3f46346bdbd562f3ff37ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _radius: 0.2
   _layer:
     serializedVersion: 2
-    m_Bits: 4160
-  _isTouchingLayer: 0
+    m_Bits: 23616
 --- !u!1 &6072994081106893459
 GameObject:
   m_ObjectHideFlags: 0

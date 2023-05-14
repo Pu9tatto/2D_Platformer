@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CreatureAnimation : MonoBehaviour
 {
-    [SerializeField] protected ColliderCheck _groundCheck;
+    [SerializeField] protected CheckCircleOverlap _groundCheck;
 
     protected bool _isHorizontalMovement;
 
@@ -56,6 +56,6 @@ public class CreatureAnimation : MonoBehaviour
     public void DoMove() => _isHorizontalMovement = true;
 
     protected virtual bool IsGrounded() =>
-        _groundCheck.IsTouchingLayer;
+        _groundCheck.IsContact();
 
 }

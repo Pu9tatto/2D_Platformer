@@ -11,8 +11,6 @@ public class CreaturesMovement : MonoBehaviour, IControllable
     [SerializeField] protected float _jumpForce;
     [SerializeField] protected float _jumpDamageForce;
 
-    [SerializeField] protected ColliderCheck _groundCheck;
-    [SerializeField] protected ColliderCheck _platformCheck;
     [SerializeField] protected CheckCircleOverlap _checkDamageableProps;
 
     protected Vector2 _direction;
@@ -38,16 +36,8 @@ public class CreaturesMovement : MonoBehaviour, IControllable
 
     protected virtual void FixedUpdate()
     {
-        IsGrounded();
         Move();
-        //Jump();
     }
-
-    public virtual void IsGrounded()
-    {
-        _isGround = _groundCheck.IsTouchingLayer;
-    }
-
 
     public virtual void Move()
     {

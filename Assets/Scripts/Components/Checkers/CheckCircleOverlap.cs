@@ -25,4 +25,16 @@ public class CheckCircleOverlap : MonoBehaviour
 
         return result;
     }
+    public bool IsContact()
+    {
+        var result = new List<GameObject>();
+
+        var size = Physics2D.OverlapCircleNonAlloc(
+            transform.position,
+            _radius,
+            _collidedResult,
+            _layer);
+
+        return size > 0;
+    }
 }

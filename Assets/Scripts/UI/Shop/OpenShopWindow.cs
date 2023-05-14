@@ -7,11 +7,12 @@ public class OpenShopWindow : MonoBehaviour
     [SerializeField] private List<Good> goods;
     [SerializeField] private UnityEvent _closeAction;
 
-    private float timeScale;
     private ShopWidget _shop;
+    private bool _isOpened = false;
 
     public void OpenShop()
     {
+        _isOpened = true;
         Time.timeScale = 0;
         var window = Resources.Load<ShopWidget>("UI/ShopWindow");
         var canvas = FindObjectOfType<UIContainerWindows>();
@@ -29,6 +30,10 @@ public class OpenShopWindow : MonoBehaviour
 
     private void OnDisable()
     {
-        _shop.CloseAction -= OnCloseAction;
+        if(_isOpened)
+        {
+            _isOpened = false;
+            _shop.CloseAction -= OnCloseAction;
+        }
     }
 }

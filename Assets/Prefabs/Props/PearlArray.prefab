@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 6790645251414857322}
   - component: {fileID: 6790645251414857323}
   - component: {fileID: 6790645251414857325}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PearlArray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectForDestroy: {fileID: 6790645251414857332}
-  _delay: 0
+  _delay: 0.1
 --- !u!114 &6790645251414857321
 MonoBehaviour:
   m_ObjectHideFlags: 0

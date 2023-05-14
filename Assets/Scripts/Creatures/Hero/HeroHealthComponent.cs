@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class HeroHealthComponent : HealthComponent
 {
+    private Hero _hero;
     private HeroData _data;
 
     protected override void Start()
     {
+        _hero = GetComponent<Hero>();
         _data = GameSession.Session.Data;
         _health = _data.Hp.Value;
         _maxHealth = DefsFacade.I.Player.MaxHealth;
@@ -17,6 +19,14 @@ public class HeroHealthComponent : HealthComponent
     {
         base.ChangeHealth(value);
         _data.Hp.Value = _health;
+    }
+    protected override void TakeDamage(int value)
+    {
+        if (!_hero.IsInvulnerable)
+        {
+            base.TakeDamage(value);
+            _hero.GetInvulnerable();
+        }
     }
 
     public void OnDie()

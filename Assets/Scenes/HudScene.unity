@@ -8478,9 +8478,9 @@ MonoBehaviour:
       - Id: Key
         Value: 0
       - Id: Hat
-        Value: 3
+        Value: 500
     Hp:
-      _value: 5
+      _value: 50
   _defaultCheckpoint: Start
 --- !u!4 &1856991581
 Transform:

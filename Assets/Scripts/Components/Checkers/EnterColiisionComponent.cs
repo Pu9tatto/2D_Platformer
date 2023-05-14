@@ -1,23 +1,26 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class EnterColiisionComponent : MonoBehaviour
 {
-    [SerializeField] private string[] _tags;
-    [SerializeField] private UnityEvent<GameObject> _action;
-
+    [SerializeField] private LayerMask _layerEnter;
+    [SerializeField] private UnityEvent<GameObject> _actionEnter;
+    [SerializeField] private LayerMask _layerStay;
+    [SerializeField] private UnityEvent<GameObject> _actionStay;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        foreach (var tag in _tags)
+        if (other.gameObject.IsInLayer(_layerEnter))
         {
-            if (other.gameObject.CompareTag(tag))
-            {
-                _action?.Invoke(other.gameObject);
-            }
+            _actionEnter?.Invoke(other.gameObject);
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.IsInLayer(_layerStay))
+        {
+            _actionStay?.Invoke(other.gameObject);
         }
     }
 }

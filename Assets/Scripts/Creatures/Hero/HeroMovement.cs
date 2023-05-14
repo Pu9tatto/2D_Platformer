@@ -3,6 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class HeroMovement : CreaturesMovement
 {
+    [SerializeField] protected CheckCircleOverlap _groundCheckOverlap;
+
     [SerializeField] private int _multiplyJump;
     [SerializeField] private PlaysSoundsComponent _sounds;
 
@@ -22,13 +24,13 @@ public class HeroMovement : CreaturesMovement
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
+        IsGrounded();
         Jump();
     }
 
-    public override void IsGrounded()
+    public void IsGrounded()
     {
-        base.IsGrounded();
-        if (_isGround)
+        if (_groundCheckOverlap.IsContact())
         {
             _multiplyJumpyIndex = 0;
             _isDamageJump = false;
@@ -43,14 +45,10 @@ public class HeroMovement : CreaturesMovement
     public override void Jump()
     {
         base.Jump();
-        var isFalling = _rigidbody.velocity.y < -0.001;
+        var isFalling = _rigidbody.velocity.y < 0.001;
         _canMultiplyJump = _multiplyJumpyIndex < _multiplyJump;
         if (_isJumpPress)
         {
-            if (_isGround)
-            {
-                AddJumpForce();
-            }
             if (isFalling)
             {
                 if (_canMultiplyJump)
@@ -78,7 +76,7 @@ public class HeroMovement : CreaturesMovement
     public override void AddJumpDamageForce()
     {
         _isDamageJump = true;
-        base.AddJumpDamageForce();
+        //base.AddJumpDamageForce();
     }
 
     public override void SetDirection(Vector2 direction)

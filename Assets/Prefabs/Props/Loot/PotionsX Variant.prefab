@@ -196,23 +196,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f41f335db452f0a458f0ab0e94b9d55f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tags:
-  - Player
-  _action:
+  _layerEnter:
+    serializedVersion: 2
+    m_Bits: 512
+  _actionEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2671195755541552422}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 3534364673367332802}
         m_TargetAssemblyTypeName: AddHealthComponent, Assembly-CSharp
         m_MethodName: AddHealth
@@ -237,3 +226,21 @@ MonoBehaviour:
           m_StringArgument: Destroing
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2671195755541552422}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _layerStay:
+    serializedVersion: 2
+    m_Bits: 0
+  _actionStay:
+    m_PersistentCalls:
+      m_Calls: []

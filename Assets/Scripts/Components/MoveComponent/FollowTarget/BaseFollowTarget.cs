@@ -7,7 +7,8 @@ public class BaseFollowTarget : MonoBehaviour
     protected Vector3 _destination;
     private void LateUpdate()
     {
-        Move();
+        if (_target != null)
+            Move();
     }
     protected virtual void Move()
     {

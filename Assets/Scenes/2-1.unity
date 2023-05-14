@@ -25050,7 +25050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77bc317b7f093d4f85b3e67043b30d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _groundCheck: {fileID: 208237441803978725}
+  _groundCheck: {fileID: 0}
 --- !u!114 &3583833547182609931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25712,6 +25712,4 @@ MonoBehaviour:
   _damage: 1
   _jumpForce: 12
   _jumpDamageForce: 3
-  _groundCheck: {fileID: 208237441803978725}
-  _platformCheck: {fileID: 0}
   _checkDamageableProps: {fileID: 4705806292949337344}

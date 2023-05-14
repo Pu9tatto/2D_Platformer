@@ -5890,18 +5890,30 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1359630774, guid: 0f7d34c8981655d44969b9e190c6cb9c, type: 3}
       propertyPath: _actionGO.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1359630774, guid: 0f7d34c8981655d44969b9e190c6cb9c, type: 3}
       propertyPath: _actionGO.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1359630774, guid: 0f7d34c8981655d44969b9e190c6cb9c, type: 3}
+      propertyPath: _actionGO.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359630774, guid: 0f7d34c8981655d44969b9e190c6cb9c, type: 3}
       propertyPath: _actionGO.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1013729845}
     - target: {fileID: 1359630774, guid: 0f7d34c8981655d44969b9e190c6cb9c, type: 3}
+      propertyPath: _actionGO.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 887493337}
+    - target: {fileID: 1359630774, guid: 0f7d34c8981655d44969b9e190c6cb9c, type: 3}
       propertyPath: _actionGO.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359630774, guid: 0f7d34c8981655d44969b9e190c6cb9c, type: 3}
+      propertyPath: _actionGO.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1359630774, guid: 0f7d34c8981655d44969b9e190c6cb9c, type: 3}
@@ -5909,11 +5921,27 @@ PrefabInstance:
       value: Open
       objectReference: {fileID: 0}
     - target: {fileID: 1359630774, guid: 0f7d34c8981655d44969b9e190c6cb9c, type: 3}
+      propertyPath: _actionGO.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359630774, guid: 0f7d34c8981655d44969b9e190c6cb9c, type: 3}
       propertyPath: _actionGO.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Door, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1359630774, guid: 0f7d34c8981655d44969b9e190c6cb9c, type: 3}
+      propertyPath: _actionGO.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.Animator, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359630774, guid: 0f7d34c8981655d44969b9e190c6cb9c, type: 3}
+      propertyPath: _actionGO.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: interact
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359630774, guid: 0f7d34c8981655d44969b9e190c6cb9c, type: 3}
       propertyPath: _actionGO.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359630774, guid: 0f7d34c8981655d44969b9e190c6cb9c, type: 3}
+      propertyPath: _actionGO.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7409135598849648394, guid: 0f7d34c8981655d44969b9e190c6cb9c, type: 3}
@@ -8947,6 +8975,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5448761365161569119, guid: a72d5700e8d640949a66dcb88c89d940, type: 3}
   m_PrefabInstance: {fileID: 1091763123}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &887493337 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2488276725065358262, guid: 0f7d34c8981655d44969b9e190c6cb9c, type: 3}
+  m_PrefabInstance: {fileID: 650792492}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &889702053
 PrefabInstance:
@@ -27061,7 +27094,6 @@ MonoBehaviour:
   - {fileID: -7043614315844772598, guid: bf1a82a88aec29d42a38f85dc11e3d22, type: 3}
   - {fileID: -7043614315844772598, guid: 6316e50a9cd260240a119ca2905b8ad9, type: 3}
   - {fileID: -7043614315844772598, guid: c601c9408ea22d246a9ca6bfcd6cf5f2, type: 3}
-  _activatedOnStart: 0
   _closeAction:
     m_PersistentCalls:
       m_Calls:
