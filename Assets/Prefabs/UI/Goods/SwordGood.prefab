@@ -318,7 +318,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -7043614315844772598}
         m_TargetAssemblyTypeName: Good, Assembly-CSharp
-        m_MethodName: TryBuy
+        m_MethodName: CheckEnoughtCurrency
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

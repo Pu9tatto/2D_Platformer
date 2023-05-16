@@ -12,5 +12,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d07080305e7fb74f8c9a5bb5d1a76b0, type: 3}
   m_Name: PlayerDef
   m_EditorClassIdentifier: 
-  _inventorySize: 7
+  _inventorySize: 8
   _maxHealth: 100
+  _stats:
+  - _name: Health
+    _id: 0
+    _icon: {fileID: 21300000, guid: 08ced36ef603c184398a973e39dc27ce, type: 3}
+    _levels:
+    - _value: 100
+      _price: 0
+    - _value: 120
+      _price: 25
+    - _value: 130
+      _price: 50
+    - _value: 140
+      _price: 100
+    - _value: 150
+      _price: 200
+    - _value: 155
+      _price: 200
+    - _value: 160
+      _price: 300
+    - _value: 165
+      _price: 300
+    - _value: 170
+      _price: 400
+    - _value: 200
+      _price: 1000
+  - _name: Damage
+    _id: 1
+    _icon: {fileID: 21300000, guid: a980c663c2ec0ef478d736267d65c8ab, type: 3}
+    _levels:
+    - _value: 10
+      _price: 0
+    - _value: 15
+      _price: 100
+    - _value: 20
+      _price: 250
+    - _value: 25
+      _price: 500
+    - _value: 30
+      _price: 1000
+  - _name: Lives
+    _id: 2
+    _icon: {fileID: 21300000, guid: 8c6cbd63df4a52b448ef4f4c5f8e7498, type: 3}
+    _levels:
+    - _value: 1
+      _price: 0
+    - _value: 2
+      _price: 250
+    - _value: 3
+      _price: 1000
+  - _name: GoldBug
+    _id: 3
+    _icon: {fileID: 21300000, guid: eecd84dfd0fec11459ec3e2e17e5e4a8, type: 3}
+    _levels:
+    - _value: 25
+      _price: 0
+    - _value: 50
+      _price: 25
+    - _value: 100
+      _price: 50
+    - _value: 250
+      _price: 100
+    - _value: 500
+      _price: 250
+    - _value: 1000
+      _price: 500
