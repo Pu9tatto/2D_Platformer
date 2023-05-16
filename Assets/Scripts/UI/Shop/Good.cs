@@ -23,18 +23,17 @@ public class Good : MonoBehaviour
     public int Price => _price;
     public int Count => _count;
 
-    public void TryBuy()
+    public void CheckEnoughtCurrency()
     {
-        if(_inventory.GetCount(_currency) >=_price)
+        if(_inventory.IsEnough(_price))
         {
-            _inventory.Remove(_currency, _price);
-            Buy();
+            TryBuy();
         }
     }
     
-    protected virtual void Buy()
+    protected virtual void TryBuy()
     {
-
+        _inventory.Remove(_currency, _price);
     }
 }
 

@@ -1,4 +1,3 @@
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class HeroAnimations : CreatureAnimation
@@ -7,8 +6,8 @@ public class HeroAnimations : CreatureAnimation
 
     [SerializeField] private Cooldown _attackCooldown;
 
-    [SerializeField] private AnimatorController _armed;
-    [SerializeField] private AnimatorController _disArmed;
+    [SerializeField] private RuntimeAnimatorController _armed;
+    [SerializeField] private RuntimeAnimatorController _disArmed;
     [SerializeField] private Cooldown _throwCooldown;
     
     private bool _isHightFall;

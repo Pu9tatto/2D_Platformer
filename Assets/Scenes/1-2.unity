@@ -5144,7 +5144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055964922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.763, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -39643,9 +39643,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _inventory:
-      _inventory: []
+      _inventory:
+      - Id: Sword
+        Value: 3
+      - Id: Pearl
+        Value: 3
     Hp:
       _value: 80
+    StatsLevel:
+      _progress: []
   _defaultCheckpoint: Start
 --- !u!4 &1860705574
 Transform:
@@ -40704,8 +40710,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013546482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.2209, y: 0.6595, z: 0}
-  m_LocalScale: {x: 17.778034, y: 7.6589, z: 1}
+  m_LocalPosition: {x: 9.2209, y: -3.022, z: 0}
+  m_LocalScale: {x: 17.778034, y: 15.022246, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1055964923}

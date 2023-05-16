@@ -1,7 +1,13 @@
 ﻿public class HealingGood : Good
 {
-    protected override void Buy()
+    protected override void TryBuy()
     {
-        _data.Hp.Value += _count;
+        var maxHelth = DefsFacade.I.Player.MaxHealth;
+        var health = GameSession.Session.Data.Hp.Value;
+        if(health<maxHelth)
+        {
+            base.TryBuy();
+            _data.Hp.Value += _count;
+        }
     }
 }

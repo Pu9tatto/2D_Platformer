@@ -82,7 +82,7 @@ public class RandomSpawner : MonoBehaviour
 
         return new Vector3(x, y, 0);
     }
-
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         var position = transform.position;
@@ -97,4 +97,5 @@ public class RandomSpawner : MonoBehaviour
         Handles.color = new Color(1, 1, 1, 0.1f);
         Handles.DrawSolidArc(position, Vector3.forward, rightBound, _sectorAngle, 1f);
     }
+#endif
 }

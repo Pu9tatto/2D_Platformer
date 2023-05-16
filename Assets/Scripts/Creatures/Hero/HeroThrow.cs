@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HeroThrow : MonoBehaviour
 {
-    [InventoryId] [SerializeField] private string _throwDefoultId;
+    [InventoryId][SerializeField] private string _throwDefoultId;
     [SerializeField] private SpawnComponent _throwSpawner;
     [SerializeField] private Transform _throwPoint;
     [SerializeField] private float _timeForMultiThrow;
@@ -32,7 +32,7 @@ public class HeroThrow : MonoBehaviour
         _throwId = _session.QuickInvetory.SelectedItem.Id;
 
         var selectedItem = DefsFacade.I.Items.Get(_throwId);
-        if(!selectedItem.HasTag(ItemTag.Throwable))
+        if (!selectedItem.HasTag(ItemTag.Throwable))
         {
             _throwId = _throwDefoultId;
         }
@@ -43,24 +43,22 @@ public class HeroThrow : MonoBehaviour
 
     public void DoThrow()
     {
-        var minvalue = _throwId == "Sword"? 1: 0;
+        var minvalue = _throwId == "Sword" ? 1 : 0;
         if (_projectileValue <= minvalue) return;
 
-        if(_projectileValue < _countMultiThrow)
+        if (_projectileValue >= _countMultiThrow+minvalue && _startPressThrowTimer + _timeForMultiThrow < Time.time)
+        {
+            StartCoroutine(MultiThrow());
+        }
+        else
         {
             Shot();
-            return;
         }
-
-        if (_startPressThrowTimer + _timeForMultiThrow < Time.time)
-            StartCoroutine(MultiThrow());
-        else
-            Shot();
     }
 
     private IEnumerator MultiThrow()
     {
-        for (int i =0; i < _countMultiThrow; i++)
+        for (int i = 0; i < _countMultiThrow; i++)
         {
             Shot();
             yield return new WaitForSeconds(_timeBetweenThrow);

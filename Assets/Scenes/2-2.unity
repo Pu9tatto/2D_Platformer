@@ -5845,7 +5845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7807925026138297448, guid: a436cc26f96812f4aad69d1e2237818e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.10261233
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7807925026138297448, guid: a436cc26f96812f4aad69d1e2237818e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5873,6 +5873,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7807925026138297448, guid: a436cc26f96812f4aad69d1e2237818e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807925026138297450, guid: a436cc26f96812f4aad69d1e2237818e, type: 3}
+      propertyPath: _clips.Array.data[1]._loop
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7807925026138297453, guid: a436cc26f96812f4aad69d1e2237818e, type: 3}
@@ -40078,6 +40082,8 @@ MonoBehaviour:
         Value: 50
     Hp:
       _value: 100
+    StatsLevel:
+      _progress: []
   _defaultCheckpoint: Start
 --- !u!4 &1860705574
 Transform:

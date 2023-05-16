@@ -7,7 +7,6 @@ public class GameSession : MonoBehaviour
 {
     [SerializeField] private HeroData _data;
     [SerializeField] private string _defaultCheckpoint;
-    
 
     public HeroData Data => _data;
     private HeroData _save;
@@ -18,6 +17,8 @@ public class GameSession : MonoBehaviour
     private List<string> _removedItems = new List<string>();
     private List<string> _savedRemovedItems;
     private readonly List<string> _checkpoints = new List<string>();
+
+    public StatsLevelModel StatsLevelModel { get; private set; }
 
 
     private static GameSession session;
@@ -69,6 +70,9 @@ public class GameSession : MonoBehaviour
     {
         QuickInvetory = new QuickInvetoryModel(_data);
         _trash.Retain(QuickInvetory);
+
+        StatsLevelModel = new StatsLevelModel(_data);
+        _trash.Retain(StatsLevelModel);
     }
 
     private void LoadHud()

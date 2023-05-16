@@ -22,6 +22,7 @@ namespace Assets.Scripts.Effects
                 _camera = Camera.main;
 
             var sprites = _container.GetComponentsInChildren<SpriteRenderer>();
+            _containerBounds = sprites[0].bounds;
             foreach (var sprite in sprites)
             {
                 _containerBounds.Encapsulate(sprite.bounds);

@@ -103,6 +103,7 @@ public class InventoryData
         }
         return count;
     }
+    public bool IsEnough(int price) => price <= GetCount("Coin");
 }
 
 [Serializable]
