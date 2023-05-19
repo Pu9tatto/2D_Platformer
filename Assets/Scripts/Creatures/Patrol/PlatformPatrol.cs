@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlatformPatrol : Patrol
@@ -10,7 +9,7 @@ public class PlatformPatrol : Patrol
     private CreaturesMovement _movement;
     private CreatureAnimation _animation;
 
-    private Vector2 direction = Vector2.right;
+    private Vector2 _direction = Vector2.right;
 
     private void Awake()
     {
@@ -22,19 +21,25 @@ public class PlatformPatrol : Patrol
     {
         while (enabled)
         {
-
-            if (!_endPlatformChecker.IsTouchingLayer)
+            if ( _animation.IsGrounded())
             {
-                direction *= -1;
+                if (!_endPlatformChecker.IsTouchingLayer)
+                {
+                    _direction *= -1;
+                }
+                else if (_obstackleChecker.IsTouchingLayer)
+                {
+                    _direction *= -1;
+                }
+
+                _movement.SetDirection(_direction);
+                _animation.DoMove();
             }
-            else if (_obstackleChecker.IsTouchingLayer)
+            else
             {
-                direction *= -1;
+                _animation.SetDirection(Vector2.zero);
             }
 
-            _movement.SetDirection(direction);
-            //_animation.SetDirection(1);
-            _animation.DoMove();
             yield return null;
         }
     }

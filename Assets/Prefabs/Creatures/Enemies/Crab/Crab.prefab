@@ -425,6 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _groundCheck: {fileID: 5076379589189392194}
+  _testGroundedCheck: 0
 --- !u!1 &4857915766598216046
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,7 +661,7 @@ MonoBehaviour:
   _radius: 0.2
   _layer:
     serializedVersion: 2
-    m_Bits: 23616
+    m_Bits: 22592
 --- !u!1 &8764296576821810192
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,16 +13,16 @@ public class StarAI : MonoBehaviour
 
     private Coroutine _current;
     private StarMovement _movement;
-    private StarAnimation _animation;
+    protected StarAnimation _animation;
     private Rigidbody2D _rigidbody;
-    private Patrol _patrol;
-    private Vector3 _direction;
-    private bool _isDie = false;
-    private bool _isPrepare = false;
-    private bool _isSpin = false;
+    protected Patrol _patrol;
+    protected Vector3 _direction;
+    protected bool _isDie = false;
+    protected bool _isPrepare = false;
+    protected bool _isSpin = false;
 
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _movement = GetComponent<StarMovement>();
         _animation = GetComponent<StarAnimation>();
@@ -30,7 +30,7 @@ public class StarAI : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    private void Start()
+    protected virtual void OnEnable()
     {
         _startCoroutine?.Invoke();
     }
@@ -49,7 +49,7 @@ public class StarAI : MonoBehaviour
         _direction = (go.transform.position - transform.position).normalized;
         StartState(Co_PrepareToSpin());
     }
-    private IEnumerator Co_PrepareToSpin()
+    public IEnumerator Co_PrepareToSpin()
     {
         _animation.SetPrepare(true);
         _isPrepare = true;
@@ -60,7 +60,7 @@ public class StarAI : MonoBehaviour
         StartState(Co_SpinToTarget());
     }
 
-    protected virtual IEnumerator Co_SpinToTarget()
+    private IEnumerator Co_SpinToTarget()
     {
         _spinDelay.Reset();
         _movement.IsSpin(true);
@@ -85,7 +85,7 @@ public class StarAI : MonoBehaviour
         _animation.SetDirection(direction);
     }
 
-    private void StartState(IEnumerator corotine)
+    protected void StartState(IEnumerator corotine)
     {
         if (_current != null)
             StopCoroutine(_current);
@@ -94,7 +94,12 @@ public class StarAI : MonoBehaviour
         _current = StartCoroutine(corotine);
     }
 
-    public void OnDie()
+    public void OnHited()
+    {
+
+    }
+
+    public virtual void OnDie()
     {
         _isDie = true;
         _movement.IsSpin(false);
@@ -107,4 +112,5 @@ public class StarAI : MonoBehaviour
             StopAllCoroutines();
 
     }
+
 }

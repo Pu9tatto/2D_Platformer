@@ -19,8 +19,6 @@ public class HealthComponent : MonoBehaviour
 
     public virtual void ChangeHealth(int value)
     {
-        if(_health<=0) return;
-
         if(value < 0)
         {
             TakeDamage(value);
@@ -54,6 +52,11 @@ public class HealthComponent : MonoBehaviour
     {
         var progress = (float) _health / _maxHealth;
         _healthBar?.SetProgress(progress);
+    }
+
+    public void SetHealth(int value)
+    {
+        _health = value;
     }
 
 }

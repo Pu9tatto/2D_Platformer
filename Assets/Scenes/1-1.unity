@@ -7838,8 +7838,6 @@ MonoBehaviour:
       _inventory:
       - Id: Candle
         Value: 10
-      - Id: Candle
-        Value: 10
     Hp:
       _value: 80
     StatsLevel:
@@ -9318,6 +9316,10 @@ PrefabInstance:
       propertyPath: _template
       value: 
       objectReference: {fileID: 8579027067864280872}
+    - target: {fileID: 1180514765626723328, guid: 96e2a713cdb82a04aae52a4f75fdacd2, type: 3}
+      propertyPath: _layer.m_Bits
+      value: 22592
+      objectReference: {fileID: 0}
     - target: {fileID: 3206097765869636610, guid: 96e2a713cdb82a04aae52a4f75fdacd2, type: 3}
       propertyPath: m_Name
       value: Sharky (3)

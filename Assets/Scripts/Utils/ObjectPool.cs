@@ -34,4 +34,15 @@ public class ObjectPool : MonoBehaviour
             item.SetActive(false);
         }
     }
+
+    public int FreeObjectsInPool()
+    {
+        int count = 0;
+        foreach (var item in _pool)
+        {
+            if(item.activeSelf == false)
+                count++;
+        }
+        return count;
+    }
 }

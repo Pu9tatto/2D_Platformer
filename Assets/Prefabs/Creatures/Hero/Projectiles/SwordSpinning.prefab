@@ -216,7 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 5120
+    m_Bits: 70656
   _action:
     m_PersistentCalls:
       m_Calls:

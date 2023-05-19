@@ -90,10 +90,7 @@ public class HeroAnimations : CreatureAnimation
         base.SetDirection(direction);
     }
 
-
-
-
-    protected override bool IsGrounded() =>
+    public override bool IsGrounded() =>
         base.IsGrounded();
 
     public void TryThrow()

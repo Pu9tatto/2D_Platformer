@@ -127,7 +127,7 @@ MonoBehaviour:
     - {fileID: 441987400, guid: 345a6f7a06f7f8d48b01ad24e252948c, type: 3}
     - {fileID: -1427187485, guid: 345a6f7a06f7f8d48b01ad24e252948c, type: 3}
     - {fileID: 285568509, guid: 345a6f7a06f7f8d48b01ad24e252948c, type: 3}
-    _loop: 1
+    _loop: 0
     _allowNextClip: 0
     _onComplete:
       m_PersistentCalls:

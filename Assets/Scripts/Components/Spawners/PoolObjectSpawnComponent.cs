@@ -4,6 +4,7 @@ public class PoolObjectSpawnComponent : ObjectPool
 {
     [SerializeField] private GameObject _template;
     [SerializeField] private Transform _spawnPoint;
+    [SerializeField] private bool _isTransformToLossyScale = true;
 
     private void Start()
     {
@@ -15,7 +16,8 @@ public class PoolObjectSpawnComponent : ObjectPool
         if(TryGetObject(out GameObject tamplate))
         {
             tamplate.transform.position = _spawnPoint.position;
-            tamplate.transform.localScale = _spawnPoint.lossyScale;
+            if(_isTransformToLossyScale )
+                tamplate.transform.localScale = _spawnPoint.lossyScale;
             tamplate.SetActive(true);
         }
     }

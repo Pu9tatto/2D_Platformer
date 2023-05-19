@@ -3,14 +3,18 @@
 public class StarAnimation : EnemyAnimation
 {
     protected static readonly int MissKey = Animator.StringToHash("miss");
+    protected static readonly int ThrowKey = Animator.StringToHash("throw");
     protected static readonly int IsSpinKey = Animator.StringToHash("is-spin");
     protected static readonly int IsPrepareKey = Animator.StringToHash("is-prepare");
-
-
 
     public void MissAnticipation()
     {
         _animator.SetTrigger(MissKey);
+    }
+
+    public void SetThrow()
+    {
+        _animator.SetTrigger(ThrowKey);
     }
 
     public void SetSpin(bool isSpin)
